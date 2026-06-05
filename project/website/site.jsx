@@ -31,7 +31,7 @@ const NAV = [
     ["Restaurant & Hospitality Heaters", CAT+"/keyword/?ddlSearchType=2&keyword=wb35"],
     ["Space Ray Replacement Parts", CAT+"/category/ater-replacement-parts-space-ray-replacement-parts"],
     ["Gas Regulators", CAT+"/category/gas-regulators-2"],
-    ["Railcar Thaw Shed", "https://www.pennradiant.com/railcar_thaw_shed.php"],
+    ["Railcar Thaw Shed", "railcar-thaw-shed.html"],
   ]},
   { label:"Electric Heating", href:"electric-heating.html", sub:[
     ["Aitken Elements", CAT+"/category/all-categories-parts-aitken-elements"],
@@ -67,11 +67,12 @@ const NAV = [
   { label:"Services", sub:[
     ["History", "history.html"],
     ["Sample Quote / Invoice", "quote-invoice.html"],
-    ["Product Manuals", "https://www.pennradiant.com/product_manuals.html"],
-    ["Spec Sheets", "https://www.pennradiant.com/spec_sheets.html"],
-    ["Payment Terms", "https://www.pennradiant.com/payment_terms.php"],
-    ["Territories", "https://www.pennradiant.com/map.html"],
+    ["Product Manuals", "product-manuals.html"],
+    ["Spec Sheets", "spec-sheets.html"],
+    ["Territories", "territories.html"],
+    ["Railcar Thaw Sheds", "railcar-thaw-shed.html"],
     ["Penn Radiant YouTube", "https://www.youtube.com/@PennRadiant"],
+    ["Privacy Policy", "privacy.html"],
   ]},
   { label:"Contact", href:"contact.html" },
 ];
@@ -204,13 +205,13 @@ function Footer() {
           <li><a href={CAT+"/category/electric-heating"} target="_blank" rel="noreferrer">Electric Heating</a></li>
           <li><a href={CAT+"/category/all-categories-parts"} target="_blank" rel="noreferrer">Parts</a></li>
           <li><a href={CAT+"/category/all-categories-cooling-equipment-2"} target="_blank" rel="noreferrer">Cooling</a></li>
-          <li><a href="https://www.pennradiant.com/railcar_thaw_shed.php" target="_blank" rel="noreferrer">Thaw Sheds</a></li>
+          <li><a href="railcar-thaw-shed.html">Thaw Sheds</a></li>
         </ul></div>
         <div><h4>Company</h4><ul>
           <li><a href="history.html">History</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="https://www.pennradiant.com/product_manuals.html" target="_blank" rel="noreferrer">Product Manuals</a></li>
-          <li><a href="https://www.pennradiant.com/map.html" target="_blank" rel="noreferrer">Territories</a></li>
+          <li><a href="product-manuals.html">Product Manuals</a></li>
+          <li><a href="territories.html">Territories</a></li>
           <li><a href="https://www.youtube.com/@PennRadiant" target="_blank" rel="noreferrer">YouTube</a></li>
         </ul></div>
         <div>

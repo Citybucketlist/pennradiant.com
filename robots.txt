@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /header-options.html
+
+Sitemap: https://www.pennradiant.com/sitemap.xml

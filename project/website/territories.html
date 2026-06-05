@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sales Territories — Penn Radiant</title>
+<meta name="description" content="Penn Radiant Products sales territories &amp; coverage — nationwide industrial heating &amp; cooling supply by LTL freight. Contact us for your region.">
+<meta name="keywords" content="Penn Radiant, industrial heating, industrial cooling, replacement parts, Space-Ray, Heat Wagon, Sure Flame, territories, sales territory, coverage, nationwide, LTL freight">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.pennradiant.com/territories.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Penn Radiant Products">
+<meta property="og:title" content="Sales Territories — Penn Radiant">
+<meta property="og:description" content="Penn Radiant Products sales territories &amp; coverage — nationwide industrial heating &amp; cooling supply by LTL freight. Contact us for your region.">
+<meta property="og:url" content="https://www.pennradiant.com/territories.html">
+<meta property="og:image" content="https://www.pennradiant.com/assets/headers/parts.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sales Territories — Penn Radiant">
+<meta name="twitter:description" content="Penn Radiant Products sales territories &amp; coverage — nationwide industrial heating &amp; cooling supply by LTL freight. Contact us for your region.">
+<meta name="twitter:image" content="https://www.pennradiant.com/assets/headers/parts.jpg">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=76">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="favicon.ico">
+<style>
+.doc-sect{margin-bottom:30px}
+.doc-sect h2{font-size:20px;letter-spacing:.02em;text-transform:uppercase;color:var(--prp-ink);border-bottom:2px solid var(--prp-gray-150);padding-bottom:8px;margin:0 0 14px}
+.doc-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:6px 26px}
+.doc-list a{display:flex;align-items:center;gap:9px;padding:8px 6px;color:var(--prp-ink);text-decoration:none;border-bottom:1px solid var(--prp-gray-100);font-size:14.5px;line-height:1.3}
+.doc-list a:hover{color:var(--prp-red)}
+.doc-list .pdf{flex:0 0 auto;font-size:10px;font-weight:800;letter-spacing:.04em;color:#fff;background:var(--prp-red);border-radius:3px;padding:2px 5px}
+.legal-body{max-width:820px}
+.legal-body h2{font-size:18px;margin:26px 0 8px;color:var(--prp-ink)}
+.legal-body p{margin:0 0 13px;color:var(--fg-2,#444);line-height:1.6;font-size:15px}
+.legal-body .upd{color:var(--fg-3,#777);font-size:13.5px;margin-bottom:22px}
+.terr-wrap img{width:100%;height:auto;border:1px solid var(--prp-gray-150);border-radius:8px;display:block}
+.rail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:22px 0}
+.rail-grid img{width:100%;height:170px;object-fit:cover;border-radius:8px;border:1px solid var(--prp-gray-150)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=15"></script>
+<script type="text/babel">
+const I = PRP_I;
+function App() {
+  return (
+    <React.Fragment>
+      <Header active="Services" />
+      <div className="pagehero light"><div className="wrap">
+        <div className="eyebrow">Coverage</div>
+        <h1>Sales Territories</h1>
+        <p>Penn Radiant supplies industrial heating &amp; cooling nationwide by LTL freight. Contact us to reach the representative for your region.</p>
+      </div></div>
+      <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><span>Territories</span></div>
+      <section className="wrap section">
+        <div className="terr-wrap">
+          <img src="https://www.pennradiant.com/images/map.jpg" alt="Penn Radiant Products sales territory map of the United States"/>
+        </div>
+        <div style={{marginTop:"22px",maxWidth:"760px"}}>
+          <p style={{color:"var(--fg-2,#444)",lineHeight:1.6}}>Penn Radiant Products ships heaters, replacement parts and cooling equipment across the United States by LTL freight from our Pittsburgh, PA warehouse. For territory-specific pricing, representation or support, reach our team directly.</p>
+          <div style={{marginTop:"18px"}}><a className="btn btn-red btn-lg" href="contact.html">Contact Us</a></div>
+        </div>
+      </section>
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

@@ -49,6 +49,22 @@ group URL to the model page (optionally with a `#tab` anchor once we add tab IDs
 | `/viewitems/heat-wagon-950h-l-parts/…-control-panel` | `/heat-wagon-950h-parts.html` |
 | `/viewitems/heat-wagon-950h-l-parts/…-pipe-train` | `/heat-wagon-950h-parts.html` |
 
+## Own-domain pages (www.pennradiant.com → new pages)
+These legacy pages live on the apex/`www` site today and rank/collect links. When the new
+site replaces the domain root, 301 each old path to its rebuilt equivalent:
+| Old URL | → New page |
+|---|---|
+| `/product_manuals.html` | `/product-manuals.html` |
+| `/spec_sheets.html` | `/spec-sheets.html` |
+| `/map.html` | `/territories.html` |
+| `/railcar_thaw_shed.php` | `/railcar-thaw-shed.html` |
+| `/payment_terms.php` | `/privacy.html` *(legacy "Payment Terms" link actually served the Privacy Policy)* |
+
+> The new pages link to the existing `/manuals/…`, `/sheets/…` and `/images/…` assets on
+> pennradiant.com — keep those directories live (or copy them into the new deploy) so the
+> PDF/image links don't 404. `header-options.html` is a dev preview: `noindex` + excluded
+> from the sitemap.
+
 ## Catalog stays external (for now)
 Pages we did **not** rebuild (most catalog category/item pages) should keep pointing at the
 live catalog — no redirect needed until/unless they're rebuilt.
