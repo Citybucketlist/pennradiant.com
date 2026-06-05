@@ -1,0 +1,25 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:var(--font-sans);color:var(--fg-1);background:#fff}
+body{padding:24px 26px}
+.row{display:flex;gap:12px;align-items:center}
+.svg-icon{width:22px;height:22px;stroke-width:2}
+
+.list{border:1px solid var(--prp-gray-150);border-radius:var(--r-md);overflow:hidden;max-width:430px}
+.crow{display:flex;align-items:center;gap:16px;padding:12px 16px;border-bottom:1px solid var(--prp-gray-150);cursor:pointer;transition:background .15s}
+.crow:last-child{border:0}
+.crow:hover{background:var(--prp-gray-100)}
+.thumb{width:54px;height:42px;object-fit:contain;flex:none}
+.cname{flex:1;font-weight:700;font-size:18px;color:var(--fg-1)}
+.chev{color:var(--prp-blue);width:22px;height:22px;stroke-width:2.5}
+
+</style></head><body><div class="prp-eyebrow" style="margin-bottom:12px">Category list rows</div>
+<div class="list">
+<div class="crow"><img class="thumb" src="../assets/products/cat-heating.jpg"><div class="cname">Gas Heaters</div><i data-lucide="chevron-right" class="chev"></i></div>
+<div class="crow"><img class="thumb" src="../assets/products/cat-parts.jpg"><div class="cname">Heater Parts</div><i data-lucide="chevron-right" class="chev"></i></div>
+<div class="crow"><img class="thumb" src="../assets/products/cat-cooling.jpg"><div class="cname">Cooling</div><i data-lucide="chevron-right" class="chev"></i></div>
+</div><script>lucide.createIcons();</script></body></html>

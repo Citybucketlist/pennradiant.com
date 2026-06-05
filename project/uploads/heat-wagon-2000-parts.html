@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heat Wagon 2000 (L) Parts — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=36">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=11"></script>
+<script type="text/babel">
+const A = PRP_A;
+window.MODEL = {
+  brand:"Heat Wagon", sku:"Heat Wagon · Direct-Fired LP",
+  title:"Heat Wagon 2000 (L) — Factory Parts",
+  blurb:"Genuine replacement parts for the Heat Wagon 2000 (L) liquid-propane direct-fired heater. Identify your part by its number, then request current pricing & availability.",
+  hero:A+"/hw-heaters/950h.jpg", heroContain:true,
+  crumb:[["Home","index.html"],["Gas Heating","gas-heating.html"],["Heat Wagon Factory Parts","heat-wagon-parts.html"]],
+  groups:[
+    { id:"body", name:"Body, Fan & Burner", diagram:A+"/hw-diagrams/2000-body.jpg", cap:"2000 (L) Body, Fan & Burner", parts:[
+      { no:1,  pn:"HWP HC1069B", d:"Lid / Control Box", price:null },
+      { no:2,  pn:"HWP HC1069A", d:"Lid / Control Box", price:null },
+      { no:3,  pn:"N/S", d:"Copper Tube / Air Switch", ns:true, price:null },
+      { no:4,  pn:"HWP HP1161",  d:"Fan Blade", price:null },
+      { no:5,  pn:"HWP HG1167",  d:"Fan Guard", price:null },
+      { no:6,  pn:"HWP HM1166",  d:"Motor, 1 HP", price:null },
+      { no:7,  pn:"HWP HB1177B", d:"Heat Shield", price:null },
+      { no:8,  pn:"HWP HB2000",  d:"Body", price:null },
+      { no:9,  pn:"HWP HB1171B", d:"Burner", price:null },
+      { no:10, pn:"HWP HW1164",  d:"Wheel — 8\" x 1.75\" x 1/2\" Hub", price:null },
+      { no:null, pn:"HWP 2000A",   d:"Sub-assembly w/ body, wheels, axle", ns:true, price:null },
+      { no:null, pn:"HWP HB1171BA",d:"Sub-assembly w/ burner & igniter", ns:true, price:null },
+      { no:null, pn:"HWP HW1164B", d:"Axle", ns:true, price:null },
+    ]},
+    { id:"control", name:"Control Box", diagram:A+"/hw-diagrams/2000-control.jpg", cap:"2000 (L) Control Panel", reqNote:"Identify your control-box part by its number on the wiring diagram above, then our team will confirm the exact part & current price. Call 1.800.438.2503 with your model & serial number." },
+    { id:"liquid", name:"Liquid Pipe Train", diagram:A+"/hw-diagrams/2000-liquid.jpg", cap:"2000 Liquid Pipe Train", parts:[
+      { no:1,  pn:"HWP HV1129",  d:"Liquid Strainer", price:null },
+      { no:2,  pn:"HWP HV1054",  d:"Liquid Pressure Gauge", price:null },
+      { no:3,  pn:"HWP HV1137",  d:"Liquid Propane Solenoid Valve", price:null },
+      { no:4,  pn:"HWP HV1039",  d:"Safety Relief Valve", price:null },
+      { no:5,  pn:"HWP HV1123",  d:"Manual Shut-Off Valve", price:null },
+      { no:6,  pn:"HWP HV1140",  d:"Vaporizing Ring", price:null },
+      { no:"6A", pn:"HWP HV1042B", d:"Hose", price:null },
+      { no:"6B", pn:"HWP HR1053",  d:"Regulator (LP)", price:null },
+    ]},
+    { id:"vapor", name:"Vapor Pipe Train", diagram:A+"/hw-diagrams/2000-vapor.jpg", cap:"2000 Vapor Pipe Train", parts:[
+      { no:1,  pn:"HWP HV1160", d:"1\" Locking Gas Selector Valve", price:null },
+      { no:2,  pn:"HWP HV1169", d:"1\" W.C. Low-Pressure Gauge", price:null },
+      { no:3,  pn:"HWP HV1032", d:"Solenoid Valve", price:null },
+      { no:4,  pn:"HWP HV20SV02B", d:"Regulator", price:null },
+      { no:5,  pn:"HWP HV1035", d:"1\" Manual Shut Valve", price:null },
+      { no:6,  pn:"HWP HV1129B", d:"“Y” Strainer 1\"", price:null },
+      { no:null, pn:"HWP HV1032C",  d:"Coil Cover", ns:true, price:null },
+      { no:null, pn:"HWP HV1032RK", d:"Rebuild Kit for HV1032", ns:true, price:null },
+    ]},
+  ],
+};
+</script>
+<script type="text/babel" src="model-detail.jsx?v=1"></script>
+</body>
+</html>

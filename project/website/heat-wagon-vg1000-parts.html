@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heat Wagon VG1000 — Factory Parts — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=76">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=14"></script>
+<script type="text/babel">
+const A = PRP_A;
+window.MODEL = {
+  brand:"Heat Wagon", sku:"Heat Wagon · Indirect-Fired",
+  title:"Heat Wagon VG1000 — Factory Parts",
+  blurb:"Genuine replacement parts for the Heat Wagon VG1000 indirect-fired heater. Use the labeled diagrams to identify your part by number, then request pricing.",
+  hero:A+"/hw-heaters/vg1000.jpg", heroContain:true,
+  crumb:[["Home","index.html"],["Gas Heating","gas-heating.html"],["Heat Wagon Factory Parts","heat-wagon-parts.html"]],
+  groups:[
+    { id:"body", name:"Heater Parts", diagram:A+"/hw-diagrams/vg1000-body.jpg", cap:"VG1000 Heater Parts", parts:[
+      { no:1,  pn:"HWP 214401", d:"Flue Gas Adapter", price:null },
+      { no:2,  pn:"HWP 214402", d:"Cover Plate, Rear", price:null },
+      { no:3,  pn:"HWP 214403", d:"Connecting Profile", price:null },
+      { no:4,  pn:"HWP 214404", d:"Cover Plate, Front", price:null },
+      { no:5,  pn:"HWP 214405", d:"Crane Eye (4)", price:null },
+      { no:6,  pn:"HWP 214406", d:"Air Outlet Adapter", price:null },
+      { no:7,  pn:"HWP 20529",  d:"Flange Seal", price:null },
+      { no:8,  pn:"HWP 20471",  d:"Oil Burner Flange", price:null },
+      { no:9,  pn:"HWP 110121", d:"Fuel Filter", price:null },
+      { no:10, pn:"HWP 110008", d:"Oil Burner", price:null },
+      { no:null, pn:"HWP 110008B", d:"Gas Burner", ns:true, price:null },
+      { no:11, pn:"HWP 214411", d:"Burner Compartment Door (Wayne)", price:null },
+      { no:12, pn:"HWP 214412", d:"Base", price:null },
+      { no:13, pn:"HWP 214413", d:"Oil Collector", price:null },
+      { no:14, pn:"HWP 214414", d:"Insulation, Center (left/right)", price:null },
+      { no:15, pn:"HWP 214415", d:"Insulation, Burner End (left/right)", price:null },
+      { no:16, pn:"HWP 214416", d:"Side Panel, Burner End (2, w/ louvres)", price:null },
+      { no:17, pn:"HWP 214417", d:"Side Panel, Center (left/right)", price:null },
+      { no:18, pn:"HWP 214418", d:"Air Inlet Adapter", price:null },
+      { no:19, pn:"HWP 214419", d:"Louvre Panel, Fan End (2)", price:null },
+      { no:20, pn:"HWP 214420", d:"Upper Side Panel, Fan End (2)", price:null },
+      { no:21, pn:"HWP 214421", d:"Radial Fan", price:null },
+      { no:22, pn:"HWP 214422", d:"Door Belt", price:null },
+      { no:23, pn:"HWP 214423", d:"Control Compartment Door", price:null },
+      { no:24, pn:"HWP 214424", d:"Main Control Box", price:null },
+      { no:25, pn:"HWP SM6162", d:"Fan Motor", price:null },
+      { no:26, pn:"HWP A68",    d:"V-Belt (2 Required)", price:null },
+      { no:27, pn:"HWP 214427", d:"Guide Rail (2 Required)", price:null },
+      { no:28, pn:"HWP 214428", d:"Combustion Chamber & Heat Exchanger", price:null },
+      { no:29, pn:"HWP 214429", d:"Air Outlet Cone", price:null },
+    ]},
+    { id:"burner", name:"Burner & Blower", diagram:A+"/hw-diagrams/vg1000-burner.jpg", cap:"VG1000 Burner & Blower", count:46, reqNote:"Find your part by its number on the diagram above, then call 1.800.438.2503 with your model & serial number and we'll confirm the exact part & current price." },
+    { id:"assembly", name:"Final Assembly", diagram:A+"/hw-diagrams/vg1000-assembly.jpg", cap:"VG1000 Final Assembly (Exploded View)", reqNote:"Find your part by its number on the diagram above, then call 1.800.438.2503 with your model & serial number and we'll confirm the exact part & current price." },
+    { id:"control", name:"Control / Wiring", diagram:A+"/hw-diagrams/vg1000-wiring.jpg", cap:"VG1000 Control & Wiring", reqNote:"Find your part by its number on the diagram above, then call 1.800.438.2503 with your model & serial number and we'll confirm the exact part & current price." }
+  ],
+};
+</script>
+<script type="text/babel" src="model-detail.jsx?v=1"></script>
+</body>
+</html>

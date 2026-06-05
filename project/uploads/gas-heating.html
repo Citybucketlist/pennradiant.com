@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gas Heating — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=36">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=11"></script>
+<script type="text/babel">
+const A = PRP_A, CAT = PRP_CAT, I = PRP_I;
+
+const HEATERS = [
+  { nm:"Space Ray Tube Heaters", tone:"heat", img:"tube-heater.jpg", desc:"Low-intensity infrared tube heaters · PTS / PTU · 100k–250k Btu", href:CAT+"/category/infrared-tube-heaters" },
+  { nm:"Space Ray Ceramic Heaters", tone:"heat", img:"ceramic-heater.png", desc:"High-intensity ceramic radiant · natural gas or propane", href:CAT+"/category/infrared-ceramic-heaters" },
+  { nm:"Direct Fired Heaters", tone:"heat", img:"../hw-heaters/2730c.jpg", desc:"Portable forced-air · 110,000–1,500,000 Btu", href:CAT+"/category/-gas-fired-heating-industrial-direct-fired-heaters" },
+  { nm:"Indirect Fired Heaters", tone:"heat", img:"../hw-heaters/vg400.jpg", desc:"Clean, dry, ducted heat for enclosed spaces", href:CAT+"/category/ories-gas-fired-heating-indirect-gas-fired-heaters" },
+  { nm:"Restaurant & Hospitality", tone:"heat", img:"ceramic-heater.png", desc:"Wind Blocker Series® patio heaters · 40 mph rated", href:CAT+"/keyword/?ddlSearchType=2&keyword=wb35" },
+  { nm:"Construction / Temporary Radiant", tone:"heat", img:"../hw-heaters/950h.jpg", desc:"Space-Ray RFPA salamander construction heaters", href:CAT+"/viewitems/gas-fired-heating/ting-space-ray-salamander-construction-rfpa-series" },
+];
+const PARTS = [
+  { nm:"Gas Regulators", tone:"heat", img:"regulator.png", desc:"High & low pressure · natural gas & propane", href:CAT+"/category/gas-regulators-2" },
+  { nm:"Sure Flame Torches", tone:"heat", img:"torch.jpg", desc:"ST2 / ST3 series torches & torch heads", href:CAT+"/viewitems/gas-fired-heating/as-fired-heating-sure-flame-st2-st3-series-torches" },
+  { nm:"Space Ray Replacement Parts", tone:"parts", img:"cat-parts.jpg", desc:"Burner heads, electrodes, controls & motors", href:CAT+"/category/ater-replacement-parts-space-ray-replacement-parts" },
+  { nm:"Sure Flame Heater Parts", tone:"parts", img:"ceramic-heater-parts.png", desc:"Factory replacement parts for Sure Flame heaters", href:"sure-flame-parts.html" },
+  { nm:"Heat Wagon Heater Parts", tone:"parts", img:"cat-elements.jpg", desc:"Factory parts for Heat Wagon direct & indirect units", href:"heat-wagon-parts.html" },
+  { nm:"Space Ray / SunStar Motor Kit", tone:"parts", img:"tube-heater-parts.png", desc:"Combustion blower motor replacement kit · 42928000", href:CAT+"/viewitems/all-categories-parts/s-space-ray-sunstar-motor-replacement-kit-42928000" },
+];
+
+function SCard({ c }) {
+  return (
+    <a className={"scard "+c.tone} href={c.href} {...(/^https?:/.test(c.href)?{target:"_blank",rel:"noreferrer"}:{})}>
+      <span className="tab"></span>
+      <div className="scard-row">
+        <div className="scard-text">
+          <div className="nm">{c.nm}<I.chevR width="20" height="20"/></div>
+          <div className="desc">{c.desc}</div>
+        </div>
+        <img className="scard-thumb" src={A+"/products/"+c.img} alt={c.nm}/>
+      </div>
+    </a>
+  );
+}
+
+function App() {
+  return (
+    <React.Fragment>
+      <Header active="Gas Heating" />
+      <div className="pagehero light"><div className="wrap">
+        <div className="eyebrow">Gas-Fired Heating</div>
+        <h1>Gas Heating</h1>
+        <p>Space-Ray and Heat Wagon gas-fired heating — infrared tube &amp; ceramic heaters, direct &amp; indirect fired units, regulators, torches and genuine replacement parts. AGA-certified, control-tested, built to last.</p>
+      </div></div>
+      <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><span>Gas Heating</span></div>
+
+      <section className="wrap section" style={{paddingTop:"10px"}}>
+        <div className="eyebrow-row"><h2><span className="lt">GAS-FIRED</span> HEATERS</h2></div>
+        <div className="scards">{HEATERS.map((c,i)=><SCard c={c} key={i}/>)}</div>
+      </section>
+
+      <section className="wrap section" style={{paddingTop:"0"}}>
+        <div className="eyebrow-row"><h2><span className="lt">PARTS,</span> REGULATORS &amp; ACCESSORIES</h2></div>
+        <div className="scards">{PARTS.map((c,i)=><SCard c={c} key={i}/>)}</div>
+      </section>
+
+      <section className="band">
+        <img className="band-bg" src={A+"/products/install-storage.jpg"} alt=""/>
+        <div className="band-shade"></div>
+        <div className="wrap band-inner">
+          <span className="eb">Need help speccing a system?</span>
+          <h2>Talk to a Heating Expert</h2>
+          <ul>
+            <li><i className="tri">▸</i>Coverage &amp; BTU sizing for your space</li>
+            <li><i className="tri">▸</i>Natural gas or propane · indoor or outdoor rated</li>
+            <li><i className="tri">▸</i>Fast quotes &amp; nationwide LTL shipping</li>
+          </ul>
+          <a className="btn btn-red btn-lg" href="contact.html">Request a Quote</a>
+        </div>
+      </section>
+
+      <PartsFinder />
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

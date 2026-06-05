@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heat Wagon 1800B (L) Parts — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=70">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=14"></script>
+<script type="text/babel">
+const A = PRP_A;
+window.MODEL = {
+  brand:"Heat Wagon", sku:"Heat Wagon · Direct-Fired LP",
+  title:"Heat Wagon 1800B (L) — Factory Parts",
+  blurb:"Genuine replacement parts for the Heat Wagon 1800B (L) liquid-propane direct-fired heater. Find your part by its number on the labeled diagrams, then add it to a quote.",
+  hero:A+"/hw-heaters/1800b.jpg", heroContain:true,
+  crumb:[["Home","index.html"],["Gas Heating","gas-heating.html"],["Heat Wagon Factory Parts","heat-wagon-parts.html"]],
+  groups:[
+    { id:"body", name:"Body, Fan & Burner", diagram:A+"/hw-diagrams/1800b-body.jpg", cap:"1800B Basic Parts", parts:[
+      { no:1,  pn:"HWP HC1082",  d:"Lid / Control Box", price:78.69 },
+      { no:2,  pn:"HWP HC1083",  d:"Control Box w/o Lid", price:285.84 },
+      { no:4,  pn:"HWP HP1161",  d:"Fan Blade", price:150.79 },
+      { no:5,  pn:"HWP HG1167",  d:"Fan Guard", price:175.17 },
+      { no:6,  pn:"SFP 9262",    d:"Motor, 1 HP", price:954.17 },
+      { no:7,  pn:"HWP HB1177",  d:"Heat Shield", price:123.95 },
+      { no:8,  pn:"HWP HB1800B", d:"Body", price:null },
+      { no:9,  pn:"HWP HB1171",  d:"Burner", price:829.70 },
+      { no:10, pn:"HWP HW1164",  d:"Wheel — 8\" x 1.75\" x 1/2\" Hub", price:42.48 },
+      { no:11, pn:"HWP HW1164B", d:"Axle for 1800", price:25.49 },
+    ]},
+    { id:"control", name:"Control Box", diagram:A+"/hw-diagrams/1800b-control.jpg", cap:"1800B Control Panel", parts:[
+      { no:1,  pn:"SFP 9264",       d:"Control Relay", price:null },
+      { no:2,  pn:"HWP HC1001D",    d:"DSI Control", price:null },
+      { no:3,  pn:"SFP S1500-710",  d:"Air Switch", price:null },
+      { no:4,  pn:"HWP HC1123",     d:"Terminal Block (A, C)", price:null },
+      { no:5,  pn:"SFP 2446",       d:"Hi Limit Switch", price:null },
+      { no:6,  pn:"HWP HC1123",     d:"Terminal Block (C)", price:null },
+      { no:7,  pn:"SFP 9264",       d:"Motor Relay", price:null },
+      { no:8,  pn:"HWP HC1122",     d:"Fuse Block", price:null },
+      { no:9,  pn:"HWP HC1115",     d:"Fuse, 20 Amp", price:null },
+      { no:10, pn:"HWP 44130",      d:"Light", price:null },
+      { no:11, pn:"HWP HC1011",     d:"Fan Only Switch", price:null },
+      { no:12, pn:"HWP HC1019B",    d:"3 Amp Breaker", price:null },
+      { no:13, pn:"HWP HC1150",     d:"Off Switch", price:null },
+      { no:14, pn:"HWP HC1149",     d:"On Switch", price:null },
+      { no:15, pn:"HWP HC1123",     d:"Terminal Block (D)", price:null },
+      { no:null, pn:"HWP HC1120",   d:"Thermostat (w/o Cord)", ns:true, price:null },
+      { no:null, pn:"HWP HC1020",   d:"Power Cord", ns:true, price:null },
+      { no:null, pn:"SFP 2142",     d:"Spark Plug", ns:true, price:null },
+      { no:null, pn:"SFP SL11B86",  d:"Flame Rod", ns:true, price:null },
+      { no:null, pn:"SFP HC1008",   d:"Flame Sensor / Ignition Wire Kit", ns:true, price:null },
+    ]},
+    { id:"pipe", name:"Pipe Train", diagram:A+"/hw-diagrams/1800b-pipetrain.jpg", cap:"1800B Pipe Train (Vapor + Liquid)", parts:[
+      { no:1,  pn:"HWP HV1160", d:"1\" Locking Gas Selector Valve", price:134.27 },
+      { no:2,  pn:"HWP HV1169", d:"15\" W.C. Low-Pressure Gauge", price:129.71 },
+      { no:3,  pn:"ACC 40SV06", d:"2nd Stage Regulator 3/4\" x 1\"", price:null },
+      { no:4,  pn:"HWP HV1035", d:"1\" Ball Valve", price:48.85 },
+      { no:5,  pn:"SFP 4490",   d:"2nd Stage Regulator Valve", price:1056.99 },
+      { no:6,  pn:"HWP HR1053", d:"High Pressure Regulator", price:472.98 },
+      { no:7,  pn:"HWP HV1042B",d:"Hose", price:53.09 },
+      { no:8,  pn:"HWP HV1039", d:"Safety Relief Valve", price:84.95 },
+      { no:9,  pn:"HWP HV1137", d:"Liquid Propane Solenoid Valve", price:404.56 },
+      { no:10, pn:"HWP HV1060", d:"Liquid Pressure Gauge", price:40.64 },
+      { no:11, pn:"HWP HV1129", d:"Liquid Strainer", price:89.27 },
+      { no:12, pn:"HWP HV1123", d:"Manual Shut-Off Valve", price:32.34 },
+      { no:13, pn:"HWP HV1140", d:"Coil", price:304.66 },
+    ]},
+  ],
+};
+</script>
+<script type="text/babel" src="model-detail.jsx?v=1"></script>
+</body>
+</html>

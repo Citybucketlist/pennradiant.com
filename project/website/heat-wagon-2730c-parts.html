@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heat Wagon 2730C & 3050 — Factory Parts — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=76">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=14"></script>
+<script type="text/babel">
+const A = PRP_A;
+window.MODEL = {
+  brand:"Heat Wagon", sku:"Heat Wagon · Direct-Fired",
+  title:"Heat Wagon 2730C & 3050 — Factory Parts",
+  blurb:"Genuine replacement parts for the Heat Wagon 2730C (and 3050) direct-fired heater. Find your part by its number on the labeled diagrams below, then request current pricing.",
+  hero:A+"/hw-heaters/2730c.jpg", heroContain:true,
+  crumb:[["Home","index.html"],["Gas Heating","gas-heating.html"],["Heat Wagon Factory Parts","heat-wagon-parts.html"]],
+  groups:[
+    { id:"basic", name:"General Body & Fan", diagram:A+"/hw-diagrams/2730c-basic.jpg", cap:"2730C & 3050 Basic Parts", parts:[
+      { no:1,  pn:"HWP HC1069B", d:"Lid / Control Box", price:null },
+      { no:2,  pn:"HWP HC1069A", d:"Control Box Lid", price:null },
+      { no:3,  pn:"N/S", d:"Copper Tube / Air Switch", ns:true, price:null },
+      { no:4,  pn:"HWP HP1049",  d:"Fan Blade — 2730C", price:null },
+      { no:5,  pn:"HWP HG1050A", d:"Fan Guard — 2730C", price:null },
+      { no:6,  pn:"HWP HM1056",  d:"Motor — 1 Phase, 2730C", price:null },
+      { no:"6A", pn:"HWP HM1066", d:"Motor — 3 Phase, 2730C", price:null },
+      { no:7,  pn:"N/S", d:"Heat Shield — 2730C", price:null },
+      { no:9,  pn:"HWP HB1021B", d:"Burner", price:null },
+      { no:10, pn:"HWP HW1065",  d:"Wheel — 12\" x 3\" x 5/8\" Hub", price:null },
+      { no:"10a", pn:"HWP HD1055", d:"Fused Disconnect (Single Phase)", ns:true, price:null },
+      { no:"10b", pn:"HWP HD1057", d:"Fused Disconnect (Three Phase)", ns:true, price:null },
+    ]},
+    { id:"control", name:"Control Panel", diagram:A+"/hw-diagrams/2730c-control.jpg", cap:"2730C & 3050 Control Panel", parts:[
+      { no:1,  pn:"HWP HS1044",  d:"Motor Relay (3Ø)", price:null },
+      { no:null, pn:"HWP HS1044", d:"Motor Relay (1Ø)", ns:true, price:null },
+      { no:2,  pn:"HWP HS1043B", d:"Overload Relay", price:null },
+      { no:3,  pn:"HWP HC1017",  d:"Control Transformer", price:null },
+      { no:4,  pn:"HWP HC1004B", d:"Igniter (Fenwall)", price:null },
+      { no:5,  pn:"HWP HC1001C", d:"D.S.I. Control Board", price:null },
+      { no:6,  pn:"HWP HC1010",  d:"Air Flow Switch", price:null },
+      { no:7,  pn:"SFP 2453",    d:"Hi-Lo Thermostat", price:null },
+      { no:8,  pn:"HWP HC1072",  d:"Time Delay Breaker", price:null },
+      { no:9,  pn:"HWP HC1019B", d:"3 Amp Breaker", price:null },
+      { no:10, pn:"SFP 5989",    d:"Volt Meter (150 Volt)", price:null },
+      { no:11, pn:"HWP HC1011",  d:"Burner Switch", price:null },
+      { no:12, pn:"HWP HC1011",  d:"Fan Switch", price:null },
+      { no:null, pn:"HWP HC1012", d:"Fan Switch (2730A/4200 prior 1992)", ns:true, price:null },
+      { no:13, pn:"SFP 2505",    d:"Light", price:null },
+      { no:14, pn:"PPE 099125-03", d:"Neutral Block", price:null },
+    ]},
+    { id:"pipe2730", name:"2730C Pipe Train (3/4\")", diagram:A+"/hw-diagrams/2730c-pipetrain.jpg", cap:"2730C Pipe Train (3/4\")", reqNote:"Part numbers are labeled on the diagram above (HWP HV1029B, SFP 2538, HWP HR1082, SFP 3455, HWP HV20SV02B, HWP HV1169, HWP HV1076B). Call 1.800.438.2503 for current pricing." },
+    { id:"pipe3050", name:"3050 Pipe Train (1\")", diagram:A+"/hw-diagrams/3050-pipetrain.jpg", cap:"3050 Pipe Train (1\")", reqNote:"Part numbers are labeled on the diagram above (HWP HV1129B, HWP HV1035, HWP HV1032, HWP HV1032B, HWP HV20SV02B, HWP 4509, HWP HV1169). Call 1.800.438.2503 for current pricing." }
+  ],
+};
+</script>
+<script type="text/babel" src="model-detail.jsx?v=1"></script>
+</body>
+</html>

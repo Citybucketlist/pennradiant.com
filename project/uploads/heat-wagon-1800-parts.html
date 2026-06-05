@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heat Wagon 1800 (L) Parts — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=36">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=11"></script>
+<script type="text/babel">
+const A = PRP_A;
+window.MODEL = {
+  brand:"Heat Wagon", sku:"Heat Wagon · Direct-Fired LP",
+  title:"Heat Wagon 1800 (L) — Factory Parts",
+  blurb:"Genuine replacement parts for the Heat Wagon 1800 (L) liquid-propane direct-fired heater. Use the labeled diagrams below to identify your part by number, then add it to a quote.",
+  hero:A+"/hw-1800/heater.jpg", heroContain:true,
+  crumb:[["Home","index.html"],["Gas Heating","gas-heating.html"],["Heat Wagon Factory Parts","heat-wagon-parts.html"]],
+  specs:[["BTU","1,300,000"],["Fuel","Liquid Propane"],["Type","Direct-Fired"],["Power","115V"]],
+  top:["body-5","body-8","control-10","body-3","body-11","control-6"],
+  groups:[
+    { id:"body", name:"Body Breakdown", diagram:A+"/hw-1800/diagram-body.jpg", cap:"1800 Series Heater Parts", parts:[
+      { no:1,  pn:"HWP HC1069B", d:"Lid / Control Box", price:95.57 },
+      { no:2,  pn:"HWP HC1069A", d:"Control Box w/ Lid", price:376.37 },
+      { no:3,  pn:"N/S", d:"Copper Tube / Air Switch", ns:true, price:null },
+      { no:4,  pn:"HWP HP1161",  d:"Fan Blade", price:150.79 },
+      { no:5,  pn:"HWP HG1167",  d:"Fan Guard", price:175.17 },
+      { no:6,  pn:"HWP HM1166",  d:"Motor, 1 HP", price:1624.78 },
+      { no:7,  pn:"HWP HB1177",  d:"Heat Shield", price:123.95 },
+      { no:8,  pn:"HWP HB1800",  d:"Body", price:null },
+      { no:9,  pn:"HWP HB1171",  d:"Burner", price:829.70 },
+      { no:10, pn:"HWP HW1164",  d:"Wheel — 8\" x 1.75\" x 1/2\" Hub", price:42.48 },
+      { no:10, pn:"HWP HW1164B", d:"Axle for 1800", price:25.49 },
+      { no:11, pn:"HWP HC1004B", d:"Electrode Assembly", price:130.14 },
+    ]},
+    { id:"control", name:"Control Box", diagram:A+"/hw-1800/diagram-control.jpg", cap:"1800 Control Panel",
+      featured:{ img:A+"/hw-1800/safeguard.jpg", title:"Ignitor Control Board (#12)", body:"The heart of the 1800 control box — the Fenwall ignitor control board with time delay (HWP HC1001C). A common replacement on older units." },
+      parts:[
+      { no:1,  pn:"SFP 5989",   d:"Supply Voltage Meter (0–150)", price:232.91 },
+      { no:2,  pn:"SFP 2505",   d:"Indicator Light", price:16.99 },
+      { no:3,  pn:"HWP HC1011",  d:"Fan On/Off Switch", price:32.39 },
+      { no:4,  pn:"HWP HC1011",  d:"Burner On/Off Switch", price:32.39 },
+      { no:5,  pn:"SFP 2453",   d:"Remote Thermostat", price:301.72 },
+      { no:7,  pn:"HWP HC1019B", d:"3 Amp. Circuit Breaker", price:106.19 },
+      { no:8,  pn:"HWP HC1010",  d:"Airflow Switch", price:264.67 },
+      { no:9,  pn:"SFP 4512",   d:"Control Relay", price:108.30 },
+      { no:10, pn:"HWP HC1003A", d:"Fan Delay Timer", price:179.98 },
+      { no:11, pn:"SFP 2446",   d:"High-Limit Control", price:30.49 },
+      { no:12, pn:"HWP HC1001C", d:"Ignitor Control Board w/ Time Delay", price:315.84 },
+      { no:13, pn:"SFP 2436",   d:"Motor Relay", price:96.30 },
+      { no:14, pn:"HWP HC1115",  d:"20 Amp. Fuse (SC-20)", price:33.98 },
+      { no:15, pn:"HWP HC1123",  d:"Terminal Block", price:29.73 },
+      { no:null, pn:"HWP HC1122", d:"Fuse Block", ns:true, price:44.59 },
+      { no:null, pn:"HWP HC1020", d:"Power Cord", ns:true, price:76.45 },
+      { no:null, pn:"SFP HC1008", d:"Ignition / Flame Sensor Wire Kit", ns:true, price:42.48 },
+    ]},
+    { id:"pipe", name:"Pipe Train", diagram:A+"/hw-1800/diagram-pipetrain.jpg", cap:"1800 Pipe Train (Vapor + Liquid)", parts:[
+      { no:7,  pn:"HWP HV1039",  d:"Safety Relief Valve", price:84.95 },
+      { no:8,  pn:"HWP HV1137",  d:"Liquid Propane Solenoid Valve", price:404.56 },
+      { no:9,  pn:"HWP HV1123",  d:"Manual Shut-Off Valve", price:32.34 },
+      { no:10, pn:"HWP HV1054",  d:"Liquid Pressure Gauge", price:15.00 },
+      { no:11, pn:"HWP HV1129",  d:"Liquid Strainer", price:89.27 },
+      { no:12, pn:"HWP HV1140",  d:"Coil", price:304.66 },
+      { no:13, pn:"HWP HV1042B", d:"Hose", price:53.09 },
+      { no:14, pn:"HWP HR1053",  d:"High Pressure Regulator", price:472.98 },
+    ]},
+  ],
+};
+</script>
+<script type="text/babel" src="model-detail.jsx?v=1"></script>
+</body>
+</html>

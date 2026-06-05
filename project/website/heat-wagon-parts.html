@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heat Wagon Factory Parts — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=43">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=14"></script>
+<script type="text/babel">
+const { useState } = React;
+const I = PRP_I, CAT = PRP_CAT, A = PRP_A;
+const HREF = CAT+"/category/all-categories-heat-wagon-factory-heater-parts";
+const LOCAL = {
+  "1800.jpg":"heat-wagon-1800-parts.html",
+  "1800B.jpg":"heat-wagon-1800b-parts.html",
+  "950H.jpg":"heat-wagon-950h-parts.html",
+  "2000.jpg":"heat-wagon-2000-parts.html",
+  "2730C.jpg":"heat-wagon-2730c-parts.html",
+  "i36.jpg":"heat-wagon-i36-parts.html",
+  "HVF110.jpg":"heat-wagon-hvf110-parts.html",
+  "HVF210.jpg":"heat-wagon-hvf210-parts.html",
+  "HVF310.jpg":"heat-wagon-hvf310-parts.html",
+  "VG400.jpg":"heat-wagon-vg400-parts.html",
+  "VG500.jpg":"heat-wagon-vg500-parts.html",
+  "VG1000.jpg":"heat-wagon-vg1000-parts.html",
+};
+
+// Official Heat Wagon model icons (self-contained tiles) from the brand asset library.
+const MODELS = [
+  { nm:"Heat Wagon Model 1800 Heater Parts", img:"1800.jpg" },
+  { nm:"Heat Wagon Model 1800B Heater Parts", img:"1800B.jpg" },
+  { nm:"Heat Wagon Model 950H Heater Parts", img:"950H.jpg" },
+  { nm:"Heat Wagon Model 2000 Heater Parts", img:"2000.jpg" },
+  { nm:"Heat Wagon Model 2730C Heater Parts", img:"2730C.jpg" },
+  { nm:"Heat Wagon Model i36 Fan Parts", img:"i36.jpg" },
+  { nm:"Heat Wagon Model HVF110 Heater Parts", img:"HVF110.jpg" },
+  { nm:"Heat Wagon Model HVF210 Heater Parts", img:"HVF210.jpg" },
+  { nm:"Heat Wagon Model HVF310 Heater Parts", img:"HVF310.jpg" },
+  { nm:"Heat Wagon Model VG175 Heater Parts", img:"VG175.jpg" },
+  { nm:"Heat Wagon Model VG400 Heater Parts", img:"VG400.jpg" },
+  { nm:"Heat Wagon Model VG500 Heater Parts", img:"VG500.jpg" },
+  { nm:"Heat Wagon Model VG700 Heater Parts", img:"VG700.jpg" },
+  { nm:"Heat Wagon Model VG1000 Heater Parts", img:"VG1000.jpg" },
+  { nm:"Heat Wagon Model P900 Heater Parts", img:"P900.jpg" },
+  { nm:"Heat Wagon Model P4000 & P6000 Heater Parts", img:"P4000-P6000.jpg" },
+];
+
+function CatCard({ m }) {
+  const href = LOCAL[m.img] || HREF;
+  const ext = !LOCAL[m.img];
+  return (
+    <a className="catcard" href={href} {...(ext?{target:"_blank",rel:"noreferrer"}:{})} aria-label={m.nm} title={m.nm}>
+      <img src={A+"/hw-icons/"+m.img} alt={m.nm} loading="lazy"/>
+    </a>
+  );
+}
+
+function App() {
+  return (
+    <React.Fragment>
+      <Header active="Parts" />
+      <div className="pagehero light"><div className="wrap">
+        <img className="hero-logo" src={A+"/brands/heat-wagon.png"} alt="Heat Wagon"/>
+        <div className="eyebrow">Heat Wagon · Factory Replacement Parts</div>
+        <h1>Heat Wagon Heater Parts</h1>
+        <p>Genuine factory replacement parts for Heat Wagon direct-fired, indirect-fired and ventilation equipment. Browse by model to find burners, motors, controls, igniters and more.</p>
+      </div></div>
+      <div className="wrap crumb">
+        <a href="index.html">Home</a><I.chevR width="14" height="14"/>
+        <a href="gas-heating.html">Gas Heating</a><I.chevR width="14" height="14"/>
+        <span>Heat Wagon Factory Parts</span>
+      </div>
+
+      <section className="wrap section" style={{paddingTop:"6px"}}>
+        <div className="catbar">
+          <div className="count">Browse by model — {MODELS.length} part categories</div>
+          <a className="btn btn-outline btn-sm" href="contact.html">Request Information</a>
+        </div>
+        <div style={{height:"14px"}}></div>
+        <div className="catgrid">
+          {MODELS.map((m,i)=><CatCard m={m} key={i}/>)}
+        </div>
+      </section>
+
+      <section className="band">
+        <div className="band-shade" style={{background:"var(--prp-ink)"}}></div>
+        <div className="wrap band-inner">
+          <span className="eb">Can’t find your model?</span>
+          <h2>We’ll Track Down the Part</h2>
+          <ul>
+            <li><i className="tri">▸</i>Send us your model &amp; serial number — we’ll match the exact part</li>
+            <li><i className="tri">▸</i>Decades of Heat Wagon parts experience on staff</li>
+            <li><i className="tri">▸</i>Fast quotes &amp; nationwide LTL shipping</li>
+          </ul>
+          <a className="btn btn-red btn-lg" href="contact.html">Contact a Parts Expert</a>
+        </div>
+      </section>
+
+      <PartsFinder />
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

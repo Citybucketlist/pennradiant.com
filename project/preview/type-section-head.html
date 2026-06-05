@@ -1,0 +1,31 @@
+<!-- @dsCard group="Type" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:var(--font-sans);color:var(--fg-1);background:#fff}
+body{padding:22px 26px}
+.tags{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.tag{display:inline-block;color:#fff;padding:9px 24px 12px 14px;clip-path:polygon(0 0,100% 0,calc(100% - 13px) 100%,0 100%)}
+.tag.heat{background:var(--prp-red)}
+.tag.cool{background:var(--prp-blue-bright)}
+.tag.parts{background:#5C6166}
+.tag .t1{font-size:12px;font-weight:400;letter-spacing:.05em;display:block;line-height:1;white-space:nowrap}
+.tag .t2{font-size:19px;font-weight:900;display:block;margin-top:2px;line-height:1;white-space:nowrap}
+.lab{display:flex;gap:14px;font-size:12px;color:var(--fg-2);font-weight:600}
+.lab span{flex:1}
+.lab b{display:block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.heatc{color:var(--prp-red)}.coolc{color:var(--prp-blue-bright)}.partsc{color:#5C6166}
+</style></head><body>
+<div class="prp-eyebrow" style="margin-bottom:11px">Section tags — color-coded by function</div>
+<div class="tags">
+  <div class="tag heat"><span class="t1">DIRECT FIRED</span><span class="t2">HEATERS</span></div>
+  <div class="tag cool"><span class="t1">INDUSTRIAL</span><span class="t2">COOLING FANS</span></div>
+  <div class="tag parts"><span class="t1">INFRARED</span><span class="t2">TUBE HEATER PARTS</span></div>
+</div>
+<div class="lab">
+  <span><b class="heatc">Red — Heating</b>Gas, electric, infrared & radiant heaters</span>
+  <span><b class="coolc">Blue — Cooling</b>Fans, ventilators, portable A/C</span>
+  <span><b class="partsc">Gray — Parts</b>Replacement parts & elements</span>
+</div>
+</body></html>

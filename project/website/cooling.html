@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooling — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=75">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=14"></script>
+<script type="text/babel">
+const A = PRP_A, CAT = PRP_CAT, I = PRP_I;
+
+const FANS = [
+  { nm:"Industrial Drum Fans", img:"box/cooling-fans.jpg", desc:"Penn Fan high-velocity drum fans · multiple mounts", href:CAT+"/category/-categories-cooling-equipment-industrial-drum-fans" },
+  { nm:"Industrial Mancooler Fans", img:"box/industrial-fans.jpg", desc:"Heavy-duty man-cooler fans on tilt base", href:CAT+"/category/gories-cooling-equipment-industrial-mancooler-fans" },
+  { nm:"Crane Cab Fans", img:"cat-cooling.jpg", desc:"Penn Fan adjustable crane-cab fans", href:CAT+"/category/gories-cooling-equipment-industrial-crane-cab-fans" },
+  { nm:"Explosion-Proof Ventilators", img:"ub18.jpg", desc:"Hazardous-location blowers & ventilators", href:CAT+"/category/ies-cooling-equipment-explosion-proof-blowers-fans" },
+  { nm:"Heat Wagon i36 Drum Fan", img:"../hw-heaters/i36.jpg", desc:"Portable industrial mancooler · i36", href:CAT+"/category/ling-equipment-heat-wagon-i36-industrial-mancooler" },
+  { nm:"Sure Flame UB18 Utility Blower", img:"ub18.jpg", desc:"18\" utility blower / air mover w/ duct", href:CAT+"/viewitems/all-categories-cooling-equipment-2/owers-extractors-sure-flame-ub18-18-utility-blower" },
+  { nm:"Sure Flame FN20 Floor Fan", img:"fn20.jpg", desc:"Stackable metal floor fan", href:CAT+"/viewitems/all-categories-cooling-equipment-2/tal-floor-fans-sure-flame-fn20-floor-fan-stackable" },
+  { nm:"Custom Industrial Fans", img:"drum-fan.jpg", desc:"Built-to-spec Penn Fan industrial fans", href:CAT+"/viewitems/all-categories-cooling-equipment-2/ategories-cooling-equipment-custom-industrial-fans" },
+];
+const COOL = [
+  { nm:"Portable AC Units", img:"box/portable-ac.jpg", desc:"Kwikool spot coolers · self-contained", href:CAT+"/category/all-categories-cooling-equipment-portable-ac-uni-2" },
+  { nm:"Portable Evaporative Coolers", img:"cat-cooling.jpg", desc:"Schaefer WayCool portable evaporative coolers", href:CAT+"/category/ies-cooling-equipment-portable-evaporative-coolers" },
+  { nm:"Schaefer WayCool / ProKool Pads", img:"cat-cooling.jpg", desc:"Replacement pads, cleaner & conditioning tabs", href:CAT+"/category/r-waycool-schaefer-prokool-replacment-pads-cleaner" },
+  { nm:"Fan Replacement Parts", img:"cat-parts.jpg", desc:"Motors, blades, guards & controls", href:CAT+"/category/categories-cooling-equipment-fan-replacement-parts" },
+];
+
+function SCard({ c }) {
+  const ext = /^https?:/.test(c.href);
+  return (
+    <a className="scard cool" href={c.href} {...(ext?{target:"_blank",rel:"noreferrer"}:{})}>
+      <span className="tab"></span>
+      <div className="scard-row">
+        <div className="scard-text">
+          <div className="nm">{c.nm}<I.chevR width="20" height="20"/></div>
+          <div className="desc">{c.desc}</div>
+        </div>
+        <img className="scard-thumb lg" src={A+"/products/"+c.img} alt={c.nm}/>
+      </div>
+    </a>
+  );
+}
+
+function App() {
+  return (
+    <React.Fragment>
+      <Header active="Cooling" />
+      <div className="pagehero light"><div className="wrap">
+        <div className="eyebrow">Industrial Cooling &amp; Ventilation</div>
+        <h1>Cooling</h1>
+        <p>Industrial fans, ventilators and portable cooling — drum &amp; man-cooler fans, crane-cab fans, explosion-proof blowers, portable A/C and evaporative coolers. Built for harsh environments.</p>
+      </div></div>
+      <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><span>Cooling</span></div>
+
+      <section className="wrap section" style={{paddingTop:"10px"}}>
+        <div className="eyebrow-row"><h2><span className="lt">FANS &amp;</span> VENTILATION</h2></div>
+        <div className="scards">{FANS.map((c,i)=><SCard c={c} key={i}/>)}</div>
+      </section>
+
+      <section className="wrap section" style={{paddingTop:"0"}}>
+        <div className="eyebrow-row"><h2><span className="lt">PORTABLE</span> COOLING &amp; PARTS</h2></div>
+        <div className="scards">{COOL.map((c,i)=><SCard c={c} key={i}/>)}</div>
+      </section>
+
+      <section className="band">
+        <div className="band-shade" style={{background:"var(--prp-navy)"}}></div>
+        <div className="wrap band-inner">
+          <span className="eb" style={{background:"var(--prp-blue-bright)"}}>Beat the heat</span>
+          <h2>Industrial Fans &amp; Portable Cooling</h2>
+          <ul>
+            <li><i className="tri" style={{color:"var(--prp-blue-bright)"}}>▸</i>Drum, man-cooler, crane-cab &amp; explosion-proof fans</li>
+            <li><i className="tri" style={{color:"var(--prp-blue-bright)"}}>▸</i>Portable A/C &amp; evaporative coolers</li>
+            <li><i className="tri" style={{color:"var(--prp-blue-bright)"}}>▸</i>Fast quotes &amp; nationwide LTL shipping</li>
+          </ul>
+          <a className="btn btn-blue btn-lg" href="contact.html">Request a Quote</a>
+        </div>
+      </section>
+
+      <PartsFinder />
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

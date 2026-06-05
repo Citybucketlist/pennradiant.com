@@ -1,0 +1,28 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:var(--font-sans);color:var(--fg-1);background:#fff}
+body{padding:24px 26px}
+.row{display:flex;gap:12px;align-items:center}
+.svg-icon{width:22px;height:22px;stroke-width:2}
+
+.pf{display:flex;align-items:center;gap:18px;background:var(--prp-gray-100);border-radius:var(--r-md);padding:16px 20px}
+.pf img{width:62px;height:62px;object-fit:contain;flex:none}
+.lbl{font-size:22px;font-weight:400;color:var(--prp-charcoal);line-height:1.05;flex:none}
+.lbl b{font-weight:900;display:block}
+.field{flex:1}
+.fhint{font-size:13px;color:var(--fg-2);margin-bottom:5px}
+.inp{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--prp-gray-300);border-radius:var(--r-md);padding:10px 13px}
+.inp i{color:var(--prp-gray-500);width:18px;height:18px}
+.inp span{color:var(--prp-gray-500);font-size:15px}
+
+</style></head><body><div class="prp-eyebrow" style="margin-bottom:12px">Replacement Parts Finder</div>
+<div class="pf">
+<img src="../assets/products/cat-parts.jpg">
+<div class="lbl">Replacement<b>Parts Finder</b></div>
+<div class="field"><div class="fhint">Quickly find parts from our entire catalog!</div>
+<div class="inp"><i data-lucide="search"></i><span>Part # or Item Name</span></div></div>
+</div><script>lucide.createIcons();</script></body></html>

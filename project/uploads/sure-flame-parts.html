@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sure Flame Factory Parts — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=36">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=11"></script>
+<script type="text/babel">
+const I = PRP_I, CAT = PRP_CAT, A = PRP_A;
+const HREF = CAT+"/category/e-flame-replacement-parts-sure-flame-factory-parts";
+
+// Official Sure Flame model icons (self-contained tiles) from the brand asset library.
+const MODELS = [
+  { nm:"Sure Flame Model S100 Heater Parts", img:"S100.jpg" },
+  { nm:"Sure Flame Model S405 Heater Parts", img:"S405.jpg" },
+  { nm:"Sure Flame Model SE405 Heater Parts", img:"SE405.jpg" },
+  { nm:"Sure Flame Model S1505 Heater Parts", img:"S1505.jpg" },
+  { nm:"Sure Flame Model S1505B Heater Parts", img:"S1505B.jpg" },
+  { nm:"Sure Flame Model UB12E Heater Parts", img:"UB12E.jpg" },
+  { nm:"Sure Flame Model UB18 Heater Parts", img:"UB18.jpg" },
+  { nm:"Sure Flame Model FN20 Fan Parts", img:"FN20.jpg" },
+  { nm:"Sure Flame Model FN42 Fan Parts", img:"FN42.jpg" },
+  { nm:"Sure Flame ST2 & ST3 Torch Head Parts", img:"ST2-ST3.jpg" },
+];
+
+function CatCard({ m }) {
+  return (
+    <a className="catcard" href={HREF} target="_blank" rel="noreferrer" aria-label={m.nm} title={m.nm}>
+      <img src={A+"/sf-icons/"+m.img} alt={m.nm} loading="lazy"/>
+    </a>
+  );
+}
+
+function App() {
+  return (
+    <React.Fragment>
+      <Header active="Parts" />
+      <div className="pagehero light"><div className="wrap">
+        <img className="hero-logo" src={A+"/brands/sure-flame.png"} alt="Sure Flame"/>
+        <div className="eyebrow">Sure Flame · Factory Replacement Parts</div>
+        <h1>Sure Flame Heater Parts</h1>
+        <p>Genuine factory replacement parts for Sure Flame heaters, torches and fans. Browse by model to find burners, motors, igniters, torch heads and more.</p>
+      </div></div>
+      <div className="wrap crumb">
+        <a href="index.html">Home</a><I.chevR width="14" height="14"/>
+        <a href="gas-heating.html">Gas Heating</a><I.chevR width="14" height="14"/>
+        <span>Sure Flame Factory Parts</span>
+      </div>
+
+      <section className="wrap section" style={{paddingTop:"6px"}}>
+        <div className="catbar">
+          <div className="count">Browse by model — {MODELS.length} part categories</div>
+          <a className="btn btn-outline btn-sm" href="contact.html">Request Information</a>
+        </div>
+        <div style={{height:"14px"}}></div>
+        <div className="catgrid">
+          {MODELS.map((m,i)=><CatCard m={m} key={i}/>)}
+        </div>
+      </section>
+
+      <section className="band">
+        <div className="band-shade" style={{background:"var(--prp-ink)"}}></div>
+        <div className="wrap band-inner">
+          <span className="eb">Can’t find your model?</span>
+          <h2>We’ll Track Down the Part</h2>
+          <ul>
+            <li><i className="tri">▸</i>Send us your model &amp; serial number — we’ll match the exact part</li>
+            <li><i className="tri">▸</i>Decades of Sure Flame parts experience on staff</li>
+            <li><i className="tri">▸</i>Fast quotes &amp; nationwide LTL shipping</li>
+          </ul>
+          <a className="btn btn-red btn-lg" href="contact.html">Contact a Parts Expert</a>
+        </div>
+      </section>
+
+      <PartsFinder />
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

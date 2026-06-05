@@ -1,0 +1,23 @@
+<!-- @dsCard group="Spacing" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:var(--font-sans);color:var(--fg-1);background:#fff}
+body{padding:24px 26px}
+.row{display:flex;gap:18px;align-items:stretch}
+.b{flex:1;display:flex;flex-direction:column;align-items:center;gap:10px}
+.box{width:100%;height:64px;border-radius:var(--r-md);display:grid;place-items:center;font-size:12px;color:var(--fg-3)}
+.l{font-size:11px;color:var(--fg-3);font-weight:600;text-align:center}
+.note{margin-top:14px;font-size:13px;color:var(--fg-2);line-height:1.5}
+.note b{color:var(--prp-red)}
+</style></head><body>
+<div class="prp-eyebrow" style="margin-bottom:12px">Surfaces — flat, no drop shadows</div>
+<div class="row">
+  <div class="b"><div class="box" style="background:#fff;border:1px solid var(--prp-gray-150)">card</div><div class="l">Hairline border · 150</div></div>
+  <div class="b"><div class="box" style="background:#fff;border:1px solid var(--prp-gray-300)">card</div><div class="l">Stronger border · 300</div></div>
+  <div class="b"><div class="box" style="background:var(--prp-gray-100)">band</div><div class="l">Gray fill · 100</div></div>
+  <div class="b"><div class="box" style="background:#fff;border-bottom:1px solid var(--prp-gray-150)">row</div><div class="l">Divider only</div></div>
+</div>
+<p class="note">Surfaces are separated by <b>hairline borders, dividers and gray fills</b> — not drop shadows. The only exception is the red logo banner, which carries its signature soft shadow.</p>
+</body></html>

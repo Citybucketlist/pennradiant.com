@@ -1,0 +1,117 @@
+/* ============================================================================
+   PENN RADIANT PRODUCTS — Core Colors & Type
+   pennradiant.com · "Industrial Infrared Heating & Cooling Solutions · Since 1965"
+   ----------------------------------------------------------------------------
+   FONT NOTE: Penn Radiant's print + web materials use Adobe MYRIAD PRO. Myriad
+   is not free for web, so this system substitutes SOURCE SANS 3 — Adobe's own
+   open-source sibling of Myriad, near-identical metrics. Loaded from Google
+   Fonts below. If you have licensed Myriad Pro webfonts, swap --font-sans.
+   (Flag to user: confirm Myriad→Source Sans 3 substitution is acceptable.)
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+:root {
+  /* ---- BRAND CORE ------------------------------------------------------- */
+  --prp-red:        #ED1D24;   /* logo banner, section-header tags, primary CTA */
+  --prp-red-dark:   #C8141A;   /* red hover / pressed */
+  --prp-blue:       #0A6FB0;   /* hero, links, secondary brand */
+  --prp-blue-bright:#0B81C2;   /* diagonal product tags, highlights */
+  --prp-blue-dark:  #0C5D8F;   /* hero gradient bottom, deep accents */
+  --prp-navy:       #093A5A;   /* darkest blue, footers over photos */
+  --prp-orange:     #E25A1F;   /* infrared glow accent (use sparingly) */
+
+  /* ---- NEUTRALS (warm-cool industrial grays) ---------------------------- */
+  --prp-ink:        #1C1C1E;   /* primary text, near-black sections */
+  --prp-charcoal:   #3A3A3C;   /* ".com" in logo, secondary headings */
+  --prp-gray-700:   #565659;   /* body text on light */
+  --prp-gray-500:   #86868A;   /* muted / captions */
+  --prp-gray-300:   #C9C8CC;   /* borders, dividers */
+  --prp-gray-150:   #E4E3E6;   /* hairlines, input borders */
+  --prp-gray-100:   #F0EFF0;   /* section bands (parts finder), fills */
+  --prp-white:      #FFFFFF;
+
+  /* ---- USA flag accents (heritage motif) -------------------------------- */
+  --usa-red:        #B22234;
+  --usa-blue:       #3C3B6E;
+
+  /* ---- SEMANTIC FOREGROUND / BACKGROUND --------------------------------- */
+  --fg-1: var(--prp-ink);        /* primary text */
+  --fg-2: var(--prp-gray-700);   /* body text */
+  --fg-3: var(--prp-gray-500);   /* muted text */
+  --fg-on-dark:   #FFFFFF;
+  --fg-on-dark-2: #C7D3DD;       /* secondary text on blue/navy */
+
+  --bg-1: var(--prp-white);      /* page */
+  --bg-2: var(--prp-gray-100);   /* alternating band */
+  --bg-dark: var(--prp-ink);     /* dark feature section */
+  --bg-hero: linear-gradient(180deg, #0A6FB0 0%, #0C5D8F 60%, #093A5A 100%);
+
+  /* ---- LINKS ------------------------------------------------------------ */
+  --link:        var(--prp-blue);
+  --link-hover:  var(--prp-blue-dark);
+
+  /* ---- TYPE ------------------------------------------------------------- */
+  --font-sans: 'Source Sans 3', 'Myriad Pro', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Fluid display sizes — headlines are HEAVY (900) & often italic in brand */
+  --fs-display: 56px;   --lh-display: 1.02;   /* hero headline */
+  --fs-h1:      40px;   --lh-h1: 1.06;
+  --fs-h2:      30px;   --lh-h2: 1.10;
+  --fs-h3:      22px;   --lh-h3: 1.18;
+  --fs-h4:      18px;   --lh-h4: 1.25;
+  --fs-body:    19px;   --lh-body: 1.55;
+  --fs-small:   16px;   --lh-small: 1.5;
+  --fs-caption: 14px;   --lh-caption: 1.4;
+  --fs-eyebrow: 13px;                          /* uppercase tracked labels */
+
+  --tracking-tight: -0.01em;
+  --tracking-eyebrow: 0.08em;
+
+  /* ---- RADIUS / SHADOW / SPACING --------------------------------------- */
+  --r-sm: 4px;
+  --r-md: 7px;     /* buttons, inputs, cards */
+  --r-lg: 12px;
+  --r-pill: 999px;
+
+  --sh-sm: 0 1px 2px rgba(20,20,30,.10);
+  --sh-md: 0 2px 8px rgba(20,20,30,.12);
+  --sh-card: 0 1px 3px rgba(20,20,30,.10), 0 6px 18px rgba(20,20,30,.07);
+  --sh-logo: 2px 3px 5px rgba(0,0,0,.28);      /* the brand's signature drop-shadow on the red banner */
+
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+  --maxw: 1200px;
+}
+
+/* ============================================================================
+   SEMANTIC TYPE CLASSES
+   ============================================================================ */
+.prp-display {
+  font-family: var(--font-sans);
+  font-weight: 900; font-style: italic;
+  font-size: var(--fs-display); line-height: var(--lh-display);
+  letter-spacing: var(--tracking-tight); color: var(--fg-1);
+}
+.prp-h1 { font-family: var(--font-sans); font-weight: 900; font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: var(--tracking-tight); color: var(--fg-1); }
+.prp-h2 { font-family: var(--font-sans); font-weight: 800; font-size: var(--fs-h2); line-height: var(--lh-h2); color: var(--fg-1); }
+.prp-h3 { font-family: var(--font-sans); font-weight: 700; font-size: var(--fs-h3); line-height: var(--lh-h3); color: var(--fg-1); }
+.prp-h4 { font-family: var(--font-sans); font-weight: 700; font-size: var(--fs-h4); line-height: var(--lh-h4); color: var(--fg-1); }
+.prp-body { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--fg-2); }
+.prp-small { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--fg-2); }
+.prp-caption { font-family: var(--font-sans); font-weight: 400; font-size: var(--fs-caption); line-height: var(--lh-caption); color: var(--fg-3); }
+
+/* Eyebrow / kicker — uppercase tracked, used above section heads */
+.prp-eyebrow {
+  font-family: var(--font-sans); font-weight: 700;
+  font-size: var(--fs-eyebrow); letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase; color: var(--prp-red);
+}
+
+/* The brand's signature TWO-WEIGHT header: light first word + heavy second.
+   e.g.  INFRARED <b>TUBE</b> HEATERS  /  HIGH INTENSITY <b>CERAMIC HEATERS</b> */
+.prp-section-head {
+  font-family: var(--font-sans); text-transform: uppercase;
+  font-weight: 400; letter-spacing: .01em; line-height: 1.04;
+}
+.prp-section-head b, .prp-section-head strong { font-weight: 900; }

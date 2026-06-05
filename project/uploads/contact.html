@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=36">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=11"></script>
+<script type="text/babel">
+const { useState, useRef, useEffect } = React;
+const I = PRP_I;
+
+function ContactForm() {
+  const [sent, setSent] = useState(false);
+  const [err, setErr] = useState("");
+  const [hp, setHp] = useState("");          // honeypot
+  const [consent, setConsent] = useState(false);
+  const [a] = useState(()=>2+Math.floor(Math.random()*7));  // 2–8
+  const [b] = useState(()=>2+Math.floor(Math.random()*7));
+  const [ans, setAns] = useState("");
+  const mounted = useRef(Date.now());
+
+  const submit = (e) => {
+    e.preventDefault();
+    // 1) Honeypot — bots fill the hidden field; humans never see it.
+    if (hp.trim() !== "") { setSent(true); return; }   // silently "accept", drop server-side
+    // 2) Time-trap — real people take more than a few seconds to fill this out.
+    if (Date.now() - mounted.current < 3000) { setErr("Please take a moment to complete the form."); return; }
+    // 3) Human check — blocks basic automated submissions.
+    if (parseInt(ans,10) !== a + b) { setErr("Please answer the quick math question so we know you’re human."); return; }
+    setErr("");
+    setSent(true);
+  };
+
+  if (sent) return (
+    <div className="form-card"><div className="sent">
+      <div className="ck"><I.check width="30" height="30"/></div>
+      <h3>Thanks — we’ll be in touch!</h3>
+      <p>A Penn Radiant expert will reply shortly. For urgent needs, call <b>1.800.438.2503</b>.</p>
+    </div></div>
+  );
+  return (
+    <div className="form-card">
+      <div className="h"><h3>Request a Quote</h3><p>Tell us what you need — heaters, parts, or cooling. We reply fast.</p></div>
+      <form className="form-body" onSubmit={submit}>
+        {/* honeypot: hidden from people, irresistible to bots */}
+        <div className="hp-field" aria-hidden="true">
+          <label>Company website (leave blank)</label>
+          <input tabIndex="-1" autoComplete="off" value={hp} onChange={e=>setHp(e.target.value)}/>
+        </div>
+
+        <div className="fld-row">
+          <div className="fld"><label>First name</label><input required placeholder="Mike"/></div>
+          <div className="fld"><label>Last name</label><input required placeholder="Lieb"/></div>
+        </div>
+        <div className="fld-row">
+          <div className="fld"><label>Email</label><input type="email" required placeholder="you@company.com"/></div>
+          <div className="fld"><label>Phone</label><input placeholder="(412) 555-0142"/></div>
+        </div>
+        <div className="fld"><label>Company</label><input placeholder="Company name"/></div>
+        <div className="fld"><label>How can we help?</label>
+          <select required defaultValue=""><option value="" disabled>Select a category…</option>
+            <option>Gas Heating</option><option>Electric Heating</option><option>Replacement Parts</option>
+            <option>Cooling</option><option>Thaw Equipment</option><option>Not sure — need help</option>
+          </select>
+        </div>
+        <div className="fld"><label>Details / part numbers</label><textarea rows="4" placeholder="Model, part #, quantity, application…"></textarea></div>
+
+        <div className="human-check">
+          <span className="q">{a} + {b} =</span>
+          <input inputMode="numeric" required placeholder="?" value={ans} onChange={e=>setAns(e.target.value)}/>
+          <span className="lbl">Quick check — confirms you’re a person, not a bot.</span>
+        </div>
+
+        <label className="consent">
+          <input type="checkbox" required checked={consent} onChange={e=>setConsent(e.target.checked)}/>
+          <span>I’m contacting Penn Radiant as a customer or prospective buyer — not to sell a product or service.</span>
+        </label>
+
+        {err && <div className="form-err"><I.x width="15" height="15"/>{err}</div>}
+
+        <button className="btn btn-red btn-lg" type="submit" style={{width:"100%",justifyContent:"center"}}>Send Request</button>
+      </form>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <React.Fragment>
+      <Header active="Contact" />
+      <div className="pagehero light"><div className="wrap">
+        <div className="eyebrow">We’re here to help</div>
+        <h1>Contact Penn Radiant</h1>
+        <p>Questions on sizing, parts, or lead times? Talk to a real heating &amp; cooling expert — by phone, email, or the form below.</p>
+      </div></div>
+      <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><span>Contact</span></div>
+
+      <section className="wrap section" style={{paddingTop:"10px"}}>
+        <div className="contact-grid">
+          <div>
+            <div className="contact-meta">
+              <div style={{fontSize:"26px",fontWeight:900,fontStyle:"italic",color:"var(--prp-ink)"}}>1.800.438.2503</div>
+              <div style={{color:"var(--fg-3)"}}>Fax: 412.635.8016</div>
+              <div><a href="mailto:info@pennradiant.com">info@pennradiant.com</a></div>
+            </div>
+            <div className="addr-card">
+              <h3>Corporate Office</h3>
+              <p>8105 Perry Highway<br/>Pittsburgh, PA 15237</p>
+            </div>
+            <div className="addr-card">
+              <h3>Mailing</h3>
+              <p>PO Box 1354<br/>Wexford, PA 15090</p>
+            </div>
+            <div className="addr-card">
+              <h3>LTL Freight &amp; Warehouse</h3>
+              <p>CXL · 267 Blue Run Road<br/>Cheswick, PA 15024</p>
+            </div>
+            <div className="no-solicit">
+              <I.x width="16" height="16"/>
+              <p><b>No soliciting.</b> Sales, marketing, SEO, freight &amp; delivery solicitations are <b>not monitored</b> and will not receive a reply.</p>
+            </div>
+          </div>
+          <ContactForm />
+        </div>
+      </section>
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

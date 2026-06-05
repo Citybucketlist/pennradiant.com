@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quote / Invoice — Penn Radiant</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font-sans);background:var(--prp-gray-100);color:var(--prp-ink);-webkit-font-smoothing:antialiased;padding:28px 16px 70px}
+a{color:inherit}
+
+/* toolbar (screen only) */
+.toolbar{max-width:850px;margin:0 auto 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--prp-gray-300);border-radius:var(--r-pill);padding:4px;gap:4px}
+.seg button{border:0;background:none;font-family:inherit;font-weight:800;font-size:14px;color:var(--prp-gray-500);padding:8px 20px;border-radius:var(--r-pill);cursor:pointer;transition:background .15s,color .15s}
+.seg button.on{background:var(--prp-red);color:#fff}
+.tb-actions{display:flex;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:700;font-size:14px;border:0;border-radius:var(--r-md);padding:11px 18px;cursor:pointer}
+.btn-print{background:var(--prp-blue);color:#fff}
+.btn-back{background:#fff;color:var(--prp-charcoal);box-shadow:inset 0 0 0 1px var(--prp-gray-300)}
+
+/* document */
+.doc{max-width:850px;margin:0 auto;background:#fff;border:1px solid var(--prp-gray-150);box-shadow:0 4px 24px rgba(20,20,30,.08)}
+.doc-head{background:linear-gradient(135deg,#0A6FB0 0%,#0C5D8F 55%,#093A5A 100%);color:#fff;padding:26px 34px;display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.doc-head .brand{display:flex;align-items:center;gap:14px}
+.doc-head .logo{height:42px}
+.doc-head .flag{height:34px}
+.doc-head .co{font-size:12.5px;line-height:1.5;color:#dbe6ef;text-align:right}
+.doc-head .co b{color:#fff;display:block;font-size:13px;font-weight:800;letter-spacing:.02em;margin-bottom:2px}
+
+.doc-title{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:24px 34px 18px;border-bottom:2px solid var(--prp-gray-150)}
+.doc-title h1{font-size:40px;font-weight:900;font-style:italic;letter-spacing:-.01em;line-height:1;color:var(--prp-ink)}
+.doc-title .docnum{text-align:right;font-size:13px;color:var(--fg-2);line-height:1.7}
+.doc-title .docnum div{white-space:nowrap}
+.doc-title .docnum b{color:var(--prp-ink);font-variant-numeric:tabular-nums}
+.badge{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:var(--r-sm);margin-top:6px}
+.badge.unpaid{background:#FBF3F3;color:var(--prp-red);border:1px solid #F1D4D5}
+.badge.valid{background:#eef4f8;color:var(--prp-blue);border:1px solid #cfe0ee}
+
+.parties{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--prp-gray-150)}
+.party{padding:18px 34px}
+.party+.party{border-left:1px solid var(--prp-gray-150)}
+.party h4{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--prp-red);margin-bottom:7px}
+.party p{font-size:14px;line-height:1.55;color:var(--fg-1)}
+.party p .nm{font-weight:800}
+
+table{width:100%;border-collapse:collapse}
+thead th{text-align:left;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--prp-gray-500);padding:12px 34px;border-bottom:2px solid var(--prp-gray-150);background:var(--prp-gray-100)}
+thead th.r{text-align:right}
+tbody td{padding:13px 34px;border-bottom:1px solid var(--prp-gray-150);font-size:14px;vertical-align:middle}
+tbody td.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.li{display:flex;align-items:center;gap:14px}
+.li-thumb{width:58px;height:48px;flex:none;object-fit:contain;background:#fff;border:1px solid var(--prp-gray-150);border-radius:5px;padding:3px;mix-blend-mode:multiply}
+tbody .pn{font-size:12px;font-weight:800;color:var(--prp-red);letter-spacing:.02em}
+tbody .desc{font-weight:600;color:var(--prp-ink)}
+tbody .sub{display:block;font-weight:400;color:var(--fg-3);font-size:12.5px;margin-top:2px}
+
+.totals{display:flex;justify-content:flex-end;padding:18px 34px 6px}
+.totals .box{width:340px;max-width:100%}
+.trow{display:flex;justify-content:space-between;font-size:14px;padding:7px 0;color:var(--fg-2)}
+.trow .v{font-variant-numeric:tabular-nums;font-weight:700;color:var(--prp-ink)}
+.trow.freight{color:var(--prp-ink);font-weight:700}
+.freight-note{display:flex;gap:9px;align-items:flex-start;background:#eef4f8;border:1px solid #cfe0ee;border-radius:var(--r-sm);padding:10px 12px;margin:8px 0;font-size:12px;line-height:1.45;color:var(--prp-blue-dark)}
+.freight-note svg{flex:none;margin-top:1px;color:var(--prp-blue)}
+.trow.grand{border-top:2px solid var(--prp-ink);margin-top:6px;padding-top:12px;font-size:20px;font-weight:900;color:var(--prp-ink)}
+.trow.grand .v{font-size:20px;font-weight:900}
+
+.terms{padding:18px 34px 30px;border-top:1px solid var(--prp-gray-150);font-size:12.5px;color:var(--fg-2);line-height:1.6}
+.terms h4{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--prp-charcoal);margin-bottom:6px}
+.terms .pay{margin-top:12px;color:var(--fg-1)}
+.terms .pay b{color:var(--prp-ink)}
+.thanks{text-align:center;padding:16px;background:var(--prp-ink);color:#cfe0ee;font-size:12.5px;letter-spacing:.02em}
+.thanks b{color:#fff}
+
+.invoice-only,.quote-only{display:none}
+body[data-mode="invoice"] .invoice-only{display:block}
+body[data-mode="invoice"] tr.invoice-only{display:table-row}
+body[data-mode="quote"] .quote-only{display:block}
+
+@media print{
+  body{background:#fff;padding:0}
+  .toolbar{display:none}
+  .doc{box-shadow:none;border:0;max-width:none}
+  @page{margin:0.5in}
+}
+@media(max-width:680px){
+  .doc-head,.doc-title,.party,thead th,tbody td,.totals,.terms{padding-left:18px;padding-right:18px}
+  .parties{grid-template-columns:1fr}
+  .party+.party{border-left:0;border-top:1px solid var(--prp-gray-150)}
+  .doc-title h1{font-size:30px}
+}
+</style>
+</head>
+<body data-mode="quote">
+
+<div class="toolbar">
+  <div class="seg">
+    <button id="b-quote" class="on" onclick="setMode('quote')">Quote</button>
+    <button id="b-invoice" onclick="setMode('invoice')">Invoice</button>
+  </div>
+  <div class="tb-actions">
+    <a class="btn btn-back" href="index.html">← Back to site</a>
+    <button class="btn btn-print" onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+      Print / Save PDF
+    </button>
+  </div>
+</div>
+
+<div class="doc">
+  <div class="doc-head">
+    <div class="brand">
+      <img class="logo" src="../assets/logos/pennradiant-red.png" alt="PennRadiant.com">
+      <img class="flag" src="../assets/logos/usa-flag.png" alt="">
+    </div>
+    <div class="co">
+      <b>Penn Radiant Products</b>
+      8105 Perry Highway, Pittsburgh, PA 15237<br>
+      1.800.438.2503 · Fax 412.635.8016<br>
+      info@pennradiant.com · pennradiant.com
+    </div>
+  </div>
+
+  <div class="doc-title">
+    <div>
+      <h1 id="doc-h1">Quote</h1>
+      <span class="badge valid quote-only">Valid 30 Days</span>
+      <span class="badge unpaid invoice-only">Unpaid</span>
+    </div>
+    <div class="docnum">
+      <div><span id="num-label">Quote #</span> <b id="doc-num">Q-25107</b></div>
+      <div>Date: <b>June 2, 2026</b></div>
+      <div class="quote-only">Valid Until: <b>July 2, 2026</b></div>
+      <div class="invoice-only">Terms: <b>Net 30</b> · Due: <b>July 2, 2026</b></div>
+      <div>Prepared by: <b>Mike Lieb</b></div>
+    </div>
+  </div>
+
+  <div class="parties">
+    <div class="party">
+      <h4>Bill To</h4>
+      <p><span class="nm">Midlantic Truck Wash, LLC</span><br>
+      Attn: Operations / Maintenance<br>
+      1420 Industrial Boulevard<br>
+      Baltimore, MD 21226<br>
+      (410) 555-0188</p>
+    </div>
+    <div class="party">
+      <h4>Ship To — LTL Freight</h4>
+      <p><span class="nm">Midlantic Truck Wash, LLC</span><br>
+      1420 Industrial Boulevard (Dock B)<br>
+      Baltimore, MD 21226<br>
+      Liftgate required · Call before delivery</p>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:120px">Part #</th>
+        <th>Description</th>
+        <th class="r" style="width:60px">Qty</th>
+        <th class="r" style="width:110px">Unit</th>
+        <th class="r" style="width:120px">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="pn">HW-1800-L</td>
+        <td><div class="li"><img class="li-thumb" src="../assets/hw-1800/heater.jpg" alt=""><div><span class="desc">Heat Wagon 1800 (L) Portable Direct-Fired Heater</span><span class="sub">1,300,000 BTU · Liquid Propane · 115V</span></div></div></td>
+        <td class="r">1</td><td class="r">$4,250.00</td><td class="r">$4,250.00</td>
+      </tr>
+      <tr>
+        <td class="pn">HWP HB1171</td>
+        <td><div class="li"><img class="li-thumb" src="../assets/hw-1800/burner.jpg" alt=""><div><span class="desc">Burner Assembly</span><span class="sub">Stainless perforated burner head</span></div></div></td>
+        <td class="r">1</td><td class="r">$829.70</td><td class="r">$829.70</td>
+      </tr>
+      <tr>
+        <td class="pn">HWP HC1001C</td>
+        <td><div class="li"><img class="li-thumb" src="../assets/hw-1800/safeguard.jpg" alt=""><div><span class="desc">Ignitor Control Board w/ Time Delay</span></div></div></td>
+        <td class="r">1</td><td class="r">$315.84</td><td class="r">$315.84</td>
+      </tr>
+      <tr>
+        <td class="pn">HWP HC1010</td>
+        <td><div class="li"><img class="li-thumb" src="../assets/hw-1800/controls.jpg" alt=""><div><span class="desc">Airflow (Pressure) Switch</span></div></div></td>
+        <td class="r">2</td><td class="r">$264.67</td><td class="r">$529.34</td>
+      </tr>
+      <tr>
+        <td class="pn">HWP HV1039</td>
+        <td><div class="li"><img class="li-thumb" src="../assets/products/regulator.png" alt=""><div><span class="desc">Safety Relief Valve</span></div></div></td>
+        <td class="r">1</td><td class="r">$84.95</td><td class="r">$84.95</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="totals">
+    <div class="box">
+      <div class="trow">Subtotal <span class="v">$6,009.83</span></div>
+      <div class="trow freight">LTL Freight (estimated) <span class="v">$742.00</span></div>
+      <div class="freight-note">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7zM5.5 18.5a2.5 2.5 0 1 0 0 .01M18.5 18.5a2.5 2.5 0 1 0 0 .01"/></svg>
+        <span><b>Freight:</b> 1 pallet · ~480 lbs · Class 85 to ZIP 21226, liftgate. <span class="quote-only">Estimate only — final freight confirmed at time of shipment.</span><span class="invoice-only">Actual freight per carrier BOL.</span></span>
+      </div>
+      <div class="trow">Sales Tax <span class="v">$0.00</span></div>
+      <div class="trow" style="font-size:12px;color:var(--fg-3);padding-top:0">Resale / tax-exemption certificate on file <span class="v" style="font-weight:400;color:var(--fg-3)">—</span></div>
+      <div class="trow grand" id="grand-label">Quote Total <span class="v">$6,751.83</span></div>
+    </div>
+  </div>
+
+  <div class="terms">
+    <h4>Notes &amp; Terms</h4>
+    <div class="quote-only">This is a quotation, not an invoice. Pricing valid 30 days from the date above. Freight is an estimate and is confirmed at time of shipment based on weight, class &amp; destination. Lead times confirmed at order. To accept, reply to this quote or call 1.800.438.2503.</div>
+    <div class="invoice-only">Payment due within 30 days (Net 30). Past-due balances subject to 1.5%/mo. service charge. Returns require RMA &amp; may be subject to restocking. Freight billed as shipped.</div>
+    <div class="pay invoice-only"><b>Remit payment to:</b> Penn Radiant Products · PO Box 1354 · Wexford, PA 15090. Checks payable to Penn Radiant Products. ACH / card accepted — call 1.800.438.2503.</div>
+  </div>
+
+  <div class="thanks">Thank you for your business — <b>Built to Last, in the USA, Since 1965.</b></div>
+</div>
+
+<script>
+function setMode(m){
+  document.body.setAttribute('data-mode', m);
+  document.getElementById('b-quote').classList.toggle('on', m==='quote');
+  document.getElementById('b-invoice').classList.toggle('on', m==='invoice');
+  document.getElementById('doc-h1').textContent = m==='invoice' ? 'Invoice' : 'Quote';
+  document.getElementById('num-label').textContent = m==='invoice' ? 'Invoice #' : 'Quote #';
+  document.getElementById('doc-num').textContent = m==='invoice' ? 'INV-25107' : 'Q-25107';
+  document.getElementById('grand-label').firstChild.textContent = m==='invoice' ? 'Amount Due ' : 'Quote Total ';
+  document.title = (m==='invoice'?'Invoice':'Quote') + ' — Penn Radiant';
+}
+</script>
+</body>
+</html>

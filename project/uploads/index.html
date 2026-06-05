@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Penn Radiant — Industrial Infrared Heating &amp; Cooling Solutions</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=36">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=11"></script>
+<script type="text/babel">
+const A = PRP_A, CAT = PRP_CAT, I = PRP_I;
+
+const HOME_BLOCKS = [
+  { t1:"INFRARED", t2:"TUBE HEATERS", tone:"heat", spec:["Space-Ray PTS/PTU","100k–250k Btu"], img:A+"/products/cat-heating.jpg", href:CAT+"/category/infrared-tube-heaters" },
+  { t1:"INDUSTRIAL", t2:"DRUM FANS", tone:"cool", spec:["Schaefer","USA made"], img:A+"/products/cat-cooling.jpg", href:CAT+"/category/-categories-cooling-equipment-industrial-drum-fans" },
+  { t1:"HEAT WAGON", t2:"HEATER PARTS", tone:"parts", spec:["Factory parts","Motors · controls"], img:A+"/products/cat-parts.jpg", href:"heat-wagon-parts.html" },
+  { t1:"PORTABLE ELECTRIC", t2:"INFRARED", tone:"heat", spec:["1.5 kW–13.5 kW","120/240V"], img:A+"/products/cat-electric.jpg", href:CAT+"/category/portable-infrared-heaters-replacement-elements" },
+  { t1:"GAS", t2:"REGULATORS", tone:"heat", spec:["High & low pressure","NG / LP"], img:A+"/products/regulator.png", href:CAT+"/category/gas-regulators-2" },
+  { t1:"FOSTORIA / TPI", t2:"ELEMENTS", tone:"parts", spec:["2 kW & 4.5 kW","Metal sheath"], img:A+"/products/cat-elements.jpg", href:CAT+"/category/all-categories-parts-fostoria-tpi-elements" },
+];
+
+function HomeBlocks() {
+  return (
+    <section className="wrap section">
+      <div className="eyebrow-row">
+        <h2><span className="lt">SHOP BY</span> POPULAR CATEGORY</h2>
+        <a href={CAT} target="_blank" rel="noreferrer">Browse full catalog →</a>
+      </div>
+      <div className="blocks">
+        {HOME_BLOCKS.map((b,i)=>(
+          <a className="block" key={i} href={b.href} target="_blank" rel="noreferrer">
+            <div className={"block-tag "+b.tone}><span className="t1">{b.t1}</span><span className="t2">{b.t2}</span></div>
+            <div className="block-lower">
+              <div className="block-info"><div className="block-spec">{b.spec.map((s,j)=>(<span key={j}><i className="tri">▸</i>{s}</span>))}</div></div>
+              <div className="block-img"><img src={b.img} alt={b.t2}/></div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function FeatureBand() {
+  return (
+    <section className="band">
+      <img className="band-bg" src={A+"/products/install-carwash.jpg"} alt=""/>
+      <div className="band-shade"></div>
+      <img className="band-product" src={A+"/products/tube-heater-cutout.png"} alt="Infrared tube heater"/>
+      <div className="wrap band-inner">
+        <span className="eb">Built for harsh environments</span>
+        <h2>Car / Truck Wash Tube Heaters</h2>
+        <ul>
+          <li><i className="tri">▸</i>Indoor or outdoor rated — exposed to rain &amp; snow</li>
+          <li><i className="tri">▸</i>Wind resistance up to 40 mph (Wind Blocker Series®)</li>
+          <li><i className="tri">▸</i>Protective silicone gaskets · totally enclosed combustion</li>
+        </ul>
+        <a className="btn btn-red btn-lg" href="contact.html">Request a Quote</a>
+      </div>
+    </section>
+  );
+}
+
+function App() {
+  return (
+    <React.Fragment>
+      <Header active="Home" />
+      <main>
+        <BannerCarousel />
+        <IntroBand />
+        <HomeBlocks />
+        <PartsFinder />
+        <FeatureBand />
+        <BrandWall />
+      </main>
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

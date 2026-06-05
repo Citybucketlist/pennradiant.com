@@ -1,0 +1,22 @@
+<!-- @dsCard group="Components" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:var(--font-sans);color:var(--fg-1);background:#fff}
+body{padding:22px 26px}
+.frame{position:relative;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--prp-gray-150)}
+.frame img{width:100%;display:block;aspect-ratio:30/9;object-fit:cover;object-position:50% 22%}
+.dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
+.dot{width:9px;height:9px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 3px rgba(0,0,0,.4)}
+.dot.on{background:#fff}
+.note{margin-top:11px;font-size:13px;color:var(--fg-2);line-height:1.45}
+.note b{color:var(--prp-red)}
+</style></head><body>
+<div class="prp-eyebrow" style="margin-bottom:11px">Rotating category banner</div>
+<div class="frame">
+  <img src="../assets/headers/parts.jpg" alt="Infrared Tube Heater Parts banner">
+  <div class="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+</div>
+<p class="note">Full-bleed auto-rotating hero. Pattern: <b>gradient field</b> (metallic gray, warm orange, or application photo) + <b>giant ghost watermark</b> of the category word + an <b>outlined or italic title</b> + a lineup of labeled product cut-outs. Real banners live in <code>assets/headers/</code>.</p>
+</body></html>
