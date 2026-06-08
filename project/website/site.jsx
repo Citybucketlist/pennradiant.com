@@ -24,45 +24,45 @@ function Button({ variant="red", size, children, ...rest }) {
 const NAV = [
   { label:"Home", href:"index.html" },
   { label:"Gas Heating", href:"gas-heating.html", sub:[
-    ["Space Ray Tube Heaters", CAT+"/category/infrared-tube-heaters"],
-    ["Space Ray Ceramic Heaters", CAT+"/category/infrared-ceramic-heaters"],
-    ["Direct Fired Heaters", CAT+"/category/-gas-fired-heating-industrial-direct-fired-heaters"],
-    ["Indirect Fired Heaters", CAT+"/category/ories-gas-fired-heating-indirect-gas-fired-heaters"],
-    ["Restaurant & Hospitality Heaters", CAT+"/keyword/?ddlSearchType=2&keyword=wb35"],
-    ["Space Ray Replacement Parts", CAT+"/category/ater-replacement-parts-space-ray-replacement-parts"],
-    ["Gas Regulators", CAT+"/category/gas-regulators-2"],
+    ["Space Ray Tube Heaters", "gas-heating.html"],
+    ["Space Ray Ceramic Heaters", "gas-heating.html"],
+    ["Direct Fired Heaters", "gas-heating.html"],
+    ["Indirect Fired Heaters", "gas-heating.html"],
+    ["Restaurant & Hospitality Heaters", "gas-heating.html"],
+    ["Space Ray Replacement Parts", "parts.html"],
+    ["Gas Regulators", "gas-heating.html"],
     ["Railcar Thaw Shed", "railcar-thaw-shed.html"],
   ]},
   { label:"Electric Heating", href:"electric-heating.html", sub:[
-    ["Aitken Elements", CAT+"/category/all-categories-parts-aitken-elements"],
-    ["Fostoria / TPI Elements", CAT+"/category/all-categories-parts-fostoria-tpi-elements"],
-    ["Portable Space Heaters", CAT+"/category/s-electric-heating-portable-electric-space-heate-2"],
-    ["Portable Infrared Heaters", CAT+"/category/portable-infrared-heaters-replacement-elements"],
-    ["Overhead Infrared Heaters", CAT+"/category/home-electric-heating-fixed-infrared-heaters"],
-    ["Crane Cab Heater", CAT+"/viewitems/electric-heating/ng-nordic-air-240-volt-dc-powered-crane-cab-heater"],
-    ["Quartz Heaters", CAT+"/category/quartz-halogen-heaters-replacement-elements"],
+    ["Aitken Elements", "electric-heating.html"],
+    ["Fostoria / TPI Elements", "electric-heating.html"],
+    ["Portable Space Heaters", "electric-heating.html"],
+    ["Portable Infrared Heaters", "electric-heating.html"],
+    ["Overhead Infrared Heaters", "electric-heating.html"],
+    ["Crane Cab Heater", "electric-heating.html"],
+    ["Quartz Heaters", "electric-heating.html"],
   ]},
   { label:"Parts", href:"parts.html", sub:[
-    ["Space Ray / SunStar Motor Kit", CAT+"/viewitems/all-categories-parts/s-space-ray-sunstar-motor-replacement-kit-42928000"],
-    ["Space Ray Replacement Parts", CAT+"/category/ater-replacement-parts-space-ray-replacement-parts"],
-    ["SunStar Replacement Parts", CAT+"/category/eplacement-parts-sunstar-factory-replacement-parts"],
-    ["Aitken Elements", CAT+"/category/ories-electric-heating-aitken-replacement-elements"],
-    ["Fostoria / TPI Elements", CAT+"/category/all-categories-parts-fostoria-tpi-elements"],
+    ["Space Ray / SunStar Motor Kit", "parts.html"],
+    ["Space Ray Replacement Parts", "parts.html"],
+    ["SunStar Replacement Parts", "parts.html"],
+    ["Aitken Elements", "parts.html"],
+    ["Fostoria / TPI Elements", "parts.html"],
     ["Sure Flame Heater Parts", "sure-flame-parts.html"],
     ["Heat Wagon Heater Parts", "heat-wagon-parts.html"],
-    ["Sure Flame Torch Parts", CAT+"/viewitems/gas-fired-heating/g-sure-flame-st2-st3-torch-heads-replacement-parts"],
-    ["Schaefer WayCool Pads", CAT+"/viewitems/all-categories-cooling-equipment-2/-cleaner-schaefer-waycool-replacment-pads-cleaners"],
-    ["Schaefer ProKool Pads", CAT+"/viewitems/all-categories-cooling-equipment-2/-cleaner-schaefer-prokool-replacement-pads-cleaner"],
+    ["Sure Flame Torch Parts", "sure-flame-parts.html"],
+    ["Schaefer WayCool Pads", "parts.html"],
+    ["Schaefer ProKool Pads", "parts.html"],
   ]},
   { label:"Cooling", href:"cooling.html", sub:[
-    ["Industrial Drum Fans", CAT+"/category/-categories-cooling-equipment-industrial-drum-fans"],
-    ["Industrial Mancoolers", CAT+"/category/gories-cooling-equipment-industrial-mancooler-fans"],
-    ["Crane Cab Fans", CAT+"/category/gories-cooling-equipment-industrial-crane-cab-fans"],
-    ["Explosion Proof Ventilators", CAT+"/category/ies-cooling-equipment-explosion-proof-blowers-fans"],
-    ["Portable AC Units", CAT+"/category/all-categories-cooling-equipment-portable-ac-uni-2"],
-    ["Portable Evaporative Coolers", CAT+"/category/ies-cooling-equipment-portable-evaporative-coolers"],
-    ["Mobile Spot Coolers", CAT+"/viewitems/all-categories-cooling-equipment-2/all-categories-cooling-equipment-portable-fans"],
-    ["Fan Replacement Parts", CAT+"/category/categories-cooling-equipment-fan-replacement-parts"],
+    ["Industrial Drum Fans", "cooling.html"],
+    ["Industrial Mancoolers", "cooling.html"],
+    ["Crane Cab Fans", "cooling.html"],
+    ["Explosion Proof Ventilators", "cooling.html"],
+    ["Portable AC Units", "cooling.html"],
+    ["Portable Evaporative Coolers", "cooling.html"],
+    ["Mobile Spot Coolers", "cooling.html"],
+    ["Fan Replacement Parts", "cooling.html"],
   ]},
   { label:"Services", sub:[
     ["History", "history.html"],
@@ -120,14 +120,14 @@ function Header({ active }) {
 
 /* ---- rotating banners ---- */
 const BANNERS = [
-  { img:A+"/headers/parts.jpg",        alt:"Infrared Tube Heater Parts",                            href:CAT+"/category/ater-replacement-parts-space-ray-replacement-parts" },
-  { img:A+"/headers/elements.jpg",     alt:"Metal Sheath Replacement Heating Elements",             href:CAT+"/category/all-categories-parts-fostoria-tpi-elements" },
-  { img:A+"/headers/restaurant.jpg",   alt:"Restaurant & Hospitality Heaters — Wind Blocker Series",href:CAT+"/keyword/?ddlSearchType=2&keyword=wb35" },
-  { img:A+"/headers/cng.jpg",          alt:"CNG Approved Infrared Tube Heaters",                    href:CAT+"/category/infrared-tube-heaters" },
-  { img:A+"/headers/railcar.jpg",      alt:"Railcar Thaw Sheds",                                    href:"https://www.pennradiant.com/railcar_thaw_shed.php" },
-  { img:A+"/headers/direct-fired.jpg", alt:"Industrial Radiant Heaters",                            href:CAT+"/category/infrared-ceramic-heaters" },
-  { img:A+"/headers/carwash.jpg",      alt:"Car / Truck Wash Tube Heaters — Built for Harsh Environments", href:CAT+"/keyword/?ddlSearchType=2&keyword=wb35" },
-  { img:A+"/headers/electric.jpg",     alt:"Electric Infrared & Space Heaters",                     href:CAT+"/category/electric-heating" },
+  { img:A+"/headers/parts.jpg",        alt:"Infrared Tube Heater Parts",                            href:"parts.html" },
+  { img:A+"/headers/elements.jpg",     alt:"Metal Sheath Replacement Heating Elements",             href:"electric-heating.html" },
+  { img:A+"/headers/restaurant.jpg",   alt:"Restaurant & Hospitality Heaters — Wind Blocker Series",href:"gas-heating.html" },
+  { img:A+"/headers/cng.jpg",          alt:"CNG Approved Infrared Tube Heaters",                    href:"gas-heating.html" },
+  { img:A+"/headers/railcar.jpg",      alt:"Railcar Thaw Sheds",                                    href:"railcar-thaw-shed.html" },
+  { img:A+"/headers/direct-fired.jpg", alt:"Industrial Radiant Heaters",                            href:"gas-heating.html" },
+  { img:A+"/headers/carwash.jpg",      alt:"Car / Truck Wash Tube Heaters — Built for Harsh Environments", href:"gas-heating.html" },
+  { img:A+"/headers/electric.jpg",     alt:"Electric Infrared & Space Heaters",                     href:"electric-heating.html" },
 ];
 function BannerCarousel() {
   const [i,setI]=useState(0); const [paused,setPaused]=useState(false);
@@ -202,9 +202,9 @@ function Footer() {
         </div>
         <div><h4>Products</h4><ul>
           <li><a href="gas-heating.html">Gas Heating</a></li>
-          <li><a href={CAT+"/category/electric-heating"} target="_blank" rel="noreferrer">Electric Heating</a></li>
-          <li><a href={CAT+"/category/all-categories-parts"} target="_blank" rel="noreferrer">Parts</a></li>
-          <li><a href={CAT+"/category/all-categories-cooling-equipment-2"} target="_blank" rel="noreferrer">Cooling</a></li>
+          <li><a href="electric-heating.html">Electric Heating</a></li>
+          <li><a href="parts.html">Parts</a></li>
+          <li><a href="cooling.html">Cooling</a></li>
           <li><a href="railcar-thaw-shed.html">Thaw Sheds</a></li>
         </ul></div>
         <div><h4>Company</h4><ul>

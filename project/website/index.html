@@ -60,23 +60,23 @@
 </head>
 <body>
 <div id="root"></div>
-<script type="text/babel" src="site.jsx?v=15"></script>
+<script type="text/babel" src="site.jsx?v=16"></script>
 <script type="text/babel">
 const A = PRP_A, CAT = PRP_CAT, I = PRP_I;
 
 const HOME_BLOCKS = [
-  { t1:"INFRARED", t2:"TUBE HEATERS", tone:"heat", spec:["Space-Ray PTS/PTU","100k–250k Btu"], img:A+"/products/box/tube-heaters.jpg", href:CAT+"/category/infrared-tube-heaters" },
-  { t1:"INDUSTRIAL", t2:"DRUM FANS", tone:"cool", spec:["Schaefer","USA made"], img:A+"/products/box/cooling-fans.jpg", href:CAT+"/category/-categories-cooling-equipment-industrial-drum-fans" },
+  { t1:"INFRARED", t2:"TUBE HEATERS", tone:"heat", spec:["Space-Ray PTS/PTU","100k–250k Btu"], img:A+"/products/box/tube-heaters.jpg", href:"gas-heating.html" },
+  { t1:"INDUSTRIAL", t2:"DRUM FANS", tone:"cool", spec:["Schaefer","USA made"], img:A+"/products/box/cooling-fans.jpg", href:"cooling.html" },
   { t1:"HEAT WAGON", t2:"HEATER PARTS", tone:"parts", spec:["Factory parts","Motors · controls"], img:A+"/products/box/heatwagon-heaters.jpg", href:"heat-wagon-parts.html" },
-  { t1:"DIRECT FIRED", t2:"HEATERS", tone:"heat", spec:["110k–1.5M Btu","NG / LP"], img:A+"/products/box/direct-fired.jpg", href:CAT+"/category/-gas-fired-heating-industrial-direct-fired-heaters" },
-  { t1:"PORTABLE", t2:"A/C UNITS", tone:"cool", spec:["Kwikool","Spot cooling"], img:A+"/products/box/portable-ac.jpg", href:CAT+"/category/all-categories-cooling-equipment-portable-ac-uni-2" },
+  { t1:"DIRECT FIRED", t2:"HEATERS", tone:"heat", spec:["110k–1.5M Btu","NG / LP"], img:A+"/products/box/direct-fired.jpg", href:"gas-heating.html" },
+  { t1:"PORTABLE", t2:"A/C UNITS", tone:"cool", spec:["Kwikool","Spot cooling"], img:A+"/products/box/portable-ac.jpg", href:"cooling.html" },
   { t1:"INFRARED", t2:"TUBE PARTS", tone:"parts", spec:["Electrodes · Tubes","Motors · Ignitors"], img:A+"/products/box/tube-parts-new.jpg", href:"heat-wagon-parts.html" },
-  { t1:"HIGH INTENSITY", t2:"CERAMIC HEATERS", tone:"heat", spec:["Space-Ray","NG / LP"], img:A+"/products/box/ceramic-heaters.jpg", href:CAT+"/category/infrared-ceramic-heaters" },
-  { t1:"INDUSTRIAL", t2:"MANCOOLER FANS", tone:"cool", spec:["Tilt base","Multiple sizes"], img:A+"/products/box/industrial-fans.jpg", href:CAT+"/category/gories-cooling-equipment-industrial-mancooler-fans" },
-  { t1:"GAS", t2:"REGULATORS", tone:"heat", spec:["High & low pressure","NG / LP"], img:A+"/products/box/regulators-three.jpg", href:CAT+"/category/gas-regulators-2" },
-  { t1:"PORTABLE ELECTRIC", t2:"INFRARED", tone:"heat", spec:["1.5 kW–13.5 kW","120/240V"], img:A+"/products/box/portable-electric.jpg", href:CAT+"/category/portable-infrared-heaters-replacement-elements" },
-  { t1:"RESTAURANT &", t2:"HOSPITALITY", tone:"heat", spec:["Wind Blocker®","40 mph rated"], img:A+"/products/gas/wb50.png", href:CAT+"/keyword/?ddlSearchType=2&keyword=wb35" },
-  { t1:"FOSTORIA / TPI", t2:"ELEMENTS", tone:"parts", spec:["2 kW & 4.5 kW","Metal sheath"], img:A+"/products/box/replacement-elements.jpg", href:CAT+"/category/all-categories-parts-fostoria-tpi-elements" },
+  { t1:"HIGH INTENSITY", t2:"CERAMIC HEATERS", tone:"heat", spec:["Space-Ray","NG / LP"], img:A+"/products/box/ceramic-heaters.jpg", href:"gas-heating.html" },
+  { t1:"INDUSTRIAL", t2:"MANCOOLER FANS", tone:"cool", spec:["Tilt base","Multiple sizes"], img:A+"/products/box/industrial-fans.jpg", href:"cooling.html" },
+  { t1:"GAS", t2:"REGULATORS", tone:"heat", spec:["High & low pressure","NG / LP"], img:A+"/products/box/regulators-three.jpg", href:"gas-heating.html" },
+  { t1:"PORTABLE ELECTRIC", t2:"INFRARED", tone:"heat", spec:["1.5 kW–13.5 kW","120/240V"], img:A+"/products/box/portable-electric.jpg", href:"electric-heating.html" },
+  { t1:"RESTAURANT &", t2:"HOSPITALITY", tone:"heat", spec:["Wind Blocker®","40 mph rated"], img:A+"/products/gas/wb50.png", href:"gas-heating.html" },
+  { t1:"FOSTORIA / TPI", t2:"ELEMENTS", tone:"parts", spec:["2 kW & 4.5 kW","Metal sheath"], img:A+"/products/box/replacement-elements.jpg", href:"parts.html" },
 ];
 
 function HomeBlocks() {
@@ -88,7 +88,7 @@ function HomeBlocks() {
       </div>
       <div className="blocks">
         {HOME_BLOCKS.map((b,i)=>(
-          <a className="block" key={i} href={b.href} target="_blank" rel="noreferrer">
+          <a className="block" key={i} href={b.href}>
             <div className="block-head">
               <div className={"block-tag "+b.tone}><span className="t1">{b.t1}</span><span className="t2">{b.t2}</span></div>
               <div className="block-spec">{b.spec.map((s,j)=>(<span key={j}><i className="tri">▸</i>{s}</span>))}</div>
