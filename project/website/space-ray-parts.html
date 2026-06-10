@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Ray Factory Parts — Penn Radiant</title>
+<meta name="description" content="Genuine Space-Ray factory replacement parts from Penn Radiant — infrared tube heater parts, ceramic heater parts and salamander/floor-model (RFPA) parts. Burners, controls, tubes, motors & elements.">
+<meta name="keywords" content="Penn Radiant, industrial heating, industrial cooling, replacement parts, Space-Ray, Heat Wagon, Sure Flame, Space Ray parts, tube heater parts, ceramic heater parts, RFPA parts, RSTP, PTS, PTU">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.pennradiant.com/space-ray-parts.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Penn Radiant Products">
+<meta property="og:title" content="Space Ray Factory Parts — Penn Radiant">
+<meta property="og:description" content="Genuine Space-Ray factory replacement parts from Penn Radiant — infrared tube heater parts, ceramic heater parts and salamander/floor-model (RFPA) parts.">
+<meta property="og:url" content="https://www.pennradiant.com/space-ray-parts.html">
+<meta property="og:image" content="https://www.pennradiant.com/assets/headers/parts.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Space Ray Factory Parts — Penn Radiant">
+<meta name="twitter:description" content="Genuine Space-Ray factory replacement parts from Penn Radiant — tube, ceramic and salamander/floor-model parts.">
+<meta name="twitter:image" content="https://www.pennradiant.com/assets/headers/parts.jpg">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=66">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=18"></script>
+<script type="text/babel">
+const A = PRP_A, CAT = PRP_CAT, I = PRP_I;
+
+/* Space Ray Replacement Parts — subcategories (mirrors catalog.pennradiant.com).
+   Part-group lists live on the per-subcategory pages; most Space Ray parts are quote-priced. */
+const GROUPS = [
+  { nm:"Tube Heater Parts", img:"space-ray/tube-parts.jpg", desc:"RSTP, CB, LTS/U, ETS/U, CTS/A, PTS/U — burners, controls, exhaust assemblies & replacement tube kits", href:"space-ray-tube-parts.html" },
+  { nm:"Ceramic Heater Parts", img:"space-ray/ceramic-parts.jpg", desc:"DK Series & RSCA high-intensity ceramic heater replacement parts", href:CAT+"/category/y-replacement-parts-space-ray-ceramic-heater-parts" },
+  { nm:"Salamander / Floor Model Parts", img:"space-ray/salamander-parts.jpg", desc:"RFPA construction salamander & floor-model heater parts", href:CAT+"/category/ement-parts-space-ray-salamander-floor-model-parts" },
+];
+
+function SCard({ c }) {
+  const ext = /^https?:/.test(c.href);
+  return (
+    <a className="scard parts" href={c.href} {...(ext?{target:"_blank",rel:"noreferrer"}:{})}>
+      <span className="tab"></span>
+      <div className="scard-row">
+        <div className="scard-text">
+          <div className="nm">{c.nm}<I.chevR width="20" height="20"/></div>
+          <div className="desc">{c.desc}</div>
+        </div>
+        <img className="scard-thumb" src={A+"/products/"+c.img} alt={c.nm}/>
+      </div>
+    </a>
+  );
+}
+
+function App() {
+  return (
+    <React.Fragment>
+      <Header active="Parts" />
+      <div className="pagehero light"><div className="wrap">
+        <div className="eyebrow">Genuine Factory Parts</div>
+        <h1>Space Ray Replacement Parts</h1>
+        <p>Factory replacement parts for Space-Ray infrared tube heaters, high-intensity ceramic heaters and RFPA salamander/floor-model heaters — burners, controls, electrodes, motors, exhaust assemblies and replacement tubes. Most Space Ray parts are quoted by application; send your model &amp; serial and we’ll match the exact part.</p>
+      </div></div>
+      <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="parts.html">Parts</a><I.chevR width="14" height="14"/><span>Space Ray</span></div>
+
+      <section className="wrap section" style={{paddingTop:"10px"}}>
+        <div className="eyebrow-row"><h2><span className="lt">SHOP BY</span> HEATER TYPE</h2></div>
+        <div className="scards">{GROUPS.map((c,i)=><SCard c={c} key={i}/>)}</div>
+      </section>
+
+      <section className="pf"><div className="wrap pf-inner">
+        <img className="pf-icon" src={A+"/products/cat-parts.jpg"} alt=""/>
+        <div className="pf-lbl">Space Ray<b>Parts Finder</b></div>
+        <div className="pf-field">
+          <div className="h">Have a Space Ray model or part number? We’ll match the exact part.</div>
+          <div className="pf-input">
+            <I.search width="20" height="20"/>
+            <input placeholder="Part # or Item Name" onKeyDown={e=>{if(e.key==="Enter")window.open(CAT,"_blank");}}/>
+            <a className="btn btn-red btn-sm" href={CAT} target="_blank" rel="noreferrer">Find</a>
+          </div>
+        </div>
+      </div></section>
+
+      <section className="band">
+        <div className="band-shade" style={{background:"var(--prp-ink)"}}></div>
+        <div className="wrap band-inner">
+          <span className="eb">Can’t find your Space Ray part?</span>
+          <h2>We’ll Track It Down</h2>
+          <ul>
+            <li><i className="tri">▸</i>Send your model &amp; serial number — we match the exact part</li>
+            <li><i className="tri">▸</i>Decades of Space-Ray infrared &amp; ceramic heater parts experience</li>
+            <li><i className="tri">▸</i>Fast quotes &amp; nationwide LTL shipping</li>
+          </ul>
+          <a className="btn btn-red btn-lg" href="contact.html">Contact a Parts Expert</a>
+        </div>
+      </section>
+
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

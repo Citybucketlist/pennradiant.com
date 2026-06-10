@@ -26,6 +26,7 @@ const NAV = [
   { label:"Gas Heating", href:"gas-heating.html" },
   { label:"Electric Heating", href:"electric-heating.html" },
   { label:"Parts", href:"parts.html", sub:[
+    ["Space Ray Heater Parts", "space-ray-parts.html"],
     ["Sure Flame Heater Parts", "sure-flame-parts.html"],
     ["Heat Wagon Heater Parts", "heat-wagon-parts.html"],
   ]},
