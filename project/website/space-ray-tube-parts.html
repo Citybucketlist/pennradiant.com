@@ -28,9 +28,9 @@
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:16px}
 .pcard{display:flex;flex-direction:column;border:1px solid var(--prp-gray-150);border-radius:10px;overflow:hidden;background:#fff;text-decoration:none;color:var(--prp-ink);transition:border-color .15s,box-shadow .15s,transform .15s}
 .pcard:hover{border-color:var(--prp-red);box-shadow:0 6px 18px rgba(0,0,0,.09);transform:translateY(-2px)}
-.pcard .ph{aspect-ratio:4/3;background:var(--prp-gray-100,#f3f4f6);display:grid;place-items:center;padding:10px}
-.pcard .ph img{max-width:100%;max-height:100%;object-fit:contain;mix-blend-mode:multiply}
-.pcard .ph.none{color:var(--prp-gray-400,#9aa6b0);font-size:12px;font-style:italic;text-align:center;padding:14px}
+.pcard .ph{height:172px;background:#fff;border-bottom:1px solid var(--prp-gray-100,#f3f4f6);display:flex;align-items:center;justify-content:center;padding:14px;overflow:hidden}
+.pcard .ph img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;object-position:center;display:block}
+.pcard .ph.none{height:172px;color:var(--prp-gray-400,#9aa6b0);font-size:12px;font-style:italic;text-align:center}
 .pcard .body{padding:11px 12px 13px;display:flex;flex-direction:column;flex:1}
 .pcard .pn{font-weight:900;font-size:16px;letter-spacing:.02em;color:var(--prp-ink)}
 .pcard .nm{font-size:13px;color:var(--fg-2,#4a5568);margin-top:2px;line-height:1.32}
