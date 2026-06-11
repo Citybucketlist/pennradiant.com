@@ -41,6 +41,7 @@ function ContactForm() {
   const [b] = useState(()=>2+Math.floor(Math.random()*7));
   const [ans, setAns] = useState("");
   const mounted = useRef(Date.now());
+  const PART = new URLSearchParams(window.location.search).get("part");
 
   const submit = (e) => {
     e.preventDefault();
@@ -81,12 +82,12 @@ function ContactForm() {
         </div>
         <div className="fld"><label>Company</label><input placeholder="Company name"/></div>
         <div className="fld"><label>How can we help?</label>
-          <select required defaultValue=""><option value="" disabled>Select a category…</option>
+          <select required defaultValue={PART?"Replacement Parts":""}><option value="" disabled>Select a category…</option>
             <option>Gas Heating</option><option>Electric Heating</option><option>Replacement Parts</option>
             <option>Cooling</option><option>Thaw Equipment</option><option>Not sure — need help</option>
           </select>
         </div>
-        <div className="fld"><label>Details / part numbers</label><textarea rows="4" placeholder="Model, part #, quantity, application…"></textarea></div>
+        <div className="fld"><label>Details / part numbers</label><textarea rows="4" placeholder="Model, part #, quantity, application…" defaultValue={PART?("Part #: "+PART+"\nQuantity: \nModel / Serial #: "):""}></textarea></div>
 
         <div className="human-check">
           <span className="q">{a} + {b} =</span>

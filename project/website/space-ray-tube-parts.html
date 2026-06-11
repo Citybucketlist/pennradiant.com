@@ -24,19 +24,18 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="favicon.ico">
+<script src="sr-parts-data.js"></script>
 <style>
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:16px}
 .pcard{display:flex;flex-direction:column;border:1px solid var(--prp-gray-150);border-radius:10px;overflow:hidden;background:#fff;text-decoration:none;color:var(--prp-ink);transition:border-color .15s,box-shadow .15s,transform .15s}
 .pcard:hover{border-color:var(--prp-red);box-shadow:0 6px 18px rgba(0,0,0,.09);transform:translateY(-2px)}
 .pcard .ph{height:172px;background:#fff;border-bottom:1px solid var(--prp-gray-100,#f3f4f6);display:flex;align-items:center;justify-content:center;padding:14px;overflow:hidden}
-.pcard .ph img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;object-position:center;display:block}
+.pcard .ph img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
 .pcard .ph.none{height:172px;color:var(--prp-gray-400,#9aa6b0);font-size:12px;font-style:italic;text-align:center}
 .pcard .body{padding:11px 12px 13px;display:flex;flex-direction:column;flex:1}
 .pcard .pn{font-weight:900;font-size:16px;letter-spacing:.02em;color:var(--prp-ink)}
 .pcard .nm{font-size:13px;color:var(--fg-2,#4a5568);margin-top:2px;line-height:1.32}
-.pcard .fits{margin-top:8px;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--prp-red)}
-.pcard .fits span{color:var(--fg-3,#7a8794);font-weight:700}
-.pcard .quote{margin-top:auto;padding-top:10px;font-size:12.5px;font-weight:800;color:var(--prp-red);display:flex;align-items:center;gap:4px}
+.pcard .view{margin-top:auto;padding-top:10px;font-size:12.5px;font-weight:800;color:var(--prp-red);display:flex;align-items:center;gap:4px}
 .parts-note{font-size:13px;color:var(--fg-3,#7a8794);margin:2px 0 18px;max-width:780px;line-height:1.5}
 </style>
 </head>
@@ -44,73 +43,21 @@
 <div id="root"></div>
 <script type="text/babel" src="site.jsx?v=18"></script>
 <script type="text/babel">
-const A = PRP_A, CAT = PRP_CAT, I = PRP_I;
-
-/* Space Ray Tube Heater Parts — 43 parts (39 with photos), from the PRP Space Ray
-   parts library. Quote-only (no published Space Ray parts pricing). Fitment is preliminary —
-   verify against the PRP Parts Layouts reference. */
-const PARTS = [
-  { pn:"03721000", nm:"BK Draft Inducer Motor", img:"space-ray/parts/03721000.jpg", fits:"LTS/LTU, RSTP" },
-  { pn:"03723000", nm:"Blower Wheel", img:"space-ray/parts/03723000.jpg", fits:"RSTP" },
-  { pn:"03723020", nm:"Blower Wheel", img:"space-ray/parts/03723020.jpg", fits:null },
-  { pn:"30202000", nm:"Fuse (2 amp)", img:"space-ray/parts/30202000.jpg", fits:"PTS/PTU" },
-  { pn:"30279000", nm:"Transformer AT120B1051", img:"space-ray/parts/30279000.jpg", fits:"DK, LTS/LTU, PTS/PTU, RSTP" },
-  { pn:"30295000", nm:"Electrode PSE-GF1", img:"space-ray/parts/30295000.jpg", fits:null },
-  { pn:"30314070", nm:"Ignition Cable 7\"", img:"space-ray/parts/30314070.jpg", fits:"DK" },
-  { pn:"30383000", nm:"Relay 24V", img:"space-ray/parts/30383000.jpg", fits:null },
-  { pn:"40504020", nm:"4\" Starting Collar", img:"space-ray/parts/40504020.jpg", fits:null },
-  { pn:"42398040", nm:"Monitoring Light Green", img:"space-ray/parts/42398040.jpg", fits:null },
-  { pn:"42398050", nm:"Monitoring Light Amber", img:"space-ray/parts/42398050.jpg", fits:null },
-  { pn:"42398060", nm:"Monitoring Light Red", img:"space-ray/parts/42398060.jpg", fits:null },
-  { pn:"42737990", nm:"Draft Inducer Assembly", img:"space-ray/parts/42737990.jpg", fits:null },
-  { pn:"42740000", nm:"Motor Plate", img:"space-ray/parts/42740000.jpg", fits:"RSTP" },
-  { pn:"42837040", nm:"Air Switch Replacement Kits", img:"space-ray/parts/42837040.jpg", fits:"CB, LTS/LTU" },
-  { pn:"42837050", nm:"Air Switch Replacement Kits", img:"space-ray/parts/42837050.jpg", fits:"CB, LTS/LTU" },
-  { pn:"42837060", nm:"Air Switch Replacement Kits", img:"space-ray/parts/42837060.jpg", fits:"CB, LTS/LTU" },
-  { pn:"42892009", nm:"4\" x 6\" Starting Collar", img:"space-ray/parts/42892009.jpg", fits:null },
-  { pn:"42917930", nm:"Draft Inducer Assembly Two Stage", img:"space-ray/parts/42917930.jpg", fits:null },
-  { pn:"42917970", nm:"Draft Inducer Assembly", img:"space-ray/parts/42917970.jpg", fits:null },
-  { pn:"42917980", nm:"Draft Inducer Assembly", img:"space-ray/parts/42917980.jpg", fits:null },
-  { pn:"42928000", nm:"Draft Inducer Motor Replacement Kit", img:"space-ray/parts/42928000.jpg", fits:"LTS/LTU, RSTP" },
-  { pn:"42928010", nm:"Draft Inducer Motor Replacement Kit", img:"space-ray/parts/42928010.jpg", fits:"RSTP" },
-  { pn:"43221000", nm:"Exhauster Gasket", img:"space-ray/parts/43221000.jpg", fits:"RSTP" },
-  { pn:"44010010", nm:"Spark Ignition Module Kit", img:"space-ray/parts/44010010.jpg", fits:"LTS/LTU" },
-  { pn:"44010250", nm:"Gas Valve Kit", img:"space-ray/parts/44010250.jpg", fits:null },
-  { pn:"44010260", nm:"Gas Valve Kit", img:"space-ray/parts/44010260.jpg", fits:null },
-  { pn:"44010270", nm:"Gas Valve Kit", img:"space-ray/parts/44010270.jpg", fits:null },
-  { pn:"44010280", nm:"Gas Valve Kit", img:"space-ray/parts/44010280.jpg", fits:null },
-  { pn:"44010290", nm:"Gas Valve Kit", img:"space-ray/parts/44010290.jpg", fits:null },
-  { pn:"44010300", nm:"Gas Valve Kit", img:"space-ray/parts/44010300.jpg", fits:null },
-  { pn:"44010310", nm:"Gas Valve Kit", img:"space-ray/parts/44010310.jpg", fits:null },
-  { pn:"44010320", nm:"Gas Valve Kit", img:"space-ray/parts/44010320.jpg", fits:null },
-  { pn:"44010330", nm:"Gas Valve Kit", img:"space-ray/parts/44010330.jpg", fits:null },
-  { pn:"44010340", nm:"Gas Valve Kit", img:"space-ray/parts/44010340.jpg", fits:null },
-  { pn:"44010350", nm:"Gas Valve Kit", img:"space-ray/parts/44010350.jpg", fits:null },
-  { pn:"44010360", nm:"Gas Valve Kit", img:"space-ray/parts/44010360.jpg", fits:null },
-  { pn:"44015252", nm:"Draft Inducer Flange Assembly", img:"space-ray/parts/44015252.jpg", fits:"CB, ETS/ETU, LTS/LTU, NXS/NXU, PTS/PTU" },
-  { pn:"03988120", nm:"Plastic Vacuum Air Tube", img:null, fits:null },
-  { pn:"03988150", nm:"Plastic Vacuum Air Tube", img:null, fits:null },
-  { pn:"30314120", nm:"Ignition Cable 14\"", img:"space-ray/parts/30314120.jpg", fits:null },
-  { pn:"30347000", nm:"Motor Spacer (4 per motor)", img:null, fits:null },
-  { pn:"42917920", nm:"Draft Inducer Assembly", img:null, fits:null },
-];
-
+const A = PRP_A, I = PRP_I;
 function PartCard({ p }) {
+  const img = p.gallery && p.gallery[0];
   return (
-    <a className="pcard" href={"contact.html"}>
-      {p.img
-        ? <div className="ph"><img src={A+"/products/"+p.img} alt={p.pn+" "+p.nm}/></div>
-        : <div className="ph none">Image coming soon</div>}
+    <a className="pcard" href={"part-detail.html?pn="+p.pn}>
+      {img ? <div className="ph"><img src={A+"/products/"+img} alt={p.pn+" "+p.nm}/></div>
+            : <div className="ph none">Image coming soon</div>}
       <div className="body">
         <div className="pn">{p.pn}</div>
         <div className="nm">{p.nm}</div>
-        {p.fits && <div className="fits"><span>Fits:</span> {p.fits}</div>}
-        <div className="quote">Request a Quote <I.chevR width="15" height="15"/></div>
+        <div className="view">View details <I.chevR width="15" height="15"/></div>
       </div>
     </a>
   );
 }
-
 function App() {
   return (
     <React.Fragment>
@@ -121,27 +68,11 @@ function App() {
         <p>Genuine Space-Ray factory replacement parts for infrared tube heaters — draft inducer motors, blower wheels, gas valve kits, air switches, electrodes, ignition modules, transformers, monitoring lights and more.</p>
       </div></div>
       <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="parts.html">Parts</a><I.chevR width="14" height="14"/><a href="space-ray-parts.html">Space Ray</a><I.chevR width="14" height="14"/><span>Tube Heater Parts</span></div>
-
       <section className="wrap section" style={{paddingTop:"10px"}}>
         <div className="eyebrow-row"><h2><span className="lt">TUBE HEATER</span> REPLACEMENT PARTS</h2></div>
-        <p className="parts-note">Space Ray parts are quoted by application — send your model &amp; serial number and we’ll confirm the exact part. “Fits” shows compatible Space Ray tube heater series where known.</p>
-        <div className="pgrid">{PARTS.map((p,i)=><PartCard p={p} key={i}/>)}</div>
+        <p className="parts-note">Space Ray parts are quoted by application. Click any part for photos, the heater it’s used in, and to request a quote.</p>
+        <div className="pgrid">{SR_PARTS.map((p,i)=><PartCard p={p} key={i}/>)}</div>
       </section>
-
-      <section className="band">
-        <div className="band-shade" style={{background:"var(--prp-ink)"}}></div>
-        <div className="wrap band-inner">
-          <span className="eb">Not sure which part?</span>
-          <h2>We’ll Match Your Space Ray Tube Heater</h2>
-          <ul>
-            <li><i className="tri">▸</i>Send your model (RSTP, CB, LTS/U, ETS/U, PTS/U…) &amp; serial number</li>
-            <li><i className="tri">▸</i>Motors, blowers, gas valves, air switches, electrodes &amp; ignition parts</li>
-            <li><i className="tri">▸</i>Fast quotes &amp; nationwide LTL shipping</li>
-          </ul>
-          <a className="btn btn-red btn-lg" href="contact.html">Contact a Parts Expert</a>
-        </div>
-      </section>
-
       <Footer />
     </React.Fragment>
   );
