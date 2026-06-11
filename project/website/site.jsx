@@ -32,10 +32,10 @@ const NAV = [
   ]},
   { label:"Sure Flame", href:"sure-flame-parts.html", sub:[
     ["Sure Flame S100", "sure-flame-parts.html"],
-    ["Sure Flame S405", "sure-flame-parts.html"],
+    ["Sure Flame S405", "sure-flame-s405-parts.html"],
     ["Sure Flame SE405", "sure-flame-parts.html"],
-    ["Sure Flame S1505", "sure-flame-parts.html"],
-    ["Sure Flame S1505B", "sure-flame-parts.html"],
+    ["Sure Flame S1505", "sure-flame-s1505-parts.html"],
+    ["Sure Flame S1505B", "sure-flame-s1505b-parts.html"],
     ["Sure Flame UB12E", "sure-flame-parts.html"],
     ["Sure Flame UB18", "sure-flame-parts.html"],
     ["Sure Flame FN20", "sure-flame-parts.html"],

@@ -27,10 +27,15 @@
 </head>
 <body>
 <div id="root"></div>
-<script type="text/babel" src="site.jsx?v=19"></script>
+<script type="text/babel" src="site.jsx?v=20"></script>
 <script type="text/babel">
 const I = PRP_I, CAT = PRP_CAT, A = PRP_A;
 const HREF = CAT+"/category/e-flame-replacement-parts-sure-flame-factory-parts";
+const LOCAL = {
+  "S405.jpg":"sure-flame-s405-parts.html",
+  "S1505.jpg":"sure-flame-s1505-parts.html",
+  "S1505B.jpg":"sure-flame-s1505b-parts.html",
+};
 
 // Official Sure Flame model icons (self-contained tiles) from the brand asset library.
 const MODELS = [
@@ -47,8 +52,10 @@ const MODELS = [
 ];
 
 function CatCard({ m }) {
+  const href = LOCAL[m.img] || HREF;
+  const ext = !LOCAL[m.img];
   return (
-    <a className="catcard" href={HREF} target="_blank" rel="noreferrer" aria-label={m.nm} title={m.nm}>
+    <a className="catcard" href={href} {...(ext?{target:"_blank",rel:"noreferrer"}:{})} aria-label={m.nm} title={m.nm}>
       <img src={A+"/sf-icons/"+m.img} alt={m.nm} loading="lazy"/>
     </a>
   );
