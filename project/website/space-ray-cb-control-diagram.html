@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Ray CB / LTU40-75 Control Parts — Interactive Diagram — Penn Radiant</title>
+<meta name="description" content="Interactive Space-Ray CB and LTU40-75 common control parts diagram — click any numbered part to see the part number and request a quote.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.pennradiant.com/space-ray-cb-control-diagram.html">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=66">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="favicon.ico">
+<script src="sr-parts-data.js?v=4"></script>
+<style>
+.diagram-wrap{position:relative;display:inline-block;width:100%;max-width:980px;border:1px solid var(--prp-gray-150);border-radius:12px;background:#fff;overflow:visible}
+.diagram-wrap>img{display:block;width:100%;height:auto;border-radius:12px}
+.hotspot{position:absolute;width:4.4%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;cursor:pointer;outline:none}
+.hotspot:hover,.hotspot:focus{box-shadow:0 0 0 4px rgba(214,40,40,.35);background:rgba(214,40,40,.12)}
+.hs-pop{position:absolute;left:50%;width:230px;transform:translateX(-50%);background:#fff;border:1px solid var(--prp-gray-150);border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.18);padding:11px 12px 12px;z-index:20;text-align:left;cursor:default}
+.hs-pop.up{bottom:150%}.hs-pop.down{top:150%}
+.hs-pop .ey{font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--prp-red)}
+.hs-pop .pn{font-size:17px;font-weight:900;color:var(--prp-ink);margin:1px 0 2px}
+.hs-pop .ds{font-size:12.5px;color:var(--fg-2,#4a5568);line-height:1.35;margin-bottom:8px}
+.hs-pop .th{height:84px;background:var(--prp-gray-100,#f6f7f8);border-radius:7px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;overflow:hidden}
+.hs-pop .th img{max-width:100%;max-height:100%;object-fit:contain}
+.hs-pop .go{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:800;color:var(--prp-red)}
+.legend{columns:2;max-width:760px;margin:18px 0 0;font-size:13.5px;color:var(--fg-2,#4a5568)}
+.legend a{color:var(--prp-ink);text-decoration:none}.legend a:hover{color:var(--prp-red)}
+.legend .ln{break-inside:avoid;padding:3px 0;display:flex;gap:8px}
+.legend .b{flex:0 0 22px;height:22px;border-radius:50%;background:var(--prp-red);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=21"></script>
+<script type="text/babel">
+const {useState} = React;
+const A = PRP_A, I = PRP_I;
+const HOTSPOTS = [
+  {n:1, pn:"03988150", desc:"Plastic Vacuum Air Tube, 15\" long", x:38.97, y:79.42},
+  {n:2, pn:"42837040", desc:"Air Switch Kit, set @0.11\" W.C. (#NS2-0307-00)", x:48.55, y:56.56},
+  {n:3, pn:"30279980", desc:"Transformer, AT120B1051", x:19.01, y:80.39},
+  {n:4, pn:"42709000", desc:"Terminal Block Shield", x:37.36, y:35.28},
+  {n:5, pn:"30281000", desc:"Terminal Block, EK-204", x:58.63, y:15.71},
+  {n:6, pn:"42759000", desc:"Electrode Bracket", x:74.57, y:23.52},
+  {n:7, pn:"30295000", desc:"Electrode PSE-GF1 (Igniter / Sensor)", x:82.58, y:25.03},
+  {n:8, pn:"30314070", desc:"Ignition Cable, 7\" long", x:89.91, y:36.73},
+  {n:9, pn:"30632060", desc:"Spark Module \u2013 Fenwal #35-608711-034", x:66.12, y:16.98},
+  {n:10, pn:"42398040", desc:"Monitoring Light, Green", x:22.89, y:68.78},
+  {n:11, pn:"42398060", desc:"Monitoring Light, Red", x:17.74, y:60.57},
+  {n:12, pn:"42398050", desc:"Monitoring Light, Amber", x:12.63, y:52.34},
+  {n:13, pn:"42757000", desc:"Restrainer Nipple, 5\" long", x:54.53, y:90.93},
+  {n:14, pn:"30333070", desc:"Gas Valve VR8205P-2408 @3\u00bd\" W.C. (Natural Gas)", x:66.26, y:88.2},
+  {n:15, pn:"30333080", desc:"Gas Valve VR8205P-2416 @10\" W.C. (Propane Gas)", x:71.23, y:82.55},
+  {n:16, pn:"42701000", desc:"Orifice Fitting & Test Gauge Connection", x:59.7, y:53.39},
+  {n:17, pn:"03259xxx", desc:"Orifice for CB20-50 (state model & gas type)", x:78.74, y:76.91}
+];
+const lookup = (pn)=> (window.SR_PARTS||[]).find(p=>p.pn===pn);
+const hrefFor = (pn)=>{ const p=lookup(pn); return p ? "part-detail.html?pn="+p.id : "contact.html?part="+encodeURIComponent(pn); };
+function Hotspot({h}){
+  const [open,setOpen]=useState(false);
+  const part=lookup(h.pn);
+  const img = part && part.gallery && part.gallery[0];
+  const down = h.y < 34;
+  return (
+    <a className="hotspot" style={{left:h.x+"%",top:h.y+"%"}} href={hrefFor(h.pn)}
+       onMouseEnter={()=>setOpen(true)} onMouseLeave={()=>setOpen(false)}
+       aria-label={"Part "+h.pn+" - "+h.desc}>
+      {open && (
+        <div className={"hs-pop "+(down?"down":"up")} onClick={e=>e.preventDefault()}>
+          <div className="ey">Item {h.n}{part?" - in catalog":""}</div>
+          <div className="pn">{h.pn}</div>
+          {img && <div className="th"><img src={A+"/products/"+img} alt={h.pn}/></div>}
+          <div className="ds">{h.desc}</div>
+          <span className="go">{part?"View part":"Get a quote"} <I.chevR width="14" height="14"/></span>
+        </div>
+      )}
+    </a>
+  );
+}
+function App(){
+  return (
+    <React.Fragment>
+      <Header active="Parts" />
+      <div className="pagehero light"><div className="wrap">
+        <div className="eyebrow">Space Ray - Interactive Parts Diagram</div>
+        <h1>CB &amp; LTU40-75 - Common Control Parts</h1>
+        <p>Hover or tap any numbered part on the diagram to see its part number, then click through to request a quote. (Proof of concept - page 1 of the control &amp; exhaust parts guide.)</p>
+      </div></div>
+      <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="parts.html">Parts</a><I.chevR width="14" height="14"/><a href="space-ray-parts.html">Space Ray</a><I.chevR width="14" height="14"/><span>CB / LTU40-75 Control Parts</span></div>
+      <section className="wrap section" style={{paddingTop:"8px"}}>
+        <div className="diagram-wrap">
+          <img src={A+"/products/space-ray/cb-control-diagram.jpg"} alt="Space Ray CB / LTU40-75 Common Control Parts diagram"/>
+          {HOTSPOTS.map((h,i)=><Hotspot h={h} key={i}/>)}
+        </div>
+        <div className="legend">
+          {HOTSPOTS.slice().sort((a,b)=>a.n-b.n).map((h,i)=>(
+            <div className="ln" key={i}><span className="b">{h.n}</span><a href={hrefFor(h.pn)}><b>{h.pn}</b> - {h.desc}</a></div>
+          ))}
+        </div>
+      </section>
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
