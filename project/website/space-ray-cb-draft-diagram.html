@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CB & LTU40-75 — Common Control Parts — Interactive Diagram — Penn Radiant</title>
-<meta name="description" content="Interactive Space-Ray CB / LTU40-75 common control parts diagram — click any numbered part for its part number and a quote.">
+<title>CB & LTU40-75 — Draft Inducer Parts — Interactive Diagram — Penn Radiant</title>
+<meta name="description" content="Interactive Space-Ray CB / LTU40-75 draft inducer parts diagram — click any numbered part for its part number and a quote.">
 <meta name="robots" content="index,follow">
-<link rel="canonical" href="https://www.pennradiant.com/space-ray-cb-control-diagram.html">
+<link rel="canonical" href="https://www.pennradiant.com/space-ray-cb-draft-diagram.html">
 <link rel="stylesheet" href="../colors_and_type.css">
 <link rel="stylesheet" href="styles.css?v=66">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@
 <script type="text/babel">
 const {useState} = React;
 const A = PRP_A, I = PRP_I;
-const HOTSPOTS = [{"label": "1", "x": 38.97, "y": 84.9, "items": [{"n": 1, "pn": "03988150", "desc": "Plastic Vacuum Air Tube, 15\" long"}]}, {"label": "2", "x": 48.55, "y": 69.59, "items": [{"n": 2, "pn": "42837040", "desc": "Air Switch Kit, set @0.11\" W.C. (#NS2-0307-00)"}]}, {"label": "3", "x": 19.01, "y": 85.54, "items": [{"n": 3, "pn": "30279980", "desc": "Transformer, AT120B1051"}]}, {"label": "4", "x": 37.36, "y": 55.34, "items": [{"n": 4, "pn": "42709000", "desc": "Terminal Block Shield"}]}, {"label": "5", "x": 58.63, "y": 42.24, "items": [{"n": 5, "pn": "30281000", "desc": "Terminal Block, EK-204"}]}, {"label": "6", "x": 74.57, "y": 47.46, "items": [{"n": 6, "pn": "42759000", "desc": "Electrode Bracket"}]}, {"label": "7", "x": 82.58, "y": 48.47, "items": [{"n": 7, "pn": "30295000", "desc": "Electrode PSE-GF1 (Igniter / Sensor)"}]}, {"label": "8", "x": 89.91, "y": 56.31, "items": [{"n": 8, "pn": "30314070", "desc": "Ignition Cable, 7\" long"}]}, {"label": "9", "x": 66.12, "y": 43.09, "items": [{"n": 9, "pn": "30632060", "desc": "Spark Module – Fenwal #35-608711-034"}]}, {"label": "10", "x": 22.89, "y": 77.78, "items": [{"n": 10, "pn": "42398040", "desc": "Monitoring Light, Green"}]}, {"label": "11", "x": 17.74, "y": 72.28, "items": [{"n": 11, "pn": "42398060", "desc": "Monitoring Light, Red"}]}, {"label": "12", "x": 12.63, "y": 66.77, "items": [{"n": 12, "pn": "42398050", "desc": "Monitoring Light, Amber"}]}, {"label": "13", "x": 54.53, "y": 92.61, "items": [{"n": 13, "pn": "42757000", "desc": "Restrainer Nipple, 5\" long"}]}, {"label": "14", "x": 66.26, "y": 90.78, "items": [{"n": 14, "pn": "30333070", "desc": "Gas Valve VR8205P-2408 @3½\" W.C. (Natural Gas)"}]}, {"label": "15", "x": 71.23, "y": 86.99, "items": [{"n": 15, "pn": "30333080", "desc": "Gas Valve VR8205P-2416 @10\" W.C. (Propane Gas)"}]}, {"label": "16", "x": 59.7, "y": 67.46, "items": [{"n": 16, "pn": "42701000", "desc": "Orifice Fitting & Test Gauge Connection"}]}, {"label": "17", "x": 78.74, "y": 83.21, "items": [{"n": 17, "pn": "03259xxx", "desc": "Orifice for CB20-50 (state model & gas type)"}]}];
+const HOTSPOTS = [{"label": "1", "x": 66.89, "y": 90.76, "items": [{"n": 1, "pn": "42737000", "desc": "Draft Inducer Assembly"}]}, {"label": "2", "x": 57.05, "y": 87.45, "items": [{"n": 2, "pn": "42928000", "desc": "Motor Replacement Kit"}]}, {"label": "3", "x": 18.25, "y": 73.57, "items": [{"n": 3, "pn": "03721000", "desc": "Motor"}]}, {"label": "4", "x": 43.34, "y": 84.29, "items": [{"n": 4, "pn": "30347000", "desc": "Motor Spacer (4 per motor)"}]}, {"label": "5", "x": 52.65, "y": 79.13, "items": [{"n": 5, "pn": "42740000", "desc": "Motor Plate"}]}, {"label": "6", "x": 58.02, "y": 72.71, "items": [{"n": 6, "pn": "03723000", "desc": "Blower Wheel"}]}, {"label": "7", "x": 63.7, "y": 70.69, "items": [{"n": 7, "pn": "43221000", "desc": "Draft Inducer Gasket"}]}, {"label": "8", "x": 32.62, "y": 48.21, "items": [{"n": 8, "pn": "42744000", "desc": "Sensing Tube, Draft Inducer"}]}, {"label": "9", "x": 38.43, "y": 42.33, "items": [{"n": 9, "pn": "42742000", "desc": "Sensing Tube Bracket"}]}, {"label": "10", "x": 71.72, "y": 32.25, "items": [{"n": 10, "pn": "42739000", "desc": "Blower Housing Sub-Assembly"}]}, {"label": "11", "x": 73.78, "y": 22.3, "items": [{"n": 11, "pn": "40504020", "desc": "4\" O.D. Flue Pipe Starting Collar"}]}];
 const DIAGRAMS=[["CB · Control","space-ray-cb-control-diagram.html"],["CB · Draft Inducer","space-ray-cb-draft-diagram.html"],["LTS/LTU/ETS/ETU · Control","space-ray-lt-et-control-diagram.html"]];
 const lookup = (pn)=> (window.SR_PARTS||[]).find(p=>p.pn===pn);
 const hrefFor = (pn)=>{ const p=lookup(pn); return p ? "part-detail.html?pn="+p.id : "contact.html?part="+encodeURIComponent(pn); };
@@ -88,14 +88,14 @@ function App(){
   return (<React.Fragment>
     <Header active="Parts" />
     <div className="pagehero light"><div className="wrap">
-      <div className="eyebrow">Space Ray · Interactive Parts Diagram</div><h1>CB & LTU40-75 — Common Control Parts</h1>
+      <div className="eyebrow">Space Ray · Interactive Parts Diagram</div><h1>CB & LTU40-75 — Draft Inducer Parts</h1>
       <p>Hover or tap any numbered part to see its part number, then click through to the part or a quote.</p>
     </div></div>
-    <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="parts.html">Parts</a><I.chevR width="14" height="14"/><a href="space-ray-parts.html">Space Ray</a><I.chevR width="14" height="14"/><span>CB & LTU40-75 — Common Control Parts</span></div>
+    <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="parts.html">Parts</a><I.chevR width="14" height="14"/><a href="space-ray-parts.html">Space Ray</a><I.chevR width="14" height="14"/><span>CB & LTU40-75 — Draft Inducer Parts</span></div>
     <section className="wrap section" style={{paddingTop:"8px"}}>
-      <div className="dnav">{DIAGRAMS.map(([lbl,href],i)=><a key={i} href={href} className={href==="space-ray-cb-control-diagram.html"?"on":""}>{lbl}</a>)}</div>
+      <div className="dnav">{DIAGRAMS.map(([lbl,href],i)=><a key={i} href={href} className={href==="space-ray-cb-draft-diagram.html"?"on":""}>{lbl}</a>)}</div>
       <div className="diagram-wrap">
-        <img src={A+"/products/space-ray/cb-control-diagram.jpg"} alt="CB & LTU40-75 — Common Control Parts diagram"/>
+        <img src={A+"/products/space-ray/cb-draft-diagram.jpg"} alt="CB & LTU40-75 — Draft Inducer Parts diagram"/>
         {HOTSPOTS.map((h,i)=><Hotspot h={h} key={i}/>)}
       </div>
       <div className="legend">{flat.map((it,i)=>(<div className="ln" key={i}><span className="b">{it.n}</span><a href={hrefFor(it.pn)}><b>{it.pn}</b> — {it.desc}</a></div>))}</div>
