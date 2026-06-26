@@ -32,6 +32,8 @@
 .wb-hero h1{font-size:44px;line-height:1.05;margin:8px 0 14px;text-shadow:0 2px 16px rgba(0,0,0,.4)}
 @media(max-width:860px){.wb-hero h1{font-size:32px}}
 .wb-hero p{color:#dde2e8;font-size:16px;line-height:1.55;max-width:560px}
+.wb-hero .hero-prod-img{display:block;max-width:420px;max-height:210px;margin-top:24px;filter:drop-shadow(0 16px 32px rgba(0,0,0,.6))}
+@media(max-width:860px){.wb-hero .hero-prod-img{max-width:300px;max-height:150px}}
 .wb-badges{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
 .wb-badge{font-size:12.5px;font-weight:800;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);color:#fff;padding:7px 13px;border-radius:999px}
 .wb-badge b{color:var(--prp-red)}
@@ -94,6 +96,7 @@ function App() {
             <span className="wb-badge"><b>Two-stage</b> Hi / Lo</span>
             <span className="wb-badge"><b>NG</b> or <b>Propane</b></span>
           </div>
+          <img className="hero-prod-img" src={A+"/products/wb/wb-models.png"} alt="Space-Ray Wind Blocker WB35 and WB50 patio heaters"/>
         </div></div>
       </section>
       <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="gas-heating.html">Gas Heating</a><I.chevR width="14" height="14"/><span>Wind Blocker WB35 &amp; WB50</span></div>
@@ -101,7 +104,6 @@ function App() {
       <section className="wrap section" style={{paddingTop:"12px"}}>
         <div className="eyebrow-row"><h2><span className="lt">CHOOSE YOUR</span> MODEL</h2></div>
         <p className="wb-lead">Two two-stage models cover small patios to large outdoor dining areas. Both share the same rugged black finish, glass front and adjustable mounting — pick your BTU output and fuel.</p>
-        <div style={{textAlign:"center",margin:"4px 0 22px"}}><img src={A+"/products/wb/wb-models.png"} alt="Space-Ray Wind Blocker WB35 and WB50 patio heaters" style={{maxWidth:"100%",maxHeight:"260px"}}/></div>
         <div className="wb-models">
           <div className="wb-mcard">
             <div className="nm">WB35</div><div className="sub">Two-Stage Infrared · Black Finish</div>
