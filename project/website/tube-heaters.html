@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infrared Tube Heaters — Space-Ray — Penn Radiant</title>
+<meta name="description" content="Space-Ray low-intensity infrared tube heaters from Penn Radiant — PTS/PTU, LTS/LTU, ETS/ETU, RSTP and CB ColdBlocker series. Overhead radiant gas heat from 20,000 to 250,000 BTU.">
+<meta name="keywords" content="Penn Radiant, Space-Ray, infrared tube heaters, low intensity, radiant tube heater, PTS, PTU, LTS, LTU, ETS, ETU, RSTP, ColdBlocker, CB series, straight tube, U-tube, natural gas, propane">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.pennradiant.com/tube-heaters.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Penn Radiant Products">
+<meta property="og:title" content="Infrared Tube Heaters — Space-Ray — Penn Radiant">
+<meta property="og:description" content="Space-Ray low-intensity infrared tube heaters — PTS/PTU, LTS/LTU, ETS/ETU, RSTP &amp; CB ColdBlocker. Overhead radiant gas heat, 20k–250k BTU.">
+<meta property="og:url" content="https://www.pennradiant.com/tube-heaters.html">
+<meta property="og:image" content="https://www.pennradiant.com/assets/headers/parts.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=68">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="favicon.ico">
+<script src="tube-data.js?v=1"></script>
+<style>
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
+.ccard{display:flex;flex-direction:column;border:1px solid var(--prp-gray-150);border-radius:12px;overflow:hidden;background:#fff;text-decoration:none;color:var(--prp-ink);transition:border-color .15s,box-shadow .15s,transform .15s}
+.ccard:hover{border-color:var(--prp-red);box-shadow:0 8px 22px rgba(0,0,0,.10);transform:translateY(-2px)}
+.ccard .ph{position:relative;height:240px;background:#fff;border-bottom:1px solid var(--prp-gray-100,#f3f4f6);display:flex;align-items:center;justify-content:center;padding:16px 16px 50px;overflow:hidden}
+.ccard .ph img.prod{max-width:100%;max-height:100%;object-fit:contain}
+.ccard .ph img.brandlogo{position:absolute;left:14px;bottom:12px;max-width:122px;max-height:30px;object-fit:contain}
+.ccard .body{padding:16px 17px 17px;display:flex;flex-direction:column;flex:1}
+.ccard .brand{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--prp-red)}
+.ccard .model{font-weight:900;font-size:21px;letter-spacing:.01em;margin-top:2px;line-height:1.15}
+.ccard .sub{font-size:13px;color:var(--fg-2,#4a5568);margin-top:3px}
+.ccard .btu{font-size:15px;font-weight:800;color:var(--prp-ink);margin-top:9px}
+.ccard .desc{font-size:13.5px;color:var(--fg-2,#4a5568);line-height:1.5;margin-top:10px}
+.ccard .cta{margin-top:auto;padding-top:14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ccard .quote{font-size:13px;font-weight:800;color:#fff;background:var(--prp-red);padding:8px 14px;border-radius:8px}
+.ccard .specs{font-size:12.5px;font-weight:700;color:var(--prp-red);display:inline-flex;align-items:center;gap:3px}
+.cnote{font-size:13px;color:var(--fg-3,#7a8794);margin:2px 0 18px;max-width:880px;line-height:1.55}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=23"></script>
+<script type="text/babel">
+const A = PRP_A, I = PRP_I;
+const LINES = window.TUBE_HEATERS || [];
+function Card({ h }) {
+  return (
+    <a className="ccard" href={"tube-heater.html?m="+h.slug}>
+      <div className="ph">
+        <img className="prod" src={A+"/products/"+h.img} alt={"Space-Ray "+h.name}/>
+        <img className="brandlogo" src={A+"/brands/"+h.brandLogo} alt={h.brand}/>
+      </div>
+      <div className="body">
+        <div className="brand">{h.brand}</div>
+        <div className="model">{h.name}</div>
+        <div className="sub">{h.sub}</div>
+        <div className="btu">{h.btu}</div>
+        <div className="desc">{h.blurb}</div>
+        <div className="cta">
+          <span className="quote">View specs &amp; quote</span>
+          <span className="specs">Details <I.chevR width="14" height="14"/></span>
+        </div>
+      </div>
+    </a>
+  );
+}
+function App() {
+  return (
+    <React.Fragment>
+      <Header active="Gas Heating" />
+      <div className="pagehero light"><div className="wrap">
+        <div className="eyebrow">Space-Ray · Gas-Fired Infrared</div>
+        <h1>Infrared Tube Heaters</h1>
+        <p>Space-Ray low-intensity infrared tube heaters — long, overhead radiant tubes that warm people and objects directly for clean, quiet, energy-efficient comfort. Straight and U-tube layouts, single- or two-stage, in natural gas or propane.</p>
+      </div></div>
+      <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="gas-heating.html">Gas Heating</a><I.chevR width="14" height="14"/><span>Tube Heaters</span></div>
+      <section className="wrap section" style={{paddingTop:"10px"}}>
+        <div className="eyebrow-row"><h2><span className="lt">LOW-INTENSITY</span> TUBE HEATERS</h2></div>
+        <p className="cnote">Low-intensity tube heaters radiate gentle, even heat along a long tube run — ideal for warehouses, garages, shops, agricultural buildings and high-bay industrial spaces. Choose by configuration and BTU; the CB ColdBlocker line is purpose-built for cold, drafty and outdoor-exposed areas.</p>
+        <div className="cgrid">{LINES.map((h,i)=><Card h={h} key={i}/>)}</div>
+      </section>
+      <section className="band">
+        <div className="band-shade" style={{background:"var(--prp-ink)"}}></div>
+        <div className="wrap band-inner">
+          <span className="eb">Designing a tube-heater layout?</span>
+          <h2>We&rsquo;ll Engineer the Run</h2>
+          <ul>
+            <li><i className="tri">&#9656;</i>Send your building size, ceiling height, fuel &amp; mounting constraints</li>
+            <li><i className="tri">&#9656;</i>Space-Ray PTS/PTU, LTS/LTU, ETS/ETU, RSTP &amp; CB ColdBlocker</li>
+            <li><i className="tri">&#9656;</i>Fast quotes, genuine factory parts &amp; nationwide shipping</li>
+          </ul>
+          <a className="btn btn-red btn-lg" href="contact.html">Request a Quote</a>
+        </div>
+      </section>
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
