@@ -48,7 +48,7 @@
 const {useState} = React;
 const A = PRP_A, I = PRP_I;
 const HOTSPOTS = [{"label": "1", "x": 38.97, "y": 84.9, "items": [{"n": 1, "pn": "03988150", "desc": "Plastic Vacuum Air Tube, 15\" long"}]}, {"label": "2", "x": 48.55, "y": 69.59, "items": [{"n": 2, "pn": "42837040", "desc": "Air Switch Kit, set @0.11\" W.C. (#NS2-0307-00)"}]}, {"label": "3", "x": 19.01, "y": 85.54, "items": [{"n": 3, "pn": "30279980", "desc": "Transformer, AT120B1051"}]}, {"label": "4", "x": 37.36, "y": 55.34, "items": [{"n": 4, "pn": "42709000", "desc": "Terminal Block Shield"}]}, {"label": "5", "x": 58.63, "y": 42.24, "items": [{"n": 5, "pn": "30281000", "desc": "Terminal Block, EK-204"}]}, {"label": "6", "x": 74.57, "y": 47.46, "items": [{"n": 6, "pn": "42759000", "desc": "Electrode Bracket"}]}, {"label": "7", "x": 82.58, "y": 48.47, "items": [{"n": 7, "pn": "30295000", "desc": "Electrode PSE-GF1 (Igniter / Sensor)"}]}, {"label": "8", "x": 89.91, "y": 56.31, "items": [{"n": 8, "pn": "30314070", "desc": "Ignition Cable, 7\" long"}]}, {"label": "9", "x": 66.12, "y": 43.09, "items": [{"n": 9, "pn": "30632060", "desc": "Spark Module – Fenwal #35-608711-034"}]}, {"label": "10", "x": 22.89, "y": 77.78, "items": [{"n": 10, "pn": "42398040", "desc": "Monitoring Light, Green"}]}, {"label": "11", "x": 17.74, "y": 72.28, "items": [{"n": 11, "pn": "42398060", "desc": "Monitoring Light, Red"}]}, {"label": "12", "x": 12.63, "y": 66.77, "items": [{"n": 12, "pn": "42398050", "desc": "Monitoring Light, Amber"}]}, {"label": "13", "x": 54.53, "y": 92.61, "items": [{"n": 13, "pn": "42757000", "desc": "Restrainer Nipple, 5\" long"}]}, {"label": "14", "x": 66.26, "y": 90.78, "items": [{"n": 14, "pn": "30333070", "desc": "Gas Valve VR8205P-2408 @3½\" W.C. (Natural Gas)"}]}, {"label": "15", "x": 71.23, "y": 86.99, "items": [{"n": 15, "pn": "30333080", "desc": "Gas Valve VR8205P-2416 @10\" W.C. (Propane Gas)"}]}, {"label": "16", "x": 59.7, "y": 67.46, "items": [{"n": 16, "pn": "42701000", "desc": "Orifice Fitting & Test Gauge Connection"}]}, {"label": "17", "x": 78.74, "y": 83.21, "items": [{"n": 17, "pn": "03259xxx", "desc": "Orifice for CB20-50 (state model & gas type)"}]}];
-const DIAGRAMS=[["CB · Control","space-ray-cb-control-diagram.html"],["CB · Draft Inducer","space-ray-cb-draft-diagram.html"],["LTS/LTU/ETS/ETU · Control","space-ray-lt-et-control-diagram.html"]];
+const DIAGRAMS=[["CB · Control","space-ray-cb-control-diagram.html"],["CB · Draft Inducer","space-ray-cb-draft-diagram.html"],["LTS/LTU/ETS/ETU · Control","space-ray-lt-et-control-diagram.html"],["LTS/LTU/ETS/ETU · Draft Inducer","space-ray-lt-et-draft-diagram.html"]];
 const lookup = (pn)=> (window.SR_PARTS||[]).find(p=>p.pn===pn);
 const hrefFor = (pn)=>{ const p=lookup(pn); return p ? "part-detail.html?pn="+p.id : "contact.html?part="+encodeURIComponent(pn); };
 function Hotspot({h}){
@@ -84,7 +84,7 @@ function Hotspot({h}){
   return single ? <a {...common} href={hrefFor(it0.pn)}>{pop}</a> : <div {...common} tabIndex="0">{pop}</div>;
 }
 function App(){
-  const flat=[]; HOTSPOTS.forEach(h=>h.items.forEach(it=>flat.push(it))); flat.sort((a,b)=>a.n-b.n);
+  const flat=[],seen={}; HOTSPOTS.forEach(h=>h.items.forEach(it=>{if(!seen[it.pn]){seen[it.pn]=1;flat.push(it);}})); flat.sort((a,b)=>a.n-b.n);
   return (<React.Fragment>
     <Header active="Parts" />
     <div className="pagehero light"><div className="wrap">

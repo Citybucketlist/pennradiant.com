@@ -48,7 +48,7 @@
 const {useState} = React;
 const A = PRP_A, I = PRP_I;
 const HOTSPOTS = [{"label": "1", "x": 66.89, "y": 90.76, "items": [{"n": 1, "pn": "42737000", "desc": "Draft Inducer Assembly"}]}, {"label": "2", "x": 57.05, "y": 87.45, "items": [{"n": 2, "pn": "42928000", "desc": "Motor Replacement Kit"}]}, {"label": "3", "x": 18.25, "y": 73.57, "items": [{"n": 3, "pn": "03721000", "desc": "Motor"}]}, {"label": "4", "x": 43.34, "y": 84.29, "items": [{"n": 4, "pn": "30347000", "desc": "Motor Spacer (4 per motor)"}]}, {"label": "5", "x": 52.65, "y": 79.13, "items": [{"n": 5, "pn": "42740000", "desc": "Motor Plate"}]}, {"label": "6", "x": 58.02, "y": 72.71, "items": [{"n": 6, "pn": "03723000", "desc": "Blower Wheel"}]}, {"label": "7", "x": 63.7, "y": 70.69, "items": [{"n": 7, "pn": "43221000", "desc": "Draft Inducer Gasket"}]}, {"label": "8", "x": 32.62, "y": 48.21, "items": [{"n": 8, "pn": "42744000", "desc": "Sensing Tube, Draft Inducer"}]}, {"label": "9", "x": 38.43, "y": 42.33, "items": [{"n": 9, "pn": "42742000", "desc": "Sensing Tube Bracket"}]}, {"label": "10", "x": 71.72, "y": 32.25, "items": [{"n": 10, "pn": "42739000", "desc": "Blower Housing Sub-Assembly"}]}, {"label": "11", "x": 73.78, "y": 22.3, "items": [{"n": 11, "pn": "40504020", "desc": "4\" O.D. Flue Pipe Starting Collar"}]}];
-const DIAGRAMS=[["CB · Control","space-ray-cb-control-diagram.html"],["CB · Draft Inducer","space-ray-cb-draft-diagram.html"],["LTS/LTU/ETS/ETU · Control","space-ray-lt-et-control-diagram.html"]];
+const DIAGRAMS=[["CB · Control","space-ray-cb-control-diagram.html"],["CB · Draft Inducer","space-ray-cb-draft-diagram.html"],["LTS/LTU/ETS/ETU · Control","space-ray-lt-et-control-diagram.html"],["LTS/LTU/ETS/ETU · Draft Inducer","space-ray-lt-et-draft-diagram.html"]];
 const lookup = (pn)=> (window.SR_PARTS||[]).find(p=>p.pn===pn);
 const hrefFor = (pn)=>{ const p=lookup(pn); return p ? "part-detail.html?pn="+p.id : "contact.html?part="+encodeURIComponent(pn); };
 function Hotspot({h}){
@@ -84,7 +84,7 @@ function Hotspot({h}){
   return single ? <a {...common} href={hrefFor(it0.pn)}>{pop}</a> : <div {...common} tabIndex="0">{pop}</div>;
 }
 function App(){
-  const flat=[]; HOTSPOTS.forEach(h=>h.items.forEach(it=>flat.push(it))); flat.sort((a,b)=>a.n-b.n);
+  const flat=[],seen={}; HOTSPOTS.forEach(h=>h.items.forEach(it=>{if(!seen[it.pn]){seen[it.pn]=1;flat.push(it);}})); flat.sort((a,b)=>a.n-b.n);
   return (<React.Fragment>
     <Header active="Parts" />
     <div className="pagehero light"><div className="wrap">
