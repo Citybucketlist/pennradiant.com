@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fostoria / TPI Direct Replacement Elements — Penn Radiant</title>
+<meta name="description" content="Fostoria / TPI direct replacement metal-sheath U-Rod heating elements from Penn Radiant — 2kW & 4.5kW, made in USA. Current and superseded (old) part numbers, by wattage & voltage.">
+<meta name="keywords" content="Penn Radiant, Fostoria elements, TPI elements, direct replacement element, metal sheath U-rod element, 642-21002, 641-35661, 2kW, 4.5kW replacement heating element">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.pennradiant.com/fostoria-elements.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Penn Radiant Products">
+<meta property="og:title" content="Fostoria / TPI Direct Replacement Elements — Penn Radiant">
+<meta property="og:description" content="Fostoria / TPI direct replacement metal-sheath U-Rod heating elements — 2kW & 4.5kW, made in USA.">
+<meta property="og:image" content="https://www.pennradiant.com/assets/headers/elements.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=67">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="favicon.ico">
+<script src="fostoria-data.js?v=1"></script>
+<style>
+.elgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:15px}
+.elcard{display:flex;flex-direction:column;border:1px solid var(--prp-gray-150);border-radius:10px;overflow:hidden;background:#fff;text-decoration:none;color:var(--prp-ink);transition:border-color .15s,box-shadow .15s,transform .15s}
+.elcard:hover{border-color:var(--prp-red);box-shadow:0 6px 18px rgba(0,0,0,.09);transform:translateY(-2px)}
+.elcard .ph{height:152px;background:#fff;border-bottom:1px solid var(--prp-gray-100,#f3f4f6);display:flex;align-items:center;justify-content:center;padding:12px;overflow:hidden}
+.elcard .ph img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.elcard .body{padding:11px 12px 13px;display:flex;flex-direction:column;flex:1}
+.elcard .pn{font-weight:900;font-size:16px;letter-spacing:.02em;color:var(--prp-ink)}
+.elcard .old{font-size:11.5px;color:var(--fg-3,#7a8794);margin-top:1px}
+.elcard .sp{font-size:12px;color:var(--fg-2,#4a5568);margin-top:4px;line-height:1.3}
+.elcard .pr{font-weight:900;font-size:15px;color:var(--prp-ink);margin-top:9px}
+.elcard .q{margin-top:auto;padding-top:9px;font-size:12px;font-weight:800;color:var(--prp-red);display:flex;align-items:center;gap:4px}
+.elnote{font-size:13px;color:var(--fg-3,#7a8794);margin:2px 0 16px;max-width:880px;line-height:1.5}
+.dr-intro{display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:center;border:1px solid var(--prp-gray-150);border-radius:14px;padding:20px 24px;background:var(--prp-gray-100,#f7f8f9);margin:0 0 26px}
+@media(max-width:640px){.dr-intro{grid-template-columns:1fr;text-align:center}}
+.dr-intro img{max-width:100%;max-height:150px;object-fit:contain}
+.dr-intro h3{margin:0 0 8px;font-size:18px}
+.dr-intro p{margin:0 0 8px;font-size:14px;color:var(--fg-2,#4a5568);line-height:1.55}
+.dr-intro p:last-child{margin-bottom:0}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="site.jsx?v=22"></script>
+<script type="text/babel">
+const A = PRP_A, I = PRP_I;
+const PARTS = window.FOSTORIA_PARTS || [];
+function ElCard({e}){
+  const img = e.gallery && e.gallery[0];
+  return (
+    <a className="elcard" href={"fostoria-element.html?pn="+encodeURIComponent(e.id)}>
+      <div className="ph">{img ? <img src={A+"/products/"+img} alt={"Fostoria/TPI "+e.former}/> : null}</div>
+      <div className="body">
+        <div className="pn">#{e.former}</div>
+        {e.old && <div className="old">Replaces old #{e.old}</div>}
+        <div className="sp">{e.watts} / {e.volts}  ·  {e.type}</div>
+        {e.price!=null && <div className="pr">${e.price.toFixed(2)}</div>}
+        <div className="q">View details <I.chevR width="14" height="14"/></div>
+      </div>
+    </a>
+  );
+}
+function App(){
+  return (<React.Fragment>
+    <Header active="Parts" />
+    <div className="pagehero light"><div className="wrap">
+      <div className="eyebrow">Fostoria / TPI · Metal-Sheath Replacement Elements</div>
+      <h1>Direct Replacement U-Rod Elements</h1>
+      <p>Direct replacement metal-sheath U-Rod heating elements for Fostoria / TPI electric infrared heaters — 2&nbsp;kW &amp; 4.5&nbsp;kW, made in the USA, with identical wattage, voltage &amp; mounting to the original. Net prices shown; confirm current pricing &amp; availability at 1.800.438.2503.</p>
+    </div></div>
+    <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="parts.html">Parts</a><I.chevR width="14" height="14"/><span>Fostoria / TPI Elements</span></div>
+    <section className="wrap section" style={{paddingTop:"10px"}}>
+      <div className="dr-intro">
+        <img src={A+"/products/fostoria/direct-replacement-icon.jpg"} alt="Direct Replacement Heater Elements — made in USA"/>
+        <div>
+          <h3>Discontinued Fostoria / TPI elements — direct replacements in stock</h3>
+          <p>Fostoria / TPI has discontinued production of the individual U-Rod replacement elements. These direct-replacement elements are manufactured in the USA with identical performance specifications (wattage, voltage &amp; physical requirements) and the same method of installation.</p>
+          <p>Each part below lists the current part number alongside the original (old) Fostoria / TPI number, so you can match exactly what you're replacing.</p>
+        </div>
+      </div>
+      <div className="eyebrow-row"><h2><span className="lt">DIRECT REPLACEMENT</span> ELEMENTS</h2></div>
+      <p className="elnote">Metal-sheath U-Rod elements — select by wattage &amp; voltage. Current part # shown with the superseded old #.</p>
+      <div className="elgrid">{PARTS.map((e,i)=><ElCard e={e} key={i}/>)}</div>
+    </section>
+    <section className="band">
+      <div className="band-shade" style={{background:"var(--prp-ink)"}}></div>
+      <div className="wrap band-inner">
+        <span className="eb">Not sure which element?</span>
+        <h2>We&rsquo;ll Match Your Heater</h2>
+        <ul>
+          <li><i className="tri">&#9656;</i>Send your old Fostoria / TPI part number or heater model</li>
+          <li><i className="tri">&#9656;</i>Made-in-USA direct replacements — identical wattage, voltage &amp; fit</li>
+          <li><i className="tri">&#9656;</i>Fast quotes &amp; nationwide shipping</li>
+        </ul>
+        <a className="btn btn-red btn-lg" href="contact.html">Request a Quote</a>
+      </div>
+    </section>
+    <Footer />
+  </React.Fragment>);
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

@@ -69,6 +69,8 @@ a{color:inherit;text-decoration:none}
 .navitem:hover .dropdown{display:block}
 .dropdown a{display:block;color:var(--fg-1);font-size:15.5px;font-weight:600;padding:10px 12px;border-radius:var(--r-sm);transition:background .12s,color .12s}
 .dropdown a:hover{background:var(--prp-gray-100);color:var(--prp-blue)}
+.dropdown .dd-head{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--fg-3,#7a8794);padding:9px 12px 4px;margin-top:4px;border-top:1px solid var(--prp-gray-150)}
+.dropdown .dd-head:first-child{margin-top:0;border-top:none;padding-top:4px}
 .dropdown.two{column-count:2;min-width:520px}
 .dropdown.two a{break-inside:avoid}
 

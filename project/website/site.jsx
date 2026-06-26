@@ -26,9 +26,13 @@ const NAV = [
   { label:"Gas Heating", href:"gas-heating.html" },
   { label:"Electric Heating", href:"electric-heating.html" },
   { label:"Parts", href:"parts.html", sub:[
+    ["Heater Parts", null],
     ["Space Ray Heater Parts", "space-ray-parts.html"],
-    ["Sure Flame Heater Parts", "sure-flame-parts.html"],
     ["Heat Wagon Heater Parts", "heat-wagon-parts.html"],
+    ["Sure Flame Heater Parts", "sure-flame-parts.html"],
+    ["Replacement Elements", null],
+    ["Aitken Replacement Elements", "aitken-elements.html"],
+    ["Fostoria / TPI Elements", "fostoria-elements.html"],
   ]},
   { label:"Cooling", href:"cooling.html" },
   { label:"Services", sub:[
@@ -65,9 +69,11 @@ function Header({ active }) {
               {n.label}{n.sub && <I.chevD className="caret"/>}
             </a>
             {n.sub && (
-              <div className={"dropdown"+(n.sub.length>7?" two":"")}>
+              <div className={"dropdown"+(n.sub.length>8?" two":"")}>
                 {n.sub.map(([label,href],j)=>(
-                  <a key={j} href={href} {...(ext(href)?{target:"_blank",rel:"noreferrer"}:{})}>{label}</a>
+                  href
+                    ? <a key={j} href={href} {...(ext(href)?{target:"_blank",rel:"noreferrer"}:{})}>{label}</a>
+                    : <div key={j} className="dd-head">{label}</div>
                 ))}
               </div>
             )}
