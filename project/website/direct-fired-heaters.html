@@ -21,12 +21,14 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="favicon.ico">
+<script src="df-data.js?v=1"></script>
 <style>
 .dfgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
 .dfcard{display:flex;flex-direction:column;border:1px solid var(--prp-gray-150);border-radius:12px;overflow:hidden;background:#fff;text-decoration:none;color:var(--prp-ink);transition:border-color .15s,box-shadow .15s,transform .15s}
 .dfcard:hover{border-color:var(--prp-red);box-shadow:0 8px 22px rgba(0,0,0,.10);transform:translateY(-2px)}
-.dfcard .ph{height:210px;background:#fff;border-bottom:1px solid var(--prp-gray-100,#f3f4f6);display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
-.dfcard .ph img{max-width:100%;max-height:100%;object-fit:contain}
+.dfcard .ph{position:relative;height:210px;background:#fff;border-bottom:1px solid var(--prp-gray-100,#f3f4f6);display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden}
+.dfcard .ph img.prod{max-width:100%;max-height:100%;object-fit:contain}
+.dfcard .ph img.brandlogo{position:absolute;left:12px;bottom:10px;max-width:118px;max-height:38px;object-fit:contain}
 .dfcard .body{padding:15px 16px 16px;display:flex;flex-direction:column;flex:1}
 .dfcard .brand{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--prp-red)}
 .dfcard .model{font-weight:900;font-size:19px;letter-spacing:.01em;margin-top:2px;line-height:1.2}
@@ -46,48 +48,31 @@
 <div id="root"></div>
 <script type="text/babel" src="site.jsx?v=23"></script>
 <script type="text/babel">
-const A = PRP_A, I = PRP_I, CAT = PRP_CAT;
-const HEATERS = [
-  { model:"Heat Wagon DG Series", brand:"Heat Wagon", btu:"250 & 400,000 BTU", duct:"Ductable", img:"hw-dg.jpg",
-    desc:"Compact dual-rated portable direct-fired heater — efficient forced-air heat for jobsites, shops and agricultural buildings.",
-    cat:CAT+"/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/heat-wagon-dg-series-portable-direct-fired-heater" },
-  { model:"Sure Flame S405", brand:"Sure Flame", btu:"400,000 BTU", duct:"Ductable", img:"s405.jpg",
-    desc:"Rugged 400,000 BTU portable direct-fired heater built for construction and temporary heat in open and well-ventilated spaces.",
-    cat:CAT+"/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/portable-direct-fired-sure-flame-s405-heaters" },
-  { model:"Heat Wagon 1800B", brand:"Heat Wagon", btu:"750,000 BTU", duct:"Ductable to 25'", img:"hw1800b.jpg",
-    desc:"High-output 750,000 BTU forced-air heater, ductable up to 25 feet — ideal for drying, curing and large open-area heating.",
-    cat:CAT+"/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/d-heaters-portable-direct-fired-heat-wagon-hw1800b" },
-  { model:"Heat Wagon 950H Series", brand:"Heat Wagon", btu:"950,000 BTU", duct:"Ductable", img:"hw950h.jpg",
-    desc:"950,000 BTU ductable direct-fired heater delivering powerful, consistent forced-air heat for demanding industrial applications.",
-    cat:CAT+"/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/ired-heaters-portable-direct-fired-heat-wagon-950h" },
-  { model:"Sure Flame S1505B", brand:"Sure Flame", btu:"1,500,000 BTU", duct:"Not ductable", img:"s1505b.jpg",
-    desc:"Heavy-duty 1.5 million BTU direct-fired heater for very large open spaces where maximum heat output is the priority.",
-    cat:CAT+"/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/ed-heaters-portable-direct-fired-sure-flame-s1505b" },
-  { model:"Heat Wagon HW2730C Series", brand:"Heat Wagon", btu:"2,000,000 BTU", duct:"Ductable", img:"hw2730c.jpg",
-    desc:"Top-of-the-line 2 million BTU ductable direct-fired heater for the largest structures, drying jobs and temporary heat projects.",
-    cat:CAT+"/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/portable-direct-fired-heat-wagon-hw2730" },
-];
+const A = PRP_A, I = PRP_I;
+const HEATERS = window.DF_HEATERS || [];
 function DuctTag({ duct }) {
-  const no = /not/i.test(duct);
+  const no = /^no$|not/i.test(duct);
   return <span className={"tag "+(no?"noduct":"duct")}>{no ? "Not ductable" : duct}</span>;
 }
 function Card({ h }) {
-  const quoteHref = "contact.html?product="+encodeURIComponent(h.brand+" "+h.model);
   return (
-    <div className="dfcard">
-      <div className="ph"><img src={A+"/products/direct-fired/"+h.img} alt={h.brand+" "+h.model}/></div>
+    <a className="dfcard" href={"df-heater.html?m="+h.slug}>
+      <div className="ph">
+        <img className="prod" src={A+"/products/direct-fired/"+h.img+"?v=2"} alt={h.brand+" "+h.model}/>
+        <img className="brandlogo" src={A+"/brands/"+h.brandLogo} alt={h.brand}/>
+      </div>
       <div className="body">
         <div className="brand">{h.brand}</div>
         <div className="model">{h.model}</div>
         <div className="btu">{h.btu}</div>
         <div className="tags"><span className="tag">Portable · Direct-Fired</span><DuctTag duct={h.duct}/></div>
-        <div className="desc">{h.desc}</div>
+        <div className="desc">{h.blurb}</div>
         <div className="cta">
-          <a className="quote" href={quoteHref}>Request a Quote</a>
-          <a className="specs" href={h.cat} target="_blank" rel="noreferrer">Full specs <I.chevR width="14" height="14"/></a>
+          <span className="quote">View specs &amp; quote</span>
+          <span className="specs">Details <I.chevR width="14" height="14"/></span>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 function App() {
