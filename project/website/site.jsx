@@ -32,6 +32,7 @@ const NAV = [
     ["Sure Flame Heater Parts", "sure-flame-parts.html"],
     ["Replacement Elements", null],
     ["Aitken Replacement Elements", "aitken-elements.html"],
+    ["Direct Replacement U-Rod Kits · 2kW & 4.5kW", "fostoria-elements.html", "sub"],
     ["Fostoria / TPI Elements", "fostoria-elements.html"],
   ]},
   { label:"Cooling", href:"cooling.html" },
@@ -69,10 +70,10 @@ function Header({ active }) {
               {n.label}{n.sub && <I.chevD className="caret"/>}
             </a>
             {n.sub && (
-              <div className={"dropdown"+(n.sub.length>8?" two":"")}>
-                {n.sub.map(([label,href],j)=>(
+              <div className={"dropdown"+(n.sub.length>9?" two":"")}>
+                {n.sub.map(([label,href,mod],j)=>(
                   href
-                    ? <a key={j} href={href} {...(ext(href)?{target:"_blank",rel:"noreferrer"}:{})}>{label}</a>
+                    ? <a key={j} className={mod==="sub"?"dd-sub":undefined} href={href} {...(ext(href)?{target:"_blank",rel:"noreferrer"}:{})}>{label}</a>
                     : <div key={j} className="dd-head">{label}</div>
                 ))}
               </div>

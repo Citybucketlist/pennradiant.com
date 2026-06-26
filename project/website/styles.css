@@ -67,8 +67,11 @@ a{color:inherit;text-decoration:none}
 .navitem > a .caret{width:14px;height:14px;opacity:.8}
 .dropdown{position:absolute;top:100%;left:0;min-width:288px;background:#fff;border:1px solid var(--prp-gray-150);border-top:3px solid var(--prp-red);box-shadow:0 14px 34px rgba(20,20,30,.16);padding:8px;display:none;z-index:60;border-radius:0 0 var(--r-md) var(--r-md)}
 .navitem:hover .dropdown{display:block}
-.dropdown a{display:block;color:var(--fg-1);font-size:15.5px;font-weight:600;padding:10px 12px;border-radius:var(--r-sm);transition:background .12s,color .12s}
+.dropdown a{display:block;color:var(--fg-1);font-size:15.5px;font-weight:600;padding:10px 12px;border-radius:var(--r-sm);transition:background .12s,color .12s;white-space:nowrap}
 .dropdown a:hover{background:var(--prp-gray-100);color:var(--prp-blue)}
+.dropdown a.dd-sub{padding-left:32px;font-size:14px;font-weight:600;color:var(--fg-2,#4a5568);position:relative}
+.dropdown a.dd-sub::before{content:"\21B3";position:absolute;left:14px;top:9px;color:var(--prp-gray-400,#9aa6b0);font-size:13px;font-weight:700}
+.dropdown a.dd-sub:hover{color:var(--prp-blue)}
 .dropdown .dd-head{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--fg-3,#7a8794);padding:9px 12px 4px;margin-top:4px;border-top:1px solid var(--prp-gray-150)}
 .dropdown .dd-head:first-child{margin-top:0;border-top:none;padding-top:4px}
 .dropdown.two{column-count:2;min-width:520px}
