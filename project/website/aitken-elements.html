@@ -20,6 +20,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="favicon.ico">
+<script src="aitken-data.js?v=1"></script>
 <style>
 .elgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:15px}
 .elcard{display:flex;flex-direction:column;border:1px solid var(--prp-gray-150);border-radius:10px;overflow:hidden;background:#fff;text-decoration:none;color:var(--prp-ink);transition:border-color .15s,box-shadow .15s,transform .15s}
@@ -39,54 +40,27 @@
 <script type="text/babel" src="site.jsx?v=21"></script>
 <script type="text/babel">
 const A = PRP_A, I = PRP_I;
-const ELEC = [
-  {pn:"HE20208", img:"he20208.jpg", sp:"2000W / 208V  \u00b7  U-Rod", price:"$250.00"},
-  {pn:"HE20240", img:"he20240.jpg", sp:"2000W / 240V  \u00b7  U-Rod", price:"$250.00"},
-  {pn:"HE20480", img:"he20480.jpg", sp:"2000W / 480V  \u00b7  U-Rod", price:"$250.00"},
-  {pn:"HE20550", img:"he20550.jpg", sp:"2000W / 550V  \u00b7  U-Rod", price:"$250.00"},
-  {pn:"HE20600", img:"he20600.jpg", sp:"2000W / 600V  \u00b7  U-Rod", price:"$250.00"},
-  {pn:"HE45208", img:"he45208.jpg", sp:"4500W / 208V  \u00b7  U-Rod", price:"$335.00"},
-  {pn:"HE45240", img:"he45240.jpg", sp:"4500W / 240V  \u00b7  U-Rod", price:"$335.00"},
-  {pn:"HE45480", img:"he45480.jpg", sp:"4500W / 480V  \u00b7  U-Rod", price:"$335.00"},
-  {pn:"HE45550", img:"he45550.jpg", sp:"4500W / 550W  \u00b7  U-Rod", price:"$335.00"},
-  {pn:"HE45600", img:"he45600.jpg", sp:"4500W / 600V  \u00b7  U-Rod", price:"$335.00"},
-  {pn:"HE8120", img:"he8120.jpg", sp:"800W / 120V  \u00b7  Straight", price:"$170.00"},
-  {pn:"HE8240", img:"he8120.jpg", sp:"800W / 240V  \u00b7  Straight", price:"$170.00"},
-  {pn:"HE11120", img:"he8120.jpg", sp:"1100W / 120V  \u00b7  Straight", price:"$200.00"},
-  {pn:"HE11240", img:"he8120.jpg", sp:"100W / 240V  \u00b7  Straight", price:"$200.00"},
-  {pn:"HE18240", img:"he8120.jpg", sp:"1800W / 240V  \u00b7  Straight", price:"$235.00"},
-  {pn:"HE18480", img:"he8120.jpg", sp:"1800W / 480V  \u00b7  Straight", price:"$235.00"},
-  {pn:"HE25240", img:"he8120.jpg", sp:"2500W / 240V  \u00b7  Straight", price:"$260.00"},
-  {pn:"HE25480", img:"he8120.jpg", sp:"2500W / 480V  \u00b7  Straight", price:"$260.00"},
-  {pn:"HE30240", img:"he8120.jpg", sp:"3000W / 240V  \u00b7  Straight", price:"$325.00"},
-  {pn:"HE30480", img:"he8120.jpg", sp:"3000W / 480V  \u00b7  Straight", price:"$325.00"},
-  {pn:"HE36240", img:"he8120.jpg", sp:"3600W / 240V  \u00b7  Straight", price:"$345.00"},
-  {pn:"HE36480", img:"he8120.jpg", sp:"3600W / 480V  \u00b7  Straight", price:"$345.00"},
-  {pn:"EPH1012", img:"eph1012.jpg", sp:"1000W / 120V  \u00b7  Straight", price:"$200.00"},
-  {pn:"EPH1024", img:"eph1012.jpg", sp:"1000W / 240V  \u00b7  Straight", price:"$205.00"},
-  {pn:"EPH1512", img:"eph1012.jpg", sp:"1500W / 120V  \u00b7  Straight", price:"$205.00"}
-];
-const QUARTZ = [
-  {pn:"P70010", img:"p70010.jpg", sp:"Butt-Socket  \u00b7  500W / 120V", price:"$190.00"},
-  {pn:"P70013", img:"p70010.jpg", sp:"Butt-Socket  \u00b7  1,600W / 208V", price:"$230.00"},
-  {pn:"P70014", img:"p70010.jpg", sp:"Butt-Socket  \u00b7  1,600W / 240V", price:"$230.00"},
-  {pn:"P70015", img:"p70010.jpg", sp:"Butt-Socket  \u00b7  1,600W / 277V", price:"$230.00"},
-  {pn:"P70016", img:"p70010.jpg", sp:"Butt-Socket  \u00b7  2,500W / 480V", price:"$275.00"},
-  {pn:"P80005", img:"p80005.jpg", sp:"Pigtail  \u00b7  500W / 120V", price:"$190.00"},
-  {pn:"P80208", img:"p80005.jpg", sp:"Pigtail  \u00b7  1,600W / 208V", price:"$210.00"},
-  {pn:"P80240", img:"p80005.jpg", sp:"Pigtail  \u00b7  1,600W / 240V", price:"$210.00"},
-  {pn:"P80277", img:"p80005.jpg", sp:"Pigtail  \u00b7  1,600W / 277V", price:"$210.00"},
-  {pn:"P80480", img:"p80005.jpg", sp:"Pigtail  \u00b7  2,500W / 480V", price:"$265.00"}
-];
+const PARTS = window.AITKEN_PARTS || [];
+const ELEC = PARTS.filter(p=>p.cat==="electric");
+const QUARTZ = PARTS.filter(p=>p.cat==="quartz");
+const u = (v,suf) => v ? (/[A-Za-z]$/.test(v)?v:v+suf) : "";
+function specLine(e){
+  const s = e.specs||{};
+  const wv = [u(s.watts,"W"), u(s.volts,"V")].filter(Boolean).join(" / ");
+  if(e.cat==="quartz") return [s.type, wv].filter(Boolean).join("  \u00b7  ");
+  return [wv, s.type].filter(Boolean).join("  \u00b7  ");
+}
+function price(e){ return e.price!=null ? "$"+e.price.toFixed(2) : null; }
 function ElCard({e}){
+  const img = e.gallery && e.gallery[0];
   return (
-    <a className="elcard" href={"contact.html?part="+encodeURIComponent(e.pn)}>
-      <div className="ph"><img src={A+"/products/aitken/"+e.img} alt={"Aitken "+e.pn}/></div>
+    <a className="elcard" href={"aitken-element.html?pn="+encodeURIComponent(e.pn)}>
+      <div className="ph">{img ? <img src={A+"/products/"+img} alt={"Aitken "+e.pn}/> : null}</div>
       <div className="body">
         <div className="pn">{e.pn}</div>
-        <div className="sp">{e.sp}</div>
-        <div className="pr">{e.price}</div>
-        <div className="q">Request a Quote <I.chevR width="14" height="14"/></div>
+        <div className="sp">{specLine(e)}</div>
+        {price(e) && <div className="pr">{price(e)}</div>}
+        <div className="q">View details <I.chevR width="14" height="14"/></div>
       </div>
     </a>
   );
