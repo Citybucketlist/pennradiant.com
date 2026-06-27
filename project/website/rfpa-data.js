@@ -2,7 +2,7 @@
 window.RFPA_HEATERS = [
   {
     slug:"rfpa10", brand:"Space-Ray", brandLogo:"space-ray.png", name:"RFPA10C",
-    sub:"Compact Radiant · Floor Model", btu:"95,000 – 100,000 BTU", img:"space-ray/heaters/rfpa.jpg",
+    sub:"Compact Radiant · Floor Model", btu:"95,000 – 100,000 BTU", img:"space-ray/heaters/rfpa10.jpg",
     cat:"https://catalog.pennradiant.com/viewitems/gas-fired-heating/ting-space-ray-salamander-construction-rfpa-series",
     blurb:"The compact Space-Ray RFPA10C radiant construction heater throws instant, directional heat with no electricity required — perfect for smaller jobsites, garages and spot heating. Manual full ON/OFF control, natural gas or propane.",
     models:[
