@@ -32,7 +32,6 @@ const NAV = [
     ["Sure Flame Heater Parts", "sure-flame-parts.html"],
     ["Replacement Elements", null],
     ["Aitken Replacement Elements", "aitken-elements.html"],
-    ["Direct Replacement U-Rod Kits · 2kW & 4.5kW", "fostoria-elements.html", "sub"],
     ["Fostoria / TPI Elements", "fostoria-elements.html"],
   ]},
   { label:"Cooling", href:"cooling.html" },
