@@ -32,11 +32,11 @@
 const A = PRP_A, CAT = PRP_CAT, I = PRP_I;
 
 const BRANDS = [
-  { nm:"Space Ray Replacement Parts", img:"box/tube-parts-new.jpg", desc:"Burner heads, electrodes, controls & motors", href:"space-ray-parts.html" },
-  { nm:"Heat Wagon Factory Parts", img:"box/ceramic-parts.jpg", desc:"Browse by model — burners, motors, controls, pipe trains", href:"heat-wagon-parts.html" },
-  { nm:"Sure Flame Factory Parts", img:"ceramic-heater-parts.png", desc:"Factory replacement parts by Sure Flame model", href:"sure-flame-parts.html" },
-  { nm:"Space Ray / SunStar Motor Kit", img:"tube-heater-parts.png", desc:"Combustion blower motor replacement kit · 42928000", href:CAT+"/viewitems/all-categories-parts/s-space-ray-sunstar-motor-replacement-kit-42928000" },
-  { nm:"SunStar Replacement Parts", img:"ceramic-heater.png", desc:"Factory replacement parts for SunStar heaters", href:CAT+"/category/eplacement-parts-sunstar-factory-replacement-parts" },
+  { nm:"Space Ray Replacement Parts", img:"space-ray/parts/30216060-1.jpg", desc:"Burner heads, electrodes, controls & motors", href:"space-ray-parts.html" },
+  { nm:"Heat Wagon Factory Parts", img:"box/hw-control-box.jpg", desc:"Browse by model — burners, motors, controls, pipe trains", href:"heat-wagon-parts.html" },
+  { nm:"Sure Flame Factory Parts", img:"box/sf-flame-control.jpg", desc:"Factory replacement parts by Sure Flame model", href:"sure-flame-parts.html" },
+  { nm:"Space Ray / SunStar Motor Kit", img:"space-ray/parts/42928000-1.jpg", desc:"Combustion blower motor replacement kit · 42928000", href:"sr-motor-kit.html" },
+  { nm:"SunStar Replacement Parts", img:"space-ray/parts/30333070-1.jpg", desc:"Factory replacement parts for SunStar heaters", href:CAT+"/category/eplacement-parts-sunstar-factory-replacement-parts" },
 ];
 const ELEMENTS = [
   { nm:"Aitken Elements", img:"cat-electric.jpg", desc:"Electric infrared replacement elements", href:"aitken-elements.html" },
@@ -57,7 +57,7 @@ function SCard({ c }) {
           <div className="nm">{c.nm}<I.chevR width="20" height="20"/></div>
           <div className="desc">{c.desc}</div>
         </div>
-        <img className="scard-thumb" src={A+"/products/"+c.img} alt={c.nm}/>
+        <img className="scard-thumb lg" src={A+"/products/"+c.img} alt={c.nm}/>
       </div>
     </a>
   );
