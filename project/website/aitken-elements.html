@@ -42,6 +42,9 @@
 const A = PRP_A, I = PRP_I;
 const PARTS = window.AITKEN_PARTS || [];
 const ELEC = PARTS.filter(p=>p.cat==="electric");
+const isUrod = p => /u-?rod/i.test((p.specs&&p.specs.type)||"");
+const UROD = ELEC.filter(isUrod);
+const STRAIGHT = ELEC.filter(p=>!isUrod(p));
 const QUARTZ = PARTS.filter(p=>p.cat==="quartz");
 const u = (v,suf) => v ? (/[A-Za-z]$/.test(v)?v:v+suf) : "";
 function specLine(e){
@@ -75,9 +78,14 @@ function App(){
     </div></div>
     <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="parts.html">Parts</a><I.chevR width="14" height="14"/><span>Aitken Elements</span></div>
     <section className="wrap section" style={{paddingTop:"10px"}}>
-      <div className="eyebrow-row"><h2><span className="lt">ELECTRIC</span> HEATING ELEMENTS</h2></div>
-      <p className="elnote">Metal-sheath U-rod replacement elements — select by wattage &amp; voltage.</p>
-      <div className="elgrid">{ELEC.map((e,i)=><ElCard e={e} key={i}/>)}</div>
+      <div className="eyebrow-row"><h2><span className="lt">U-ROD</span> ELEMENTS</h2></div>
+      <p className="elnote">Heavy-duty metal-sheath U-rod replacement elements — select by wattage &amp; voltage.</p>
+      <div className="elgrid">{UROD.map((e,i)=><ElCard e={e} key={i}/>)}</div>
+    </section>
+    <section className="wrap section" style={{paddingTop:"0"}}>
+      <div className="eyebrow-row"><h2><span className="lt">STRAIGHT</span> ELEMENTS</h2></div>
+      <p className="elnote">Straight metal-sheath replacement elements for Aitken EXS / EXD process-module heaters.</p>
+      <div className="elgrid">{STRAIGHT.map((e,i)=><ElCard e={e} key={i}/>)}</div>
     </section>
     <section className="wrap section" style={{paddingTop:"0"}}>
       <div className="eyebrow-row"><h2><span className="lt">QUARTZ LAMP</span> ELEMENTS</h2></div>
