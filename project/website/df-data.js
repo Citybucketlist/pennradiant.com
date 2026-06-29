@@ -17,7 +17,7 @@ window.DF_HEATERS = [
     feats:["Heavy-duty frame with wheels and lifting hook","Changes from vapor propane to natural gas with a turn of a valve","Low amp draw (5.0 / 8.5)","Ductable up to 50'","High-CFM axial fan","Air switch protected by 30-mesh filter","Optional remote thermostat (50' cord) & delay-start relay"],
   },
   {
-    slug:"s405", brand:"Sure Flame", brandLogo:"sure-flame.png", model:"S405",
+    slug:"s405", partsHref:"sure-flame-s405-parts.html", brand:"Sure Flame", brandLogo:"sure-flame.png", model:"S405",
     btu:"400,000 BTU", duct:"Ductable", img:"s405.jpg",
     cat:"https://catalog.pennradiant.com/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/portable-direct-fired-sure-flame-s405-heaters",
     blurb:"Rugged 400,000 BTU dual-fuel portable direct-fired heater built for construction and temporary heat in open, well-ventilated spaces.",
@@ -34,7 +34,7 @@ window.DF_HEATERS = [
     feats:["Quick change from LP or natural gas via handle","Air-flow switch & hi-limit switch","Burner heat shield","Flame-safeguard control with electronic ignition","Lifting loop & optional wheel kit","Steel construction","Tested to ANSI standard Z83.7","Indoor / outdoor use"],
   },
   {
-    slug:"hw1800b", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"1800B",
+    slug:"hw1800b", partsHref:"heat-wagon-1800b-parts.html", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"1800B",
     btu:"250,000 – 750,000 BTU", duct:"Ductable to 25'", img:"hw1800b.jpg",
     cat:"https://catalog.pennradiant.com/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/d-heaters-portable-direct-fired-heat-wagon-hw1800b",
     blurb:"High-output forced-air heater, ductable up to 25 feet — ideal for drying, curing and large open-area heating. Hi/Lo firing with included 50' remote thermostat.",
@@ -51,7 +51,7 @@ window.DF_HEATERS = [
     feats:[],
   },
   {
-    slug:"hw950h", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"950H Series",
+    slug:"hw950h", partsHref:"heat-wagon-950h-parts.html", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"950H Series",
     btu:"400,000 – 950,000 BTU", duct:"Ductable", img:"hw950h.jpg",
     cat:"https://catalog.pennradiant.com/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/ired-heaters-portable-direct-fired-heat-wagon-950h",
     blurb:"950,000 BTU ductable direct-fired heater delivering powerful, consistent forced-air heat for demanding industrial applications.",
@@ -67,7 +67,7 @@ window.DF_HEATERS = [
     feats:[],
   },
   {
-    slug:"s1505b", brand:"Sure Flame", brandLogo:"sure-flame.png", model:"S1505B",
+    slug:"s1505b", partsHref:"sure-flame-s1505b-parts.html", brand:"Sure Flame", brandLogo:"sure-flame.png", model:"S1505B",
     btu:"850,000 – 1,500,000 BTU", duct:"Not ductable", img:"s1505b.jpg",
     cat:"https://catalog.pennradiant.com/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/ed-heaters-portable-direct-fired-sure-flame-s1505b",
     blurb:"Heavy-duty 1.5 million BTU direct-fired heater for very large open spaces where maximum heat output is the priority.",
@@ -84,7 +84,7 @@ window.DF_HEATERS = [
     feats:[],
   },
   {
-    slug:"hw2730c", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"HW2730C Series",
+    slug:"hw2730c", partsHref:"heat-wagon-2730c-parts.html", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"HW2730C Series",
     btu:"500,000 – 2,000,000 BTU", duct:"Ductable", img:"hw2730c.jpg",
     cat:"https://catalog.pennradiant.com/viewitems/-gas-fired-heating-industrial-direct-fired-heaters/portable-direct-fired-heat-wagon-hw2730",
     blurb:"Top-of-the-line 2 million BTU ductable direct-fired heater for the largest structures, drying jobs and temporary-heat projects. Direct-wire with electronic ignition and full safety monitoring.",

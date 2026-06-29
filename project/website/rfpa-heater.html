@@ -48,6 +48,12 @@
 .pd-feats li{position:relative;padding-left:22px;font-size:14px;color:var(--fg-2,#4a5568);line-height:1.45}
 .pd-feats li i{position:absolute;left:0;top:1px;color:var(--prp-red);font-style:normal;font-weight:900}
 .pd-back{display:inline-flex;align-items:center;gap:5px;color:var(--prp-red);font-weight:700;text-decoration:none;font-size:14px;margin-top:6px}
+.pd-parts{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border:1px solid var(--prp-gray-150);border-left:4px solid var(--prp-red);border-radius:12px;background:var(--prp-gray-100,#f7f8f9);padding:16px 20px;margin-top:26px}
+.pd-parts .m{display:flex;flex-direction:column;gap:3px;flex:1;min-width:250px}
+.pd-parts .eb{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--prp-red)}
+.pd-parts b{font-size:15.5px;color:var(--prp-ink)}
+.pd-parts .sub{font-size:13.5px;color:var(--fg-2,#4a5568);line-height:1.45}
+.pd-parts .btn{flex:none}
 </style>
 </head>
 <body>
@@ -103,6 +109,16 @@ function Detail({ h }){
           <h3>Features</h3>
           <ul>{h.feats.map((f,i)=>(<li key={i}><i>▸</i>{f}</li>))}</ul>
         </div>}
+        <div className="pd-parts">
+          <div className="m">
+            <span className="eb">Genuine Factory Parts</span>
+            <b>Replacement parts are available for this heater.</b>
+            <span className="sub">Burners, controls, motors, electrodes, igniters &amp; more — stocked and quoted by application.</span>
+          </div>
+          {"space-ray-salamander-parts.html"
+            ? <a className="btn btn-red" href={"space-ray-salamander-parts.html"}>View parts <I.chevR width="15" height="15"/></a>
+            : <a className="btn btn-red" href={"contact.html?part="+encodeURIComponent(h.name||h.model||"heater")}>Contact us about parts <I.chevR width="15" height="15"/></a>}
+        </div>
         <div style={{marginTop:"24px",display:"flex",gap:"18px",flexWrap:"wrap",alignItems:"center"}}>
           <a className="pd-back" href="rfpa-heaters.html"><I.chevR width="15" height="15" style={{transform:"rotate(180deg)"}}/> All RFPA heaters</a>
           <a className="pd-back" href={h.cat} target="_blank" rel="noreferrer">View on catalog <I.chevR width="14" height="14"/></a>

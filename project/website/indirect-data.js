@@ -1,7 +1,7 @@
 // Heat Wagon VG-series indirect-fired heaters — scraped from catalog.pennradiant.com
 window.INDIRECT_HEATERS = [
   {
-    slug:"vg400", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"VG400",
+    slug:"vg400", partsHref:"heat-wagon-vg400-parts.html", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"VG400",
     btu:"320,000 BTU output", img:"vg400.jpg",
     cat:"https://catalog.pennradiant.com/viewitems/ories-gas-fired-heating-indirect-gas-fired-heaters/gas-fired-heating-indirect-gas-fired-heaters-vg400",
     blurb:"Compact Heat Wagon VG400 indirect-fired heater — clean, dry, 100% combustion-separated heat that can be ducted into occupied and enclosed spaces. Ideal for construction, restoration and tenting.",
@@ -19,7 +19,7 @@ window.INDIRECT_HEATERS = [
     feats:["100% indirect — combustion byproducts vented separately for clean, dry heat","Safe to duct into occupied &amp; enclosed spaces","Ductable supply &amp; flue","Propane or natural gas","Heavy-duty frame with wheels","Thermostat controlled"],
   },
   {
-    slug:"vg500", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"VG500",
+    slug:"vg500", partsHref:"heat-wagon-vg500-parts.html", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"VG500",
     btu:"~400,000 BTU output", img:"vg500.jpg",
     cat:"https://catalog.pennradiant.com/viewitems/ories-gas-fired-heating-indirect-gas-fired-heaters/gas-fired-heating-indirect-gas-fired-heaters-vg500",
     blurb:"Heat Wagon VG500 indirect-fired heater delivers clean, dry, ductable heat for mid-size enclosed spaces — construction, restoration, temporary heat and event tenting where air quality matters.",
@@ -47,7 +47,7 @@ window.INDIRECT_HEATERS = [
     feats:["100% indirect — combustion separated from the airstream","High-output clean heat for large enclosed areas","Ductable supply &amp; flue","Propane or natural gas","Heavy-duty frame with wheels","Thermostat controlled"],
   },
   {
-    slug:"vg1000", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"VG1000",
+    slug:"vg1000", partsHref:"heat-wagon-vg1000-parts.html", brand:"Heat Wagon", brandLogo:"heat-wagon.png", model:"VG1000",
     btu:"800,000 BTU output", img:"vg1000.jpg",
     cat:"https://catalog.pennradiant.com/viewitems/ories-gas-fired-heating-indirect-gas-fired-heaters/as-fired-heating-indirect-gas-fired-heaters-vg1000",
     blurb:"The Heat Wagon VG1000 is the top of the indirect-fired line — 800,000 BTU of clean, dry, ductable heat for the largest enclosed structures, drying jobs and temporary-heat projects.",

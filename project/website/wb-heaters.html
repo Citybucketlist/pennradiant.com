@@ -63,6 +63,12 @@
 .wb-app{font-size:13.5px;font-weight:700;background:var(--prp-gray-100,#f1f3f5);color:var(--fg-2,#4a5568);padding:8px 15px;border-radius:999px}
 .wb-h2{font-size:27px;margin:0 0 6px}
 .wb-lead{font-size:14.5px;color:var(--fg-2,#4a5568);line-height:1.55;max-width:760px;margin:0 0 22px}
+.pd-parts{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border:1px solid var(--prp-gray-150);border-left:4px solid var(--prp-red);border-radius:12px;background:var(--prp-gray-100,#f7f8f9);padding:16px 20px;margin-top:8px}
+.pd-parts .m{display:flex;flex-direction:column;gap:3px;flex:1;min-width:250px}
+.pd-parts .eb{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--prp-red)}
+.pd-parts b{font-size:15.5px;color:var(--prp-ink)}
+.pd-parts .sub{font-size:13.5px;color:var(--fg-2,#4a5568);line-height:1.45}
+.pd-parts .btn{flex:none}
 </style>
 </head>
 <body>
@@ -178,6 +184,17 @@ function App() {
       <section className="wrap section" style={{paddingTop:"4px"}}>
         <div className="eyebrow-row"><h2><span className="lt">PERFECT</span> FOR</h2></div>
         <div className="wb-apps">{APPS.map((a,i)=><span className="wb-app" key={i}>{a}</span>)}</div>
+      </section>
+
+      <section className="wrap section" style={{paddingTop:"4px"}}>
+        <div className="pd-parts">
+          <div className="m">
+            <span className="eb">Genuine Factory Parts</span>
+            <b>Replacement parts are available for the Wind Blocker heaters.</b>
+            <span className="sub">Burners, controls, emitters, valves &amp; more — contact our parts team for availability.</span>
+          </div>
+          <a className="btn btn-red" href="contact.html?part=Wind+Blocker+WB35+WB50">Contact us about parts</a>
+        </div>
       </section>
 
       <section className="band">
