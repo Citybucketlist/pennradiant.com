@@ -69,6 +69,8 @@
 .pd-parts b{font-size:15.5px;color:var(--prp-ink)}
 .pd-parts .sub{font-size:13.5px;color:var(--fg-2,#4a5568);line-height:1.45}
 .pd-parts .btn{flex:none}
+.pd-parts-thumb{flex:none;width:66px;height:66px;background:#fff;border:1px solid var(--prp-gray-150);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:7px}
+.pd-parts-thumb img{max-width:100%;max-height:100%;object-fit:contain}
 </style>
 </head>
 <body>
@@ -188,6 +190,7 @@ function App() {
 
       <section className="wrap section" style={{paddingTop:"4px"}}>
         <div className="pd-parts">
+          <div className="pd-parts-thumb"><img src={A+"/products/space-ray/parts/30216060-1.jpg"} alt="Replacement part"/></div>
           <div className="m">
             <span className="eb">Genuine Factory Parts</span>
             <b>Replacement parts are available for the Wind Blocker heaters.</b>
