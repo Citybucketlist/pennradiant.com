@@ -15,6 +15,7 @@
 <script src="sr-parts-data.js?v=15"></script>
 <script src="aitken-data.js?v=1"></script>
 <script src="fostoria-data.js?v=1"></script>
+<script src="portable-data.js?v=1"></script>
 <script src="search-index.js?v=1"></script>
 <style>
 .sr-box{display:flex;gap:10px;max-width:640px;margin:2px 0 6px}
@@ -63,6 +64,9 @@ function buildIndex(){
     pn:p.former, nm:p.nm, cat:"Fostoria / TPI · Element",
     extra:((p.old||"")+" "+(p.watts||"")+" "+(p.volts||"")+" "+(p.type||"")),
     src:(p.gallery&&p.gallery[0])?A+"/products/"+p.gallery[0]:null, href:"fostoria-element.html?pn="+encodeURIComponent(p.id) }));
+  (window.PORTABLE_HEATERS||[]).forEach(h=>(h.variants||[]).forEach(v=>out.push({
+    pn:v.m, nm:"Aitken "+h.series+" "+h.kw+" Portable Infrared · "+v.v, cat:"Aitken · Portable Infrared Heater",
+    extra:h.series+" "+h.kw+" "+v.v+" "+v.e, src:A+"/products/"+h.img, href:"portable-infrared-heaters.html" })));
   (window.SEARCH_INDEX||[]).forEach(p=>out.push(p));  // Heat Wagon & Sure Flame model parts + regulators (pre-built src/href)
   return out;
 }
