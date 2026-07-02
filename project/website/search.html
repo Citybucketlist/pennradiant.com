@@ -14,6 +14,7 @@
   <link rel="shortcut icon" href="favicon.ico">
 <script src="sr-parts-data.js?v=15"></script>
 <script src="aitken-data.js?v=1"></script>
+<script src="fostoria-data.js?v=1"></script>
 <script src="search-index.js?v=1"></script>
 <style>
 .sr-box{display:flex;gap:10px;max-width:640px;margin:2px 0 6px}
@@ -58,6 +59,10 @@ function buildIndex(){
       extra:((s.fits||"")+" "+(s.wv||"")+" "+(s.type||"")),
       src:(p.gallery&&p.gallery[0])?A+"/products/"+p.gallery[0]:null, href:"aitken-element.html?pn="+encodeURIComponent(p.pn) });
   });
+  (window.FOSTORIA_PARTS||[]).forEach(p=>out.push({
+    pn:p.former, nm:p.nm, cat:"Fostoria / TPI · Element",
+    extra:((p.old||"")+" "+(p.watts||"")+" "+(p.volts||"")+" "+(p.type||"")),
+    src:(p.gallery&&p.gallery[0])?A+"/products/"+p.gallery[0]:null, href:"fostoria-element.html?pn="+encodeURIComponent(p.id) }));
   (window.SEARCH_INDEX||[]).forEach(p=>out.push(p));  // Heat Wagon & Sure Flame model parts + regulators (pre-built src/href)
   return out;
 }
