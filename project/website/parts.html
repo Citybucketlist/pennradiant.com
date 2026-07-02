@@ -27,7 +27,7 @@
 </head>
 <body>
 <div id="root"></div>
-<script type="text/babel" src="site.jsx?v=24"></script>
+<script type="text/babel" src="site.jsx?v=25"></script>
 <script type="text/babel">
 const A = PRP_A, CAT = PRP_CAT, I = PRP_I;
 
@@ -91,8 +91,8 @@ function App() {
           <div className="h">Have a part number or model? We’ll match the exact part.</div>
           <div className="pf-input">
             <I.search width="20" height="20"/>
-            <input placeholder="Part # or Item Name" onKeyDown={e=>{if(e.key==="Enter")window.open(CAT,"_blank");}}/>
-            <a className="btn btn-red btn-sm" href={CAT} target="_blank" rel="noreferrer">Find</a>
+            <input id="pf-parts" placeholder="Part # or Item Name" onKeyDown={e=>{if(e.key==="Enter")goSearch(e.target.value);}}/>
+            <a className="btn btn-red btn-sm" onClick={()=>goSearch(document.getElementById("pf-parts").value)} style={{cursor:"pointer"}}>Find</a>
           </div>
         </div>
       </div></section>

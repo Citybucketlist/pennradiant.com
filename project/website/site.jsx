@@ -15,6 +15,8 @@ const I = {
 };
 const A = "../assets";
 const CAT = "https://catalog.pennradiant.com";
+/* internal site search — routes to search.html (finds parts on our site, not the catalog) */
+function goSearch(v){ const t=(v||"").trim(); window.location.href = "search.html" + (t ? "?q="+encodeURIComponent(t) : ""); }
 
 function Button({ variant="red", size, children, ...rest }) {
   return <button className={["btn","btn-"+variant,size==="lg"?"btn-lg":size==="sm"?"btn-sm":""].join(" ")} {...rest}>{children}</button>;
@@ -83,8 +85,8 @@ function Header({ active }) {
       </div></nav>
       <div className="searchbar"><div className="wrap inner">
         <I.search width="18" height="18" style={{color:"var(--prp-gray-500)"}}/>
-        <input placeholder="Search the entire catalog — part # or item name…" onKeyDown={e=>{if(e.key==="Enter")window.open(CAT,"_blank");}}/>
-        <a className="btn btn-red btn-sm" href={CAT} target="_blank" rel="noreferrer">Search</a>
+        <input id="site-search" placeholder="Search parts — part # or item name…" onKeyDown={e=>{if(e.key==="Enter")goSearch(e.target.value);}}/>
+        <a className="btn btn-red btn-sm" onClick={()=>goSearch(document.getElementById("site-search").value)} style={{cursor:"pointer"}}>Search</a>
         <a className="btn btn-outline btn-sm" href="contact.html">Request a Quote</a>
       </div></div>
     </header>
@@ -147,8 +149,8 @@ function PartsFinder() {
         <div className="h">Quickly find parts from our entire catalog!</div>
         <div className="pf-input">
           <I.search width="20" height="20"/>
-          <input placeholder="Part # or Item Name" onKeyDown={e=>{if(e.key==="Enter")window.open(CAT,"_blank");}}/>
-          <a className="btn btn-red btn-sm" href={CAT} target="_blank" rel="noreferrer">Find</a>
+          <input id="pf-search" placeholder="Part # or Item Name" onKeyDown={e=>{if(e.key==="Enter")goSearch(e.target.value);}}/>
+          <a className="btn btn-red btn-sm" onClick={()=>goSearch(document.getElementById("pf-search").value)} style={{cursor:"pointer"}}>Find</a>
         </div>
       </div>
     </div></section>
