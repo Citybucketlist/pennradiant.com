@@ -59,15 +59,27 @@ function buildIndex(){
   });
   return out;
 }
-function runSearch(q){
-  q=q.toLowerCase();
+// strip a leading part-# label people commonly type: #, P#, P/N, PN, PART #, NO., ITEM #
+// (won't strip a bare leading letter, so real part #s like Aitken "P70010" stay intact)
+function stripPrefix(raw){
+  const q = (raw||"").trim();
+  const s = q.replace(/^(?:part\s*(?:no\.?|number)?\s*#?|item\s*#?|p\s*\/\s*n|p\s*#|pn(?=[\s#:/-]|\d)|no\.?\s|#)\s*[:#/\-]*\s*/i, "");
+  return (s.trim() || q);
+}
+const collapse = s => (s||"").toLowerCase().replace(/[^a-z0-9]/g,"");  // ignore spaces/dashes/# in part #s
+function runSearch(raw){
+  const q = stripPrefix(raw).toLowerCase();
   if(!q) return [];
+  const qc = collapse(q);
   const res=[];
   buildIndex().forEach(it=>{
-    const pn=(it.pn||"").toLowerCase(), nm=(it.nm||"").toLowerCase(), ex=(it.extra||"").toLowerCase();
+    const pnc=collapse(it.pn), nm=(it.nm||"").toLowerCase(), ex=(it.extra||"").toLowerCase();
     let s=-1;
-    if(pn===q) s=0; else if(pn.replace(/\s/g,"").startsWith(q)) s=1; else if(pn.includes(q)) s=2;
-    else if(nm.includes(q)) s=3; else if(ex.includes(q)) s=4;
+    if(qc && pnc===qc) s=0;
+    else if(qc && pnc.startsWith(qc)) s=1;
+    else if(qc && pnc.includes(qc)) s=2;
+    else if(nm.includes(q)) s=3;
+    else if(ex.includes(q)) s=4;
     if(s>=0) res.push([s,it]);
   });
   res.sort((a,b)=> a[0]-b[0] || a[1].pn.localeCompare(b[1].pn));
