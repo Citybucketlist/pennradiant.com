@@ -14,6 +14,7 @@
   <link rel="shortcut icon" href="favicon.ico">
 <script src="sr-parts-data.js?v=15"></script>
 <script src="aitken-data.js?v=1"></script>
+<script src="search-index.js?v=1"></script>
 <style>
 .sr-box{display:flex;gap:10px;max-width:640px;margin:2px 0 6px}
 .sr-box .fld{flex:1;display:flex;align-items:center;gap:9px;border:1px solid var(--prp-gray-300);border-radius:var(--r-md);padding:11px 14px;background:#fff}
@@ -48,15 +49,16 @@ const CATLABEL = {tube:"Space Ray · Tube Parts", ceramic:"Space Ray · Ceramic 
 function buildIndex(){
   const out=[];
   (window.SR_PARTS||[]).forEach(p=>out.push({
-    brand:"Space Ray", pn:p.pn, nm:p.nm, cat:CATLABEL[p.cat]||"Space Ray Parts",
+    pn:p.pn, nm:p.nm, cat:CATLABEL[p.cat]||"Space Ray Parts",
     extra:((p.models||[]).join(" ")+" "+(p.group||"")),
-    img:(p.gallery&&p.gallery[0])||null, href:"part-detail.html?pn="+encodeURIComponent(p.id)
+    src:(p.gallery&&p.gallery[0])?A+"/products/"+p.gallery[0]:null, href:"part-detail.html?pn="+encodeURIComponent(p.id)
   }));
   (window.AITKEN_PARTS||[]).forEach(p=>{ const s=p.specs||{};
-    out.push({ brand:"Aitken", pn:p.pn, nm:p.nm, cat:p.cat==="quartz"?"Aitken · Quartz Element":"Aitken · Element",
+    out.push({ pn:p.pn, nm:p.nm, cat:p.cat==="quartz"?"Aitken · Quartz Element":"Aitken · Element",
       extra:((s.fits||"")+" "+(s.wv||"")+" "+(s.type||"")),
-      img:(p.gallery&&p.gallery[0])||null, href:"aitken-element.html?pn="+encodeURIComponent(p.pn) });
+      src:(p.gallery&&p.gallery[0])?A+"/products/"+p.gallery[0]:null, href:"aitken-element.html?pn="+encodeURIComponent(p.pn) });
   });
+  (window.SEARCH_INDEX||[]).forEach(p=>out.push(p));  // Heat Wagon & Sure Flame model parts + regulators (pre-built src/href)
   return out;
 }
 // strip a leading part-# label people commonly type: #, P#, P/N, PN, PART #, NO., ITEM #
@@ -90,7 +92,7 @@ function go(v){ const t=(v||"").trim(); window.location.href="search.html"+(t?"?
 function Card({r}){
   return (
     <a className="pcard" href={r.href}>
-      {r.img ? <div className="ph"><img src={A+"/products/"+r.img} alt={r.pn}/></div> : <div className="ph none">No image</div>}
+      {r.src ? <div className="ph"><img src={r.src} alt={r.pn}/></div> : <div className="ph none">No image</div>}
       <div className="body">
         <div className="brand">{r.cat}</div>
         <div className="pn">{r.pn}</div>
