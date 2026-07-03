@@ -17,6 +17,7 @@
 <script src="fostoria-data.js?v=1"></script>
 <script src="portable-data.js?v=1"></script>
 <script src="fixed-data.js?v=1"></script>
+<script src="quartz-data.js?v=1"></script>
 <script src="search-index.js?v=1"></script>
 <style>
 .sr-box{display:flex;gap:10px;max-width:640px;margin:2px 0 6px}
@@ -71,6 +72,9 @@ function buildIndex(){
   (window.FIXED_HEATERS||[]).forEach(h=>(h.variants||[]).forEach(v=>out.push({
     pn:v.m, nm:"Aitken "+h.series+" "+h.kw+" Overhead Infrared · "+v.v, cat:"Aitken · Fixed Overhead Heater",
     extra:h.series+" "+h.kw+" "+v.v+" "+v.e, src:A+"/products/"+h.img, href:"fixed-infrared-heaters.html" })));
+  (window.QUARTZ_HEATERS||[]).forEach(h=>(h.variants||[]).forEach(v=>out.push({
+    pn:v.m, nm:"Aitken "+h.nm+" · "+v.w, cat:"Aitken · Quartz Solar Beam Heater",
+    extra:h.angle+" solar beam quartz "+v.v+" "+v.w, src:A+"/products/"+h.img, href:"quartz-heaters.html" })));
   (window.SEARCH_INDEX||[]).forEach(p=>out.push(p));  // Heat Wagon & Sure Flame model parts + regulators (pre-built src/href)
   return out;
 }
