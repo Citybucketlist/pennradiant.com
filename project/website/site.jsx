@@ -132,10 +132,6 @@ function IntroBand() {
         <h1 className="intro-h1">Industrial Infrared <span>Heating &amp; Cooling</span> Solutions</h1>
         <p>Serving industrial heating &amp; cooling since 1965 — gas-fired and electric heaters, replacement parts, fans and portable cooling. Built to last, in the USA.</p>
       </div>
-      <div className="intro-cta">
-        <a className="btn btn-red btn-lg" href={CAT} target="_blank" rel="noreferrer">Shop All Products</a>
-        <a className="btn btn-outline btn-lg" href="contact.html">Request a Quote</a>
-      </div>
     </div></section>
   );
 }
