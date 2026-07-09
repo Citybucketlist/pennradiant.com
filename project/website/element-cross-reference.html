@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heating Element Cross-Reference — Aitken · Fostoria / TPI — Penn Radiant</title>
+<meta name="description" content="Infrared heating element cross-reference and interchange guide. Look up any Aitken, Fostoria or TPI element part number — current or superseded — and find the direct replacement from Penn Radiant.">
+<meta name="keywords" content="heating element cross reference, element interchange, replacement element lookup, Aitken element, Fostoria element, TPI element, HE20208, HE20240, HE20480, HE20600, HE45208, HE45240, HE45480, HE45600, 642-21002, 642-21004, 642-21008, 642-21009, 642-21010, 642-21012, 642-21016, 642-21017, 641-35661, 641-35611, 641-35621, 641-50011, 641-36061, 641-35631, 641-35641, 641-50021, FHK series, CH series, U-Rod element">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.pennradiant.com/element-cross-reference.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Penn Radiant Products">
+<meta property="og:title" content="Heating Element Cross-Reference — Aitken · Fostoria / TPI — Penn Radiant">
+<meta property="og:description" content="Look up any Aitken, Fostoria or TPI element part number — current or superseded — and find the direct replacement.">
+<meta property="og:url" content="https://www.pennradiant.com/element-cross-reference.html">
+<meta property="og:image" content="https://www.pennradiant.com/assets/headers/elements.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="styles.css?v=68">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="favicon.ico">
+<script src="aitken-data.js?v=2"></script>
+<script src="fostoria-data.js?v=2"></script>
+<style>
+.xr-box{display:flex;gap:10px;max-width:640px;margin:2px 0 6px}
+.xr-box .fld{flex:1;display:flex;align-items:center;gap:9px;border:1px solid var(--prp-gray-300);border-radius:var(--r-md);padding:11px 14px;background:#fff}
+.xr-box .fld input{border:0;outline:none;font-size:15px;font-family:inherit;width:100%;background:transparent}
+.xr-count{font-size:13.5px;color:var(--fg-3,#7a8794);margin:10px 0 16px}
+.xr-count b{color:var(--prp-ink)}
+.xr-wrap{overflow-x:auto;border:1px solid var(--prp-gray-150);border-radius:12px;background:#fff}
+.xr-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:860px}
+.xr-table th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--fg-3,#7a8794);font-weight:800;padding:13px 14px;border-bottom:2px solid var(--prp-gray-150);background:var(--prp-gray-100,#f7f8f9);white-space:nowrap}
+.xr-table td{padding:12px 14px;border-bottom:1px solid var(--prp-gray-100,#eee);color:var(--fg-2,#4a5568);vertical-align:top}
+.xr-table tbody tr:last-child td{border-bottom:0}
+.xr-table tbody tr:hover{background:var(--prp-gray-100,#f7f8f9)}
+.xr-table a.ourpn{font-weight:900;font-size:15px;letter-spacing:.02em;color:var(--prp-ink);text-decoration:none;white-space:nowrap}
+.xr-table a.ourpn:hover{color:var(--prp-red)}
+.xr-brand{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--prp-red);white-space:nowrap}
+.xr-wv{white-space:nowrap;font-weight:700;color:var(--prp-ink)}
+.xr-fits{font-size:12.5px;line-height:1.4;min-width:180px}
+.xr-alts{display:flex;flex-wrap:wrap;gap:6px;min-width:200px}
+.xr-alt{font-size:12px;font-weight:800;background:var(--prp-gray-100,#f1f3f5);border:1px solid var(--prp-gray-150);color:var(--prp-ink);padding:4px 8px;border-radius:6px;white-space:nowrap}
+.xr-alt small{font-weight:700;color:var(--fg-3,#7a8794);margin-left:4px}
+.xr-none{color:var(--prp-gray-400,#9aa6b0);font-style:italic;font-size:12.5px}
+.xr-empty{border:1px solid var(--prp-gray-150);border-radius:14px;background:var(--prp-gray-100,#f7f8f9);padding:30px 26px;max-width:720px}
+.xr-empty h3{margin:0 0 8px}
+.xr-empty p{font-size:14.5px;color:var(--fg-2,#4a5568);line-height:1.55;margin:0 0 14px}
+.xr-note{display:flex;gap:14px;align-items:flex-start;border:1px solid var(--prp-gray-150);border-left:4px solid var(--prp-red);border-radius:12px;background:var(--prp-gray-100,#f7f8f9);padding:16px 20px;margin:22px 0 6px;max-width:900px}
+.xr-note p{margin:0;font-size:13.5px;color:var(--fg-2,#4a5568);line-height:1.55}
+.xr-note b{color:var(--prp-ink)}
+.xr-legend{font-size:12.5px;color:var(--fg-3,#7a8794);margin:0 0 18px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<noscript>
+  <!-- Static fallback: the same interchange data, crawlable without JavaScript. -->
+  <h1>Heating Element Cross-Reference — Penn Radiant</h1>
+  <p>Find the direct replacement for any Aitken, Fostoria or TPI infrared heating element. Call 1.800.438.2503.</p>
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead><tr><th>Our Part #</th><th>Brand</th><th>Watts / Volts</th><th>Type</th><th>Fits Models</th><th>Also Replaces</th></tr></thead>
+    <tbody id="xr-static">
+      <tr><td><a href="aitken-element.html?pn=EPH1012">EPH1012</a></td><td>Aitken</td><td>1000W / 120V</td><td>Straight</td><td>IPH-1012</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=EPH1024">EPH1024</a></td><td>Aitken</td><td>1000W / 240V</td><td>Straight</td><td>IPH-1024</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=EPH1512">EPH1512</a></td><td>Aitken</td><td>1500W / 120V</td><td>Straight</td><td>IPH-1512</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE11120">HE11120</a></td><td>Aitken</td><td>1100W / 120V</td><td>Straight</td><td>EXS-1101, EXD-2201</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE11240">HE11240</a></td><td>Aitken</td><td>1100W / 240V</td><td>Straight</td><td>EXS-1102, EXD-2202</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE18240">HE18240</a></td><td>Aitken</td><td>1800W / 240V</td><td>Straight</td><td>EXS-1802, EXD-3602</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE18480">HE18480</a></td><td>Aitken</td><td>1800W / 480V</td><td>Straight</td><td>EXS-1804, EXD-3604</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE20208">HE20208</a></td><td>Aitken</td><td>2000W / 208V</td><td>U-Rod</td><td>OH-2028-H3, OH-2028, OH-628, PPH-628</td><td>642-21002, 641-35661 (old #)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE20240">HE20240</a></td><td>Aitken</td><td>2000W / 240V</td><td>U-Rod</td><td>OH-202-H3, OH-202, OH-623, PPH-623</td><td>642-21004, 641-35611 (old #)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE20480">HE20480</a></td><td>Aitken</td><td>2000W / 480V</td><td>U-Rod</td><td>OH204-H3, OH-204, OH-643, PPH-643</td><td>642-21008, 641-35621 (old #)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE20550">HE20550</a></td><td>Aitken</td><td>2000W / 550V</td><td>U-Rod</td><td>OH-205-H3, OH-205, OH-653, PPH-653</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE20600">HE20600</a></td><td>Aitken</td><td>2000W / 600V</td><td>U-Rod</td><td>OH-206, OH-663, PPH-663</td><td>642-21009, 641-50011 (old #)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE25240">HE25240</a></td><td>Aitken</td><td>2500W / 240V</td><td>Straight</td><td>EXS-2502, EXD-5002</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE25480">HE25480</a></td><td>Aitken</td><td>2500W / 480V</td><td>Straight</td><td>EXS-2504, EXD-5002</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE30240">HE30240</a></td><td>Aitken</td><td>3000W / 240V</td><td>Straight</td><td>EXS-3002, EXD-6002</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE30480">HE30480</a></td><td>Aitken</td><td>3000W / 480V</td><td>Straight</td><td>EXS3004</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE36240">HE36240</a></td><td>Aitken</td><td>3600W / 240V</td><td>Straight</td><td>EXS-3602, EXD-7202, EXD-7204 (two elements wire as 480V)</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE36480">HE36480</a></td><td>Aitken</td><td>3600W / 480V</td><td>Straight</td><td>EXS3604</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE45208">HE45208</a></td><td>Aitken</td><td>4500W / 208V</td><td>U-Rod</td><td>OH-4528, OH-4528-H3, OH-13528, PHX-4528, SH-13528 Length N/A 44.5&quot;</td><td>642-21010, 641-36061 (old #)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE45240">HE45240</a></td><td>Aitken</td><td>4500W / 240V</td><td>U-Rod</td><td>OH-452-H3, OH-452, OH-135231, PHX-452, SH-135231 Length N/A 44.5&quot;</td><td>642-21012, 641-35631 (old #)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE45480">HE45480</a></td><td>Aitken</td><td>4500W / 480V</td><td>U-Rod</td><td>OH-454-H3, OH-454, OH-135431, PHX-454, SH-135431 Length N/A 44.5&quot;</td><td>642-21016, 641-35641 (old #)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE45550">HE45550</a></td><td>Aitken</td><td>4500W / 550W</td><td>U-Rod</td><td>OH-455-H3, OH-455, OH-13553, PHX-455, SH-13553 Length N/A 44.5&quot;</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE45600">HE45600</a></td><td>Aitken</td><td>4500W / 600V</td><td>U-Rod</td><td>OH-13563, OH-456, PHX-456, SH-13563 Length N/A 44.5&quot;</td><td>642-21017, 641-50021 (old #)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE8120">HE8120</a></td><td>Aitken</td><td>800W / 120V</td><td>Straight</td><td>EXS-801, EXD-1601</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE8240">HE8240</a></td><td>Aitken</td><td>800W / 240V</td><td>Straight</td><td>EXS-802, EXD-1602</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=P70010">P70010</a></td><td>Aitken</td><td>500W / 120V</td><td>Butt Socket</td><td>QH109, QH106, QH106A</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=P70013">P70013</a></td><td>Aitken</td><td>1,600W / 208V</td><td>Butt Socket</td><td>QH169, QH329, QH329, QH326, QH326A, SQH169, SQH329, SQH326, SQH326A</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=P70014">P70014</a></td><td>Aitken</td><td>1,600W / 240V</td><td>Butt Socket</td><td>QHL169, SQH169, QH329, SQH329</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=P70015">P70015</a></td><td>Aitken</td><td>1,600W / 277V</td><td>Butt Socket</td><td>QHL169, QH329, QH326, QH326A, SQH169, SQH329, SQH326, SQH326A</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=P70016">P70016</a></td><td>Aitken</td><td>2,500W / 480V</td><td>Butt Socket</td><td>-</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=P80005">P80005</a></td><td>Aitken</td><td>500W / 120V</td><td>Pigtail</td><td>QH109, QH106, QH106A</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=P80208">P80208</a></td><td>Aitken</td><td>1,600W / 208V</td><td>Pigtail</td><td>QHL109, QHL106, QHL106A, SQHL169, SQHL329, SQHL326, SQHL326A</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=P80240">P80240</a></td><td>Aitken</td><td>1,600W / 240V</td><td>Pigtail</td><td>QHL109, QHL106, QHL106A, SQHL169, SQHL329, SQHL326, SQHL326A</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=P80277">P80277</a></td><td>Aitken</td><td>1,600W / 277V</td><td>Pigtail</td><td>QHL109, QHL106, QHL106A, SQHL169, SQHL329, SQHL326, SQHL326A</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="aitken-element.html?pn=P80480">P80480</a></td><td>Aitken</td><td>2,500W / 480V</td><td>Pigtail</td><td>QHL509, QHL506, QHL506A, SQHL509, SQHL506, SQHL506A, SQHL7559</td><td>Cross-reference pending</td></tr>
+      <tr><td><a href="fostoria-element.html?pn=642-21002">642-21002</a></td><td>Fostoria / TPI</td><td>2000W / 208V</td><td>U-Rod</td><td>FHK &amp; CH Series</td><td>641-35661 (old #), HE20208</td></tr>
+      <tr><td><a href="fostoria-element.html?pn=642-21004">642-21004</a></td><td>Fostoria / TPI</td><td>2000W / 240V</td><td>U-Rod</td><td>FHK &amp; CH Series</td><td>641-35611 (old #), HE20240</td></tr>
+      <tr><td><a href="fostoria-element.html?pn=642-21008">642-21008</a></td><td>Fostoria / TPI</td><td>2000W / 480V</td><td>U-Rod</td><td>FHK &amp; CH Series</td><td>641-35621 (old #), HE20480</td></tr>
+      <tr><td><a href="fostoria-element.html?pn=642-21009">642-21009</a></td><td>Fostoria / TPI</td><td>2000W / 600V</td><td>U-Rod</td><td>FHK &amp; CH Series</td><td>641-50011 (old #), HE20600</td></tr>
+      <tr><td><a href="fostoria-element.html?pn=642-21010">642-21010</a></td><td>Fostoria / TPI</td><td>4500W / 208V</td><td>U-Rod</td><td>FHK &amp; CH Series</td><td>641-36061 (old #), HE45208</td></tr>
+      <tr><td><a href="fostoria-element.html?pn=642-21012">642-21012</a></td><td>Fostoria / TPI</td><td>4500W / 240V</td><td>U-Rod</td><td>FHK &amp; CH Series</td><td>641-35631 (old #), HE45240</td></tr>
+      <tr><td><a href="fostoria-element.html?pn=642-21016">642-21016</a></td><td>Fostoria / TPI</td><td>4500W / 480V</td><td>U-Rod</td><td>FHK &amp; CH Series</td><td>641-35641 (old #), HE45480</td></tr>
+      <tr><td><a href="fostoria-element.html?pn=642-21017">642-21017</a></td><td>Fostoria / TPI</td><td>4500W / 600V</td><td>U-Rod</td><td>FHK &amp; CH Series</td><td>641-50021 (old #), HE45600</td></tr>
+    </tbody>
+  </table>
+</noscript>
+
+<script type="text/babel" src="site.jsx?v=26"></script>
+<script type="text/babel">
+const { useState } = React;
+const A = PRP_A, I = PRP_I;
+const Q0 = (new URLSearchParams(window.location.search).get("q")||"").trim();
+
+const u = (v,suf) => v ? (/[A-Za-z]$/.test(v)?v:v+suf) : "";
+const collapse = s => (s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
+
+/* One row per part we sell. `alts` = every other number that lands here —
+   other brands' current numbers AND their superseded (old) numbers. */
+function buildRows(){
+  const out=[];
+  (window.AITKEN_PARTS||[]).forEach(p=>{
+    const s=p.specs||{};
+    const alts=[];
+    (p.xref||[]).forEach(x=>{
+      if(x.pn)  alts.push({brand:x.brand, pn:x.pn});
+      if(x.old) alts.push({brand:x.brand, pn:x.old, old:true});
+    });
+    out.push({
+      ourPn:p.pn, brand:"Aitken",
+      wv:[u(s.watts,"W"), u(s.volts,"V")].filter(Boolean).join(" / "),
+      type:s.type||"", fits:s.fits||"", alts,
+      href:"aitken-element.html?pn="+encodeURIComponent(p.pn),
+    });
+  });
+  (window.FOSTORIA_PARTS||[]).forEach(p=>{
+    const alts=[];
+    if(p.old) alts.push({brand:"Fostoria / TPI", pn:p.old, old:true});
+    (p.xref||[]).forEach(x=>{ if(x.pn) alts.push({brand:x.brand, pn:x.pn}); });
+    out.push({
+      ourPn:p.former, brand:"Fostoria / TPI",
+      wv:[p.watts,p.volts].filter(Boolean).join(" / "),
+      type:p.type||"", fits:p.fits||"", alts,
+      href:"fostoria-element.html?pn="+encodeURIComponent(p.id),
+    });
+  });
+  return out;
+}
+const ROWS = buildRows();
+
+function matches(r, q){
+  if(!q) return true;
+  const qc = collapse(q);
+  if(!qc) return true;
+  if(collapse(r.ourPn).includes(qc)) return true;
+  if(r.alts.some(a=>collapse(a.pn).includes(qc))) return true;
+  const text = collapse(r.brand+r.type+r.fits+r.wv);
+  return text.includes(qc);
+}
+
+function Row({r}){
+  return (
+    <tr>
+      <td><a className="ourpn" href={r.href}>{r.ourPn}</a></td>
+      <td><span className="xr-brand">{r.brand}</span></td>
+      <td className="xr-wv">{r.wv||"—"}</td>
+      <td>{r.type||"—"}</td>
+      <td className="xr-fits">{r.fits || <span className="xr-none">—</span>}</td>
+      <td>
+        {r.alts.length
+          ? <div className="xr-alts">{r.alts.map((a,i)=>(
+              <span className="xr-alt" key={i}>{a.pn}{a.old && <small>old #</small>}</span>
+            ))}</div>
+          : <span className="xr-none">Cross-reference pending</span>}
+      </td>
+    </tr>
+  );
+}
+
+function App(){
+  const [q,setQ] = useState(Q0);
+  const shown = ROWS.filter(r=>matches(r,q));
+  const withAlts = ROWS.filter(r=>r.alts.length).length;
+  return (
+    <React.Fragment>
+      <Header active="Parts" />
+      <div className="pagehero light"><div className="wrap">
+        <div className="eyebrow">Parts · Interchange Guide</div>
+        <h1>Heating Element Cross-Reference</h1>
+        <p style={{maxWidth:"680px",color:"var(--fg-2,#4a5568)",fontSize:"15.5px",lineHeight:1.55,margin:"8px 0 16px"}}>
+          Have a part number off an old element or a heater manual? Type it below — current
+          number or superseded &ldquo;old&rdquo; number, any brand — and we&rsquo;ll show you the
+          element we ship as its direct replacement.
+        </p>
+        <div className="xr-box">
+          <div className="fld">
+            <I.search width="18" height="18" style={{color:"var(--prp-gray-500)",flex:"none"}}/>
+            <input value={q} placeholder="Element part # — e.g. 641-35661, 642-21004, HE20240…" autoFocus
+                   onChange={e=>setQ(e.target.value)}/>
+          </div>
+        </div>
+      </div></div>
+      <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="parts.html">Parts</a><I.chevR width="14" height="14"/><span>Element Cross-Reference</span></div>
+
+      <section className="wrap section" style={{paddingTop:"8px"}}>
+        <p className="xr-count">
+          <b>{shown.length}</b> of {ROWS.length} elements{q ? <React.Fragment> matching &ldquo;{q}&rdquo;</React.Fragment> : null}.
+        </p>
+        {shown.length
+          ? <React.Fragment>
+              <div className="xr-wrap">
+                <table className="xr-table">
+                  <thead><tr>
+                    <th>Our Part #</th><th>Brand</th><th>Watts / Volts</th>
+                    <th>Type</th><th>Fits Models</th><th>Also Replaces</th>
+                  </tr></thead>
+                  <tbody>{shown.map((r,i)=><Row r={r} key={i}/>)}</tbody>
+                </table>
+              </div>
+              <p className="xr-legend" style={{marginTop:"12px"}}>
+                Cross-reference covers {withAlts} of {ROWS.length} elements today. We&rsquo;re actively
+                adding manufacturer manuals and additional brands — if your number isn&rsquo;t listed, we still very likely stock it.
+              </p>
+            </React.Fragment>
+          : <div className="xr-empty">
+              <h3>No match for &ldquo;{q}&rdquo; yet</h3>
+              <p>We couldn&rsquo;t match that number in our published interchange &mdash; but we very likely
+                 stock the element. Send it to our parts team and we&rsquo;ll identify it from your heater&rsquo;s model &amp; serial.</p>
+              <div style={{display:"flex",gap:"12px",flexWrap:"wrap"}}>
+                <a className="btn btn-red" href={"contact.html?part="+encodeURIComponent(q)}>Request this element</a>
+                <a className="btn btn-outline" href="aitken-elements.html">Browse all elements</a>
+              </div>
+            </div>}
+
+        <div className="xr-note">
+          <div>
+            <p><b>Before you order:</b> a cross-referenced element matches on wattage, voltage, physical
+            dimensions and method of installation &mdash; but heater builds vary by year. Confirm your exact
+            model and serial number with us and we&rsquo;ll make sure you get the right element the first time.
+            Call <b>1.800.438.2503</b> or <a href="contact.html" style={{color:"var(--prp-red)",fontWeight:700}}>request a quote</a>.</p>
+          </div>
+        </div>
+      </section>
+      <Footer />
+    </React.Fragment>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>
