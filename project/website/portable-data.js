@@ -3,7 +3,7 @@
 window.PORTABLE_HEATERS = [
   {
     key:"4.5", series:"PHX", nm:"Aitken PHX · 4.5 kW", kw:"4.5 kW", watts:"4,500 W", btu:"15,359",
-    phase:"Single-phase", price:"1,116.00", img:"portable/4.5kw.jpg",
+    phase:"Single-phase", price:"1,116.00", img:"portable/4.5kw.png",
     desc:"The nimble, single-phase spot heater. The PHX runs off a standard branch circuit and tilts right up to the work — ideal for warming one station, thawing a doorway, or knocking the chill off a small bay. A single 4.5&nbsp;kW U-rod element behind a heavy wire guard, on a one-hand tilt-and-roll stand.",
     variants:[
       {m:"PHX4528", v:"208 V", a:"21.6 A", e:"HE45208", ss:"phx4528"},
@@ -15,7 +15,7 @@ window.PORTABLE_HEATERS = [
   },
   {
     key:"6", series:"PPH", nm:"Aitken PPH · 6 kW", kw:"6 kW", watts:"6,000 W", btu:"20,478",
-    phase:"Three-phase", price:"1,511.00", img:"portable/6kw.jpg",
+    phase:"Three-phase", price:"1,511.00", img:"portable/6kw.png",
     desc:"More radiant reach on a compact cart. The PPH steps up to 20,478&nbsp;BTU from a four-panel head — sized for garages, loading docks and work cells that need steady heat without a big footprint. Three-phase power keeps the amp draw low, and the folding stand tucks away between jobs.",
     variants:[
       {m:"PPH628", v:"208 V", a:"16.7 A", e:"HE20208", ss:"pph628"},
@@ -27,7 +27,7 @@ window.PORTABLE_HEATERS = [
   },
   {
     key:"13.5", series:"SH", nm:"Aitken SH · 13.5 kW", kw:"13.5 kW", watts:"13,500 W", btu:"46,076",
-    phase:"Three-phase", price:"2,302.00", img:"portable/13.5kw.jpg",
+    phase:"Three-phase", price:"2,302.00", img:"portable/13.5kw.png",
     desc:"The big-bay powerhouse. The SH throws 46,000+&nbsp;BTU of instant infrared from a full-height, three-element panel — built for construction sites, high-ceiling shops and large open areas where you have to move a lot of heat fast. Three-phase, heavy-gauge frame, and pneumatic wheels to haul it anywhere on site.",
     variants:[
       {m:"SH13528",  v:"208 V", a:"37.5 A", e:"HE45208", ss:"sh13528"},

@@ -43,8 +43,11 @@ const A = PRP_A, I = PRP_I;
 const PARTS = window.AITKEN_PARTS || [];
 const ELEC = PARTS.filter(p=>p.cat==="electric");
 const isUrod = p => /u-?rod/i.test((p.specs&&p.specs.type)||"");
+const num = v => parseInt(String(v||"").replace(/[^0-9]/g,""),10) || 0;
+const byWattsVolts = (a,b) => num((a.specs||{}).watts)-num((b.specs||{}).watts)
+                            || num((a.specs||{}).volts)-num((b.specs||{}).volts);
 const UROD = ELEC.filter(isUrod);
-const STRAIGHT = ELEC.filter(p=>!isUrod(p));
+const STRAIGHT = ELEC.filter(p=>!isUrod(p)).sort(byWattsVolts);
 const QUARTZ = PARTS.filter(p=>p.cat==="quartz");
 const u = (v,suf) => v ? (/[A-Za-z]$/.test(v)?v:v+suf) : "";
 function specLine(e){
