@@ -23,10 +23,15 @@ window.DRUM_FAN = {
     { code:"P",    name:"Pedestal",                    img:"cooling/drum/pedestal.png", desc:"Single-column pedestal base — tilts up for directed airflow." }
   ],
   mountsNote: "Additional mounts — T-Base, Yoke Mount Tilt-Swivel, fixed Ceiling Mount and Wall Mount — available on request.",
-  // Documented dimensions for one representative build (from the D48B7.5X-4LWC submittal).
-  dimsExample: { model:"D48B7.5X-4LWC", size:48, mount:"Four Legs w/ Casters",
-                 A:'84.5"', B:'48.5"', C:'60"', D:'34.5"', weight:"~870 lbs",
-                 img:"cooling/drum/dims-d48.png" },
+  // Dimension drawing (generic A/B/C/D shape, same for every drum) + documented
+  // dimensions keyed by "size-mount". Only D48B7.5X-4LWC is published today; add rows
+  // as Penn Fan / Mike supply them and the Dimensions panel fills in automatically.
+  // A/B/C/D are set by blade size & mounting; motor/HP affects weight only.
+  dimsDrawing: "cooling/drum/dims-d48.png",
+  dimsRefLabel: "D48B7.5X · 48″ · Four Legs w/ Casters",
+  dims: {
+    "48-4LWC": { model:"D48B7.5X-4LWC", A:'84.5"', B:'48.5"', C:'60"', D:'34.5"', weight:"~870 lbs" }
+  },
   phases: [
     { key:"3", label:"3-Phase", volts:"208-230/460 V · 3-phase" },
     { key:"1", label:"1-Phase", volts:"115/230 V · 1-phase" }

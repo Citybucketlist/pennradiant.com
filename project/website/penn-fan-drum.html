@@ -21,7 +21,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="favicon.ico">
-<script src="drum-fan-data.js?v=1"></script>
+<script src="drum-fan-data.js?v=2"></script>
 <style>
 .df-hero{background:linear-gradient(180deg,var(--prp-gray-100,#f6f7f9),#fff);border-bottom:1px solid var(--prp-gray-100,#eef0f2)}
 .df-hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:center;padding:38px 0 30px}
@@ -207,27 +207,48 @@ function App(){
         <p className="df-cap">Airflow shown as CFM at free air (0&Prime; w.g.) with the <b>{bl.label.toLowerCase()}</b> blade. Galvanized steel is standard; nylon &amp; cast-aluminum blades are options. Two-speed / variable-speed, 50&nbsp;Hz &amp; 575&nbsp;V, and custom finishes (hot-dipped galvanized, aluminum, 304/316 stainless) available &mdash; confirm final selection &amp; pricing at quote.</p>
       </section>
 
-      {/* DIMENSIONS */}
-      {D.dimsExample && (
-      <section className="wrap section" style={{paddingTop:"0"}}>
-        <div className="df-step"><span className="n" style={{background:"var(--prp-ink)"}}>&#8942;</span><h2>Dimensions</h2></div>
-        <p className="df-note">Example build below. Overall dimensions vary by blade size &amp; mounting &mdash; we&rsquo;ll confirm exact dimensions &amp; weight for your configuration at quote.</p>
-        <div className="df-dims">
-          <img src={A+"/products/"+D.dimsExample.img} alt={"Penn Fan "+D.dimsExample.model+" dimensioned drawing"}/>
-          <div className="dt">
-            <h3>{D.dimsExample.model}</h3>
-            <div className="sub">{D.dimsExample.size}&Prime; · {D.dimsExample.mount}</div>
-            <table><tbody>
-              <tr><td className="k">A — Overall height</td><td className="v">{D.dimsExample.A}</td></tr>
-              <tr><td className="k">B — Fan height</td><td className="v">{D.dimsExample.B}</td></tr>
-              <tr><td className="k">C — Overall width</td><td className="v">{D.dimsExample.C}</td></tr>
-              <tr><td className="k">D — Base depth</td><td className="v">{D.dimsExample.D}</td></tr>
-              <tr><td className="k">Approx. weight</td><td className="v">{D.dimsExample.weight}</td></tr>
-            </tbody></table>
+      {/* DIMENSIONS — reacts to the chosen size + mounting */}
+      {D.dimsDrawing && (()=>{
+        const dRow = (size!=="all") ? (D.dims||{})[size+"-"+mount] : null;
+        return (
+        <section className="wrap section" style={{paddingTop:"0"}}>
+          <div className="df-step"><span className="n" style={{background:"var(--prp-ink)"}}>&#8942;</span><h2>Dimensions</h2></div>
+          <p className="df-note">Overall dimensions are set by <b>blade size &amp; mounting</b> &mdash; motor &amp; power affect weight, not A/B/C/D.{size==="all" ? " Pick a blade size in step 2 to see this configuration." : ""}</p>
+          <div className="df-dims">
+            <img src={A+"/products/"+D.dimsDrawing} alt="Penn Fan drum fan dimensioned drawing"/>
+            <div className="dt">
+              {size==="all"
+                ? <React.Fragment>
+                    <h3>{M.name}</h3>
+                    <div className="sub">Select a blade size above to see dimensions.</div>
+                  </React.Fragment>
+                : <React.Fragment>
+                    <h3>{size}&Prime; Drum Fan · {M.name}</h3>
+                    {dRow
+                      ? <React.Fragment>
+                          <div className="sub">{dRow.model}</div>
+                          <table><tbody>
+                            <tr><td className="k">A — Overall height</td><td className="v">{dRow.A}</td></tr>
+                            <tr><td className="k">B — Fan height</td><td className="v">{dRow.B}</td></tr>
+                            <tr><td className="k">C — Overall width</td><td className="v">{dRow.C}</td></tr>
+                            <tr><td className="k">D — Base depth</td><td className="v">{dRow.D}</td></tr>
+                            <tr><td className="k">Approx. weight</td><td className="v">{dRow.weight}</td></tr>
+                          </tbody></table>
+                        </React.Fragment>
+                      : <React.Fragment>
+                          <div className="sub">Exact dimensions confirmed at quote</div>
+                          <p style={{fontSize:"13.5px",color:"var(--fg-2,#4a5568)",lineHeight:1.55,margin:"4px 0 0"}}>
+                            We&rsquo;ll send exact A/B/C/D &amp; weight for your {size}&Prime; · {M.name} build with your quote.
+                            <a href={"contact.html?product="+encodeURIComponent("Penn Fan Drum Fan dimensions — "+size+"\" "+M.name)} style={{color:"var(--prp-blue-bright,#1f6fb2)",fontWeight:700,textDecoration:"none"}}> Ask for dimensions &#8594;</a>
+                          </p>
+                        </React.Fragment>}
+                  </React.Fragment>}
+            </div>
           </div>
-        </div>
-      </section>
-      )}
+          <p className="df-cap">Reference drawing: {D.dimsRefLabel}. Published dimensions currently cover this build; others confirmed at quote.</p>
+        </section>
+        );
+      })()}
 
       <section className="band">
         <div className="band-shade" style={{background:"var(--prp-navy)"}}></div>
