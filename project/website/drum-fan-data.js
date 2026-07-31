@@ -30,7 +30,8 @@ window.DRUM_FAN = {
   dimsDrawing: "cooling/drum/dims-d48.png",
   dimsRefLabel: "D48B7.5X · 48″ · Four Legs w/ Casters",
   dims: {
-    "48-4LWC": { model:"D48B7.5X-4LWC", A:'84.5"', B:'48.5"', C:'60"', D:'34.5"', weight:"~870 lbs" }
+    "48-4LWC": { model:"D48B7.5X-4LWC", A:'84.5"', B:'48.5"', C:'60"', D:'34.5"', weight:"~870 lbs",
+                 drawing:"cooling/drum/dims-d48.png" }
   },
   phases: [
     { key:"3", label:"3-Phase", volts:"208-230/460 V · 3-phase" },

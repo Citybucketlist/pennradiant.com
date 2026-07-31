@@ -21,7 +21,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="favicon.ico">
-<script src="drum-fan-data.js?v=2"></script>
+<script src="drum-fan-data.js?v=3"></script>
 <style>
 .df-hero{background:linear-gradient(180deg,var(--prp-gray-100,#f6f7f9),#fff);border-bottom:1px solid var(--prp-gray-100,#eef0f2)}
 .df-hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:center;padding:38px 0 30px}
@@ -80,7 +80,7 @@
 .df-cap{font-size:12.5px;color:var(--fg-3,#7a8794);margin:10px 2px 0}
 .df-dims{display:grid;grid-template-columns:1.3fr .7fr;gap:26px;align-items:center;border:1px solid var(--prp-gray-150);border-radius:14px;background:#fff;padding:20px 22px;margin-top:8px}
 @media(max-width:760px){.df-dims{grid-template-columns:1fr}}
-.df-dims img{max-width:100%;height:auto}
+.df-dims img{max-width:100%;max-height:340px;height:auto;object-fit:contain;display:block;margin:0 auto}
 .df-dims .dt h3{font-size:16px;margin:0 0 3px}
 .df-dims .dt .sub{font-size:12.5px;color:var(--fg-3,#7a8794);margin:0 0 12px}
 .df-dims table{width:100%;border-collapse:collapse;font-size:13.5px}
@@ -210,12 +210,14 @@ function App(){
       {/* DIMENSIONS — reacts to the chosen size + mounting */}
       {D.dimsDrawing && (()=>{
         const dRow = (size!=="all") ? (D.dims||{})[size+"-"+mount] : null;
+        const isDrawing = !!(dRow && dRow.drawing);
+        const illo = isDrawing ? dRow.drawing : M.img;   // dimensioned drawing where we have one, else the mount's own render
         return (
         <section className="wrap section" style={{paddingTop:"0"}}>
           <div className="df-step"><span className="n" style={{background:"var(--prp-ink)"}}>&#8942;</span><h2>Dimensions</h2></div>
           <p className="df-note">Overall dimensions are set by <b>blade size &amp; mounting</b> &mdash; motor &amp; power affect weight, not A/B/C/D.{size==="all" ? " Pick a blade size in step 2 to see this configuration." : ""}</p>
           <div className="df-dims">
-            <img src={A+"/products/"+D.dimsDrawing} alt="Penn Fan drum fan dimensioned drawing"/>
+            <img src={A+"/products/"+illo} alt={isDrawing ? "Penn Fan "+dRow.model+" dimensioned drawing" : "Penn Fan drum fan — "+M.name+" mount"}/>
             <div className="dt">
               {size==="all"
                 ? <React.Fragment>
@@ -245,7 +247,9 @@ function App(){
                   </React.Fragment>}
             </div>
           </div>
-          <p className="df-cap">Reference drawing: {D.dimsRefLabel}. Published dimensions currently cover this build; others confirmed at quote.</p>
+          <p className="df-cap">{isDrawing
+            ? <React.Fragment>Dimensioned drawing shown for {D.dimsRefLabel}.</React.Fragment>
+            : <React.Fragment>Illustration shows the <b>{M.name}</b> mount. Published dimensions currently cover {D.dimsRefLabel}; others confirmed at quote.</React.Fragment>}</p>
         </section>
         );
       })()}
