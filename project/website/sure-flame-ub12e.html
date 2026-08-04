@@ -56,13 +56,43 @@
 .iw-price{display:flex;flex-direction:column;line-height:1.05}
 .iw-price .pl{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--fg-3,#7a8794)}
 .iw-price .pv{font-size:26px;font-weight:900;color:var(--prp-ink)}
+.iw-gal{display:flex;flex-direction:column;align-items:center;gap:14px}
+.iw-gal .main{display:flex;align-items:center;justify-content:center;height:320px;width:100%}
+.iw-gal .main img{max-height:320px;max-width:100%;width:auto;object-fit:contain;filter:drop-shadow(0 14px 26px rgba(0,0,0,.16))}
+.iw-thumbs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.iw-thumbs button{width:66px;height:66px;border:1px solid var(--prp-gray-150);border-radius:9px;background:#fff;padding:5px;cursor:pointer;overflow:hidden}
+.iw-thumbs button:hover{border-color:var(--prp-blue-bright,#1f6fb2)}
+.iw-thumbs button.on{border-color:var(--prp-blue-bright,#1f6fb2);box-shadow:0 0 0 1px var(--prp-blue-bright,#1f6fb2)}
+.iw-thumbs img{width:100%;height:100%;object-fit:contain}
 </style>
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel" src="site.jsx?v=26"></script>
 <script type="text/babel">
+const { useState } = React;
 const A = PRP_A, I = PRP_I;
+const GALLERY = [
+  { src:"cooling/ub12e/ub12e.png",       alt:"Sure Flame UB12E explosion-proof blower — side" },
+  { src:"cooling/ub12e/ub12e-front.png", alt:"Sure Flame UB12E — outlet / fan side" },
+  { src:"cooling/ub12e/ub12e-cable.png", alt:"Sure Flame UB12E — with wrapped power cable" },
+  { src:"cooling/ub12e/ub12e-inlet.png", alt:"Sure Flame UB12E — inlet" },
+];
+function Gallery(){
+  const [i,setI] = useState(0);
+  return (
+    <div className="iw-gal">
+      <div className="main"><img src={A+"/products/"+GALLERY[i].src} alt={GALLERY[i].alt}/></div>
+      <div className="iw-thumbs">
+        {GALLERY.map((g,j)=>(
+          <button key={j} className={j===i?"on":""} onClick={()=>setI(j)} aria-label={g.alt}>
+            <img src={A+"/products/"+g.src} alt=""/>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 const SPECS = [
   ["Air delivery", "2,900 CFM (2,930 @ 0″ w.g.)"],
   ["Fan / ducting", "12″ · ductable both ends"],
@@ -105,7 +135,7 @@ function App(){
           </div>
           <span className="iw-note" style={{display:"block",marginTop:"10px"}}>Confirm current pricing &amp; availability · 1.800.438.2503</span>
         </div>
-        <div className="pic"><img src={A+"/products/cooling/ub12e/ub12e.png"} alt="Sure Flame UB12E explosion-proof blower"/></div>
+        <Gallery/>
       </div></section>
       <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="cooling.html">Cooling</a><I.chevR width="14" height="14"/><span>Sure Flame UB12E</span></div>
 
