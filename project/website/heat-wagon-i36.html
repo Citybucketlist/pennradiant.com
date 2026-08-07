@@ -53,13 +53,45 @@
 .iw-parts .eb{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--prp-blue-bright,#1f6fb2)}
 .iw-parts b{font-size:16px;color:var(--prp-ink)}
 .iw-parts .sub{font-size:13.5px;color:var(--fg-2,#4a5568);line-height:1.45}
+.iw-gal{display:flex;flex-direction:column;align-items:center;gap:14px}
+.iw-gal .main{display:flex;align-items:center;justify-content:center;height:320px;width:100%}
+.iw-gal .main img{max-height:320px;max-width:100%;width:auto;object-fit:contain;filter:drop-shadow(0 14px 26px rgba(0,0,0,.16))}
+.iw-thumbs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.iw-thumbs button{width:66px;height:66px;border:1px solid var(--prp-gray-150);border-radius:9px;background:#fff;padding:5px;cursor:pointer;overflow:hidden}
+.iw-thumbs button:hover{border-color:var(--prp-blue-bright,#1f6fb2)}
+.iw-thumbs button.on{border-color:var(--prp-blue-bright,#1f6fb2);box-shadow:0 0 0 1px var(--prp-blue-bright,#1f6fb2)}
+.iw-thumbs img{width:100%;height:100%;object-fit:contain}
+.iw-dims{border:1px solid var(--prp-gray-150);border-radius:14px;background:#fff;padding:20px 22px;margin-top:30px}
+.iw-dims img{max-width:100%;height:auto;display:block;margin:6px auto 0}
 </style>
 </head>
 <body>
 <div id="root"></div>
 <script type="text/babel" src="site.jsx?v=26"></script>
 <script type="text/babel">
+const { useState } = React;
 const A = PRP_A, I = PRP_I;
+const SPEC_PDF = A+"/products/cooling/i36/i36-spec-sheet.pdf";
+const GALLERY = [
+  { src:"cooling/i36/i36.png",        alt:"Heat Wagon i36 mancooler — upright on tilt stand" },
+  { src:"cooling/i36/i36-tilted.png", alt:"Heat Wagon i36 — tilted position" },
+  { src:"cooling/i36/i36-caster.png", alt:"Heat Wagon i36 — heavy-duty locking caster" },
+];
+function Gallery(){
+  const [i,setI] = useState(0);
+  return (
+    <div className="iw-gal">
+      <div className="main"><img src={A+"/products/"+GALLERY[i].src} alt={GALLERY[i].alt}/></div>
+      <div className="iw-thumbs">
+        {GALLERY.map((g,j)=>(
+          <button key={j} className={j===i?"on":""} onClick={()=>setI(j)} aria-label={g.alt}>
+            <img src={A+"/products/"+g.src} alt=""/>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 const SPECS = [
   ["Air delivery", "25,500 CFM (free air)"],
   ["Fan diameter", "36″"],
@@ -98,10 +130,11 @@ function App(){
           </div>
           <div className="iw-cta">
             <a className="btn btn-blue" href={quote}>Request a Quote</a>
-            <span className="iw-note">Quoted by application · confirm current pricing</span>
+            <a className="btn btn-outline" href={SPEC_PDF} target="_blank" rel="noreferrer">Spec Sheet (PDF)</a>
           </div>
+          <span className="iw-note" style={{display:"block",marginTop:"10px"}}>Quoted by application · confirm current pricing</span>
         </div>
-        <div className="pic"><img src={A+"/products/cooling/i36/i36.png"} alt="Heat Wagon i36 portable industrial mancooler on a tilt stand with casters"/></div>
+        <Gallery/>
       </div></section>
       <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="cooling.html">Cooling</a><I.chevR width="14" height="14"/><span>Heat Wagon i36</span></div>
 
@@ -121,6 +154,11 @@ function App(){
               {FEATS.map((f,i)=>(<li key={i}><i>&#9656;</i>{f}</li>))}
             </ul>
           </div>
+        </div>
+
+        <div className="iw-dims">
+          <h2 className="iw-h2">Dimensions</h2>
+          <img src={A+"/products/cooling/i36/i36-measurements.png"} alt="Heat Wagon i36 dimensions — 36″ fan diameter, 77″ tall, 50″ wide, 34″ deep"/>
         </div>
 
         <div className="iw-parts">
