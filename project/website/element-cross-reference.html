@@ -21,7 +21,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="favicon.ico">
-<script src="element-xref-data.js?v=1"></script>
+<script src="element-xref-data.js?v=2"></script>
 <style>
 .xr-box{display:flex;gap:10px;max-width:640px;margin:2px 0 6px}
 .xr-box .fld{flex:1;display:flex;align-items:center;gap:9px;border:1px solid var(--prp-gray-300);border-radius:var(--r-md);padding:11px 14px;background:#fff}
@@ -62,6 +62,7 @@
 .xr-brandnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .xr-brandnav a{font-size:12.5px;font-weight:800;background:#fff;border:1px solid var(--prp-gray-150);color:var(--prp-ink);padding:7px 13px;border-radius:999px;text-decoration:none}
 .xr-brandnav a:hover{border-color:var(--prp-red);color:var(--prp-red)}
+.xr-equiv{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.02em;color:#9a6a00;background:#fff6e0;border:1px solid #f0d68a;padding:3px 8px;border-radius:6px;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -74,16 +75,16 @@
   <table border="1" cellpadding="6" cellspacing="0">
     <thead><tr><th>Our Element</th><th>Brand</th><th>Watts / Volts</th><th>Fits Heater Models</th><th>Also Replaces</th></tr></thead>
     <tbody id="xr-static">
-      <tr><td><a href="aitken-element.html?pn=HE20208">HE20208</a></td><td>Aitken</td><td>2000 W / 208 V</td><td>CH-220-1A, CH-220-1C, CH-620-3A, CH-620-3C, FHK-220-1A, FHK-620-3A, OH-2028, OH-628, PPH-628</td><td>Fostoria / TPI: 642-21002, 641-35661, 641-70241, 04877702, UPC 686334-445832 | Spectrum / Comfort: GL208R2000</td></tr>
-      <tr><td><a href="aitken-element.html?pn=HE20240">HE20240</a></td><td>Aitken</td><td>2000 W / 240 V</td><td>CH-224-1A, CH-224-1C, CH-624-3A, CH-624-3C, FHK-224-1A, FHK-624-3A, OH-202, OH-623, PPH-623</td><td>Fostoria / TPI: 642-21004, 641-35611, 641-70251, 04877902, UPC 686334-445795 | Chromalox: UTUA-224LT, PCN 106016 | Spectrum / Comfort: GL240R2000</td></tr>
-      <tr><td><a href="fostoria-elements.html">642-21005</a></td><td>Fostoria / TPI · direct replacement</td><td>2000 W / 277 V</td><td>CH-227-1A, CH-227-1C, CH-627-3A, CH-627-3C, FHK-227-1A, FHK-627-3A</td><td>Fostoria / TPI: 642-21005, 641-36051, 641-70261, 04878002, UPC 686334-445849 | Spectrum / Comfort: GL277R2000</td></tr>
-      <tr><td><a href="aitken-element.html?pn=HE20480">HE20480</a></td><td>Aitken</td><td>2000 W / 480 V</td><td>CH-248-1A, CH-248-1C, CH-648-3A, CH-648-3C, FHK-248-1A, FHK-648-3A, OH-204, OH-643, PPH-643</td><td>Fostoria / TPI: 642-21008, 641-35621, 641-70271, 04878302, UPC 686334-445801 | Chromalox: UTUA-248LT, PCN 106024 | Spectrum / Comfort: GL480R2000</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE20208">HE20208</a></td><td>Aitken</td><td>2000 W / 208 V</td><td>CH-220-1A, CH-220-1C, CH-620-3A, CH-620-3C, FHK-220-1A, FHK-620-3A, OH-2028, OH-628, PPH-628</td><td>Fostoria / TPI: 642-21002, 641-35661, 641-70241, 04877702, UPC 686334-445832 | Spectrum / Comfort: GL208R2000 (electrical equiv — confirm fit)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE20240">HE20240</a></td><td>Aitken</td><td>2000 W / 240 V</td><td>CH-224-1A, CH-224-1C, CH-624-3A, CH-624-3C, FHK-224-1A, FHK-624-3A, OH-202, OH-623, PPH-623</td><td>Fostoria / TPI: 642-21004, 641-35611, 641-70251, 04877902, UPC 686334-445795 | Chromalox: UTUA-224LT, PCN 106016 | Spectrum / Comfort: GL240R2000 (electrical equiv — confirm fit)</td></tr>
+      <tr><td><a href="fostoria-elements.html">642-21005</a></td><td>Fostoria / TPI · direct replacement</td><td>2000 W / 277 V</td><td>CH-227-1A, CH-227-1C, CH-627-3A, CH-627-3C, FHK-227-1A, FHK-627-3A</td><td>Fostoria / TPI: 642-21005, 641-36051, 641-70261, 04878002, UPC 686334-445849 | Spectrum / Comfort: GL277R2000 (electrical equiv — confirm fit)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE20480">HE20480</a></td><td>Aitken</td><td>2000 W / 480 V</td><td>CH-248-1A, CH-248-1C, CH-648-3A, CH-648-3C, FHK-248-1A, FHK-648-3A, OH-204, OH-643, PPH-643</td><td>Fostoria / TPI: 642-21008, 641-35621, 641-70271, 04878302, UPC 686334-445801 | Chromalox: UTUA-248LT, PCN 106024 | Spectrum / Comfort: GL480R2000 (electrical equiv — confirm fit)</td></tr>
       <tr><td><a href="aitken-element.html?pn=HE20600">HE20600</a></td><td>Aitken</td><td>2000 W / 600 V</td><td>CH-257-1A, CH-257-1C, CH-657-3A, CH-657-3C, FHK-257-1A, FHK-657-3A, OH-206, OH-663, PPH-663</td><td>Fostoria / TPI: 642-21009, 641-50011, 641-70281, 04878402, UPC 686334-445887</td></tr>
-      <tr><td><a href="aitken-element.html?pn=HE45208">HE45208</a></td><td>Aitken</td><td>4500 W / 208 V</td><td>CH-420-1A, CH-420-1C, CH-1320-3A, CH-1320-3B, CH-2720-3B, CH-2720-3C, FHK-420-1A, FHK-1320-3A, OH-4528, PHX-4528, SH-13528</td><td>Fostoria / TPI: 642-21010, 641-36061, 641-70001, 04878502, UPC 686334-445856 | Spectrum / Comfort: GL208R4500</td></tr>
-      <tr><td><a href="aitken-element.html?pn=HE45240">HE45240</a></td><td>Aitken</td><td>4500 W / 240 V</td><td>CH-424-1A, CH-424-1C, CH-1324-3A, CH-1324-3B, CH-2724-3B, CH-2724-3C, FHK-424-1A, FHK-1324-3A, OH-452, PHX-452, SH-135231</td><td>Fostoria / TPI: 642-21012, 641-35631, 641-70011, 04878702, UPC 686334-445818 | Chromalox: UTUA-424LT, PCN 106032 | Spectrum / Comfort: GL240R4500</td></tr>
-      <tr><td><a href="fostoria-elements.html">642-21013</a></td><td>Fostoria / TPI · direct replacement</td><td>4500 W / 277 V</td><td>CH-427-1A, CH-427-1C, CH-1327-3A, CH-1327-3B, FHK-427-1A, FHK-1327-3A</td><td>Fostoria / TPI: 642-21013, 641-36071, 641-70021, 04878802, UPC 686334-445863 | Spectrum / Comfort: GL277R4500</td></tr>
-      <tr><td><a href="aitken-element.html?pn=HE45480">HE45480</a></td><td>Aitken</td><td>4500 W / 480 V</td><td>CH-448-1A, CH-448-1C, CH-1348-3A, CH-1348-3B, CH-2748-3B, CH-2748-3C, FHK-448-1A, FHK-1348-3A, OH-454, PHX-454, SH-135431</td><td>Fostoria / TPI: 642-21016, 641-35641, 641-70031, 04879102, UPC 686334-446174 | Chromalox: UTUA-448LT, PCN 106040 | Spectrum / Comfort: GL480R4500</td></tr>
-      <tr><td><a href="aitken-element.html?pn=HE45600">HE45600</a></td><td>Aitken</td><td>4500 W / 600 V</td><td>CH-457-1A, CH-457-1C, CH-1357-3A, CH-1357-3B, CH-2757-3B, CH-2757-3C, FHK-457-1A, FHK-1357-3A, OH-456, PHX-456, SH-13563</td><td>Fostoria / TPI: 642-21017, 641-50021, 641-70041, 04879202, UPC 686334-445894 | Spectrum / Comfort: GL600R4500</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE45208">HE45208</a></td><td>Aitken</td><td>4500 W / 208 V</td><td>CH-420-1A, CH-420-1C, CH-1320-3A, CH-1320-3B, CH-2720-3B, CH-2720-3C, FHK-420-1A, FHK-1320-3A, OH-4528, PHX-4528, SH-13528</td><td>Fostoria / TPI: 642-21010, 641-36061, 641-70001, 04878502, UPC 686334-445856 | Spectrum / Comfort: GL208R4500 (electrical equiv — confirm fit)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE45240">HE45240</a></td><td>Aitken</td><td>4500 W / 240 V</td><td>CH-424-1A, CH-424-1C, CH-1324-3A, CH-1324-3B, CH-2724-3B, CH-2724-3C, FHK-424-1A, FHK-1324-3A, OH-452, PHX-452, SH-135231</td><td>Fostoria / TPI: 642-21012, 641-35631, 641-70011, 04878702, UPC 686334-445818 | Chromalox: UTUA-424LT, PCN 106032 | Spectrum / Comfort: GL240R4500 (electrical equiv — confirm fit)</td></tr>
+      <tr><td><a href="fostoria-elements.html">642-21013</a></td><td>Fostoria / TPI · direct replacement</td><td>4500 W / 277 V</td><td>CH-427-1A, CH-427-1C, CH-1327-3A, CH-1327-3B, FHK-427-1A, FHK-1327-3A</td><td>Fostoria / TPI: 642-21013, 641-36071, 641-70021, 04878802, UPC 686334-445863 | Spectrum / Comfort: GL277R4500 (electrical equiv — confirm fit)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE45480">HE45480</a></td><td>Aitken</td><td>4500 W / 480 V</td><td>CH-448-1A, CH-448-1C, CH-1348-3A, CH-1348-3B, CH-2748-3B, CH-2748-3C, FHK-448-1A, FHK-1348-3A, OH-454, PHX-454, SH-135431</td><td>Fostoria / TPI: 642-21016, 641-35641, 641-70031, 04879102, UPC 686334-446174 | Chromalox: UTUA-448LT, PCN 106040 | Spectrum / Comfort: GL480R4500 (electrical equiv — confirm fit)</td></tr>
+      <tr><td><a href="aitken-element.html?pn=HE45600">HE45600</a></td><td>Aitken</td><td>4500 W / 600 V</td><td>CH-457-1A, CH-457-1C, CH-1357-3A, CH-1357-3B, CH-2757-3B, CH-2757-3C, FHK-457-1A, FHK-1357-3A, OH-456, PHX-456, SH-13563</td><td>Fostoria / TPI: 642-21017, 641-50021, 641-70041, 04879202, UPC 686334-445894 | Spectrum / Comfort: GL600R4500 (electrical equiv — confirm fit)</td></tr>
       <tr><td><a href="fostoria-elements.html">642-21001</a></td><td>Fostoria / TPI · direct replacement</td><td>1800 W / 120 V</td><td>CH-212-1A, CH-212-1C, FHK-212-1CA</td><td>Fostoria / TPI: 642-21001, 641-37211, 641-70321, 04877602, UPC 686334-445870</td></tr>
     </tbody>
   </table>
@@ -113,6 +114,7 @@ function Nums({f}){
       {(f.nums||[]).map((n,j)=><span className="xr-alt" key={j}>{n}</span>)}
       {f.upc && <span className="xr-alt"><small>UPC</small>&nbsp;{f.upc}</span>}
       {f.pcn && <span className="xr-alt"><small>PCN</small>&nbsp;{f.pcn}</span>}
+      {f.equiv && <span className="xr-equiv">electrical equiv · confirm fit</span>}
     </div>
   );
 }
@@ -176,7 +178,7 @@ function App(){
       {BRANDS.map(b=>{ const rows=brandRows(b.key); return (
         <section className="wrap section" style={{paddingTop:"0"}} id={b.slug} key={b.slug}>
           <div className="xr-secthead"><h2><span className="lt">{b.key}</span> element replacements</h2></div>
-          <p className="xr-blurb">{b.blurb}</p>
+          <p className="xr-blurb" dangerouslySetInnerHTML={{__html:b.blurb}}/>
           <div className="xr-wrap"><table className="xr-table">
             <thead><tr><th>{b.key} number(s)</th><th>Fits Models</th><th>Watts / Volts</th><th>Our Replacement</th></tr></thead>
             <tbody>{rows.map((r,i)=>{ const f=(r.refs||[]).find(x=>x.brand===b.key)||{}; return (
