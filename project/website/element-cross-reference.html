@@ -21,7 +21,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="favicon.ico">
-<script src="element-xref-data.js?v=2"></script>
+<script src="element-xref-data.js?v=3"></script>
 <style>
 .xr-box{display:flex;gap:10px;max-width:640px;margin:2px 0 6px}
 .xr-box .fld{flex:1;display:flex;align-items:center;gap:9px;border:1px solid var(--prp-gray-300);border-radius:var(--r-md);padding:11px 14px;background:#fff}
@@ -63,6 +63,13 @@
 .xr-brandnav a{font-size:12.5px;font-weight:800;background:#fff;border:1px solid var(--prp-gray-150);color:var(--prp-ink);padding:7px 13px;border-radius:999px;text-decoration:none}
 .xr-brandnav a:hover{border-color:var(--prp-red);color:var(--prp-red)}
 .xr-equiv{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.02em;color:#9a6a00;background:#fff6e0;border:1px solid #f0d68a;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.xr-heaters{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 20px}
+.xr-heater{display:flex;flex-direction:column;align-items:center;width:132px}
+.xr-heater .ph{width:132px;height:152px;background:#fff;border:1px solid var(--prp-gray-150);border-radius:12px;display:flex;align-items:center;justify-content:center;padding:10px}
+.xr-heater .ph img{max-width:100%;max-height:100%;object-fit:contain}
+.xr-heater .cap{font-size:12.5px;font-weight:800;color:var(--prp-ink);margin-top:7px;text-align:center;line-height:1.25}
+.xr-heater .sub{font-size:11px;color:var(--fg-3,#7a8794);text-align:center;line-height:1.2}
+.xr-heatlbl{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--fg-3,#7a8794);margin:0 0 9px}
 </style>
 </head>
 <body>
@@ -179,6 +186,20 @@ function App(){
         <section className="wrap section" style={{paddingTop:"0"}} id={b.slug} key={b.slug}>
           <div className="xr-secthead"><h2><span className="lt">{b.key}</span> element replacements</h2></div>
           <p className="xr-blurb" dangerouslySetInnerHTML={{__html:b.blurb}}/>
+          {b.heaters && b.heaters.length ? (
+            <React.Fragment>
+              <p className="xr-heatlbl">Heaters these elements fit &mdash; for reference</p>
+              <div className="xr-heaters">
+                {b.heaters.map((h,i)=>(
+                  <figure className="xr-heater" key={i}>
+                    <span className="ph"><img src={A+"/products/elements/"+h.img} alt={b.key+" "+h.cap+" heater"} loading="lazy"/></span>
+                    <figcaption className="cap">{h.cap}</figcaption>
+                    <div className="sub">{h.sub}</div>
+                  </figure>
+                ))}
+              </div>
+            </React.Fragment>
+          ) : null}
           <div className="xr-wrap"><table className="xr-table">
             <thead><tr><th>{b.key} number(s)</th><th>Fits Models</th><th>Watts / Volts</th><th>Our Replacement</th></tr></thead>
             <tbody>{rows.map((r,i)=>{ const f=(r.refs||[]).find(x=>x.brand===b.key)||{}; return (
