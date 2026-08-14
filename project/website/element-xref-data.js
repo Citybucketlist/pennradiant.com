@@ -88,7 +88,9 @@ window.ELEMENT_XREF_BRANDS = [
   { key:"Chromalox", slug:"chromalox",
     blurb:"Chromalox UTUA-LT tubular elements (INCOLOY sheath, 9/16-18 bulkhead fittings) cross-reference directly to our Aitken HE-series elements for OH, SH, PPH and PHX radiant heaters.",
     heaters:[{ img:"heaters/chromalox-chromastar.png", cap:"Chromalox ChromaStar", sub:"infrared radiant" }] },
-  { key:"Spectrum / Comfort", slug:"spectrum-comfort",
+  // Spectrum / Comfort: kept here for internal reference, but HIDDEN from the public
+  // page per Mike Lieb (2026-08-13 — on the back burner). Set active:true to relist.
+  { key:"Spectrum / Comfort", slug:"spectrum-comfort", active:false,
     blurb:"Spectrum Rail Heating no longer sells the Comfort IR / HB / RFX heaters. Their GL-series elements are an INCOLOY-840 hairpin (0.375\" dia.) — a different physical form than our U-Rod, so these are matched on \u003cb\u003ewattage \u0026 voltage only\u003c/b\u003e. Send us your heater model \u0026 serial and we\u2019ll confirm the right element before you order.",
     heaters:[
       { img:"heaters/comfort-ir.png", cap:"Comfort IR", sub:"infrared" },
