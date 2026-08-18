@@ -20,6 +20,19 @@ window.CERAMIC_HEATERS = [
     ],
     modelHead:["Model","Btu output"],
     feats:["Special honeycomb-design tiles for increased radiant output","24-volt direct-spark ignition with 120/24V transformer included","Indirect-vented operation","100% gas shut-off safety control","Optional reverb screen for added safety","10 BTU sizes — 30,000 to 160,000 BTU"],
+    gallery:{
+      intro:"The DK line scales by cabinet size — more honeycomb tiles mean more radiant output. Here are representative sizes across the range; all ten BTU ratings (30,000–160,000) are listed below.",
+      models:[
+        { img:"dk/dk-40.png",  model:"DK 40",  btu:"40,000 BTU" },
+        { img:"dk/dk-80.png",  model:"DK 80",  btu:"80,000 BTU" },
+        { img:"dk/dk-120.png", model:"DK 120", btu:"120,000 BTU" },
+        { img:"dk/dk-160.png", model:"DK 160", btu:"160,000 BTU" },
+      ],
+      details:[
+        { img:"dk/dk-burner-front.jpg", cap:"Honeycomb tiles & burner", sub:"special honeycomb-design ceramic tiles for higher radiant output" },
+        { img:"dk/dk-back.jpg", cap:"Back — controls & venting", sub:"24V direct-spark ignition, indirect-vented, 100% gas shut-off" },
+      ],
+    },
   },
   {
     slug:"rsca", brand:"Space-Ray", brandLogo:"space-ray.png", name:"RSCA Series",
