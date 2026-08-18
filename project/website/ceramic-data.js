@@ -52,6 +52,14 @@ window.CERAMIC_HEATERS = [
     modelHead:["Model","Btu output","Options"],
     note:"Order code: add –N (natural gas) or –L (propane), and –5 (24V direct spark) or –1 (millivolt standing pilot). e.g. RSCA6-N5.",
     install:{ img:"rsca/rsca-10-install.jpg", cap:"Space-Ray RSCA 10 units installed along a warehouse wall." },
+    gallery:{
+      intro:"The RSCA line comes in three sizes — RSCA3, RSCA6 and RSCA10 — adding emitter length and radiant output as they scale. All three run the same iron-oxide-coated emitter with an included reverb screen.",
+      models:[
+        { img:"rsca/rsca-3.png",  model:"RSCA3",  btu:"26,000 BTU" },
+        { img:"rsca/rsca-6.png",  model:"RSCA6",  btu:"52,000 BTU" },
+        { img:"rsca/rsca-10.png", model:"RSCA10", btu:"104,000 BTU" },
+      ],
+    },
     feats:["10-year limited warranty on the emitter","24V direct-spark ignition or millivolt standing pilot","Iron-oxide-coated emitter surface for higher emissivity","Reverb screen included for a secondary radiating surface & safety","Natural gas or propane","Three sizes — RSCA3 / RSCA6 / RSCA10"],
   },
 ];
