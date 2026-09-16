@@ -23,7 +23,28 @@
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="hw-parts-data.js?v=1"></script>
   <link rel="shortcut icon" href="favicon.ico">
+<style>
+.hwf-head p{font-size:14.5px;color:var(--fg-2,#4a5568);margin:4px 0 12px;max-width:720px;line-height:1.5}
+.hwf-box{display:flex;align-items:center;gap:9px;border:1px solid var(--prp-gray-300);border-radius:var(--r-md,10px);padding:11px 14px;background:#fff;max-width:640px}
+.hwf-box input{border:0;outline:none;font-size:15px;font-family:inherit;width:100%;background:transparent}
+.hwf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:16px}
+.hwf-card{display:flex;flex-direction:column;border:1px solid var(--prp-gray-150);border-radius:10px;overflow:hidden;background:#fff;text-decoration:none;color:var(--prp-ink);transition:border-color .15s,box-shadow .15s}
+.hwf-card:hover{border-color:var(--prp-red);box-shadow:0 6px 18px rgba(0,0,0,.09)}
+.hwf-card .ph{height:150px;display:flex;align-items:center;justify-content:center;padding:12px;border-bottom:1px solid var(--prp-gray-100,#f3f4f6);color:#9aa6b0;font-size:12px;font-style:italic}
+.hwf-card .ph img{max-width:100%;max-height:100%;object-fit:contain}
+.hwf-card .ph img.ctx{opacity:.85}
+.hwf-card .body{padding:10px 12px 12px}
+.hwf-card .pn{font-weight:900;font-size:15.5px}
+.hwf-card .nm{font-size:13px;color:var(--fg-2,#4a5568);margin-top:2px;line-height:1.3}
+.hwf-card .pr{font-size:13px;margin-top:6px;color:var(--fg-2,#4a5568)}
+.hwf-card .pr b{color:var(--prp-ink)}
+.hwf-card .pr .q{color:var(--prp-blue,#1f6fb2);font-weight:800}
+.hwf-card .md{font-size:12px;color:var(--fg-3,#7a8794);margin-top:5px;line-height:1.35}
+.hwf-none{font-size:14px;color:var(--fg-2,#4a5568);margin-top:14px}
+.hwf-none a{color:var(--prp-red);font-weight:700}
+</style>
 </head>
 <body>
 <div id="root"></div>
@@ -80,6 +101,36 @@ function CatCard({ m }) {
   );
 }
 
+const HWP = window.HW_PARTS||[];
+const hwCollapse = s => (s||"").toLowerCase().replace(/[^a-z0-9]/g,"");
+const hwMoney = n => "$"+Number(n).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+function HWFinder(){
+  const [q,setQ]=React.useState("");
+  const qc=hwCollapse(q); let res=[];
+  if(qc.length>=2){
+    res=HWP.map(p=>{const pnc=hwCollapse(p.pn);let s=-1;
+      if(pnc===qc)s=0;else if(pnc.startsWith(qc))s=1;else if(pnc.includes(qc))s=2;
+      else if((p.nm+" "+(p.desc||"")).toLowerCase().includes(q.toLowerCase()))s=3;
+      else if((p.models||[]).some(m=>hwCollapse(m).includes(qc)))s=4;
+      return s<0?null:[s,p];}).filter(Boolean).sort((a,b)=>a[0]-b[0]||a[1].pn.localeCompare(b[1].pn)).slice(0,24).map(x=>x[1]);
+  }
+  return (
+    <section className="wrap section" style={{paddingTop:"6px",paddingBottom:"4px"}}>
+      <div className="hwf-head"><div className="eyebrow">Find a part by number</div><p>Type a Heat Wagon or Sure Flame part number, a description, or a heater model. Every part shows its 2026-2027 list price and the models it fits.</p></div>
+      <div className="hwf-box"><I.search width="18" height="18" style={{color:"var(--prp-gray-500)",flex:"none"}}/><input value={q} onChange={e=>setQ(e.target.value)} placeholder="Part #, description or model, e.g. E10215, electrode, DF400"/></div>
+      {qc.length>=2 && (res.length
+        ? <div className="hwf-grid">{res.map(p=>(
+            <a className="hwf-card" key={p.id} href={"hw-part-detail.html?pn="+encodeURIComponent(p.id)}>
+              <div className="ph">{p.gallery&&p.gallery[0]?<img src={A+"/products/"+p.gallery[0]} alt={p.pn}/>:p.context?<img className="ctx" src={A+"/products/"+p.context} alt=""/>:<span>No image</span>}</div>
+              <div className="body"><div className="pn">{p.pn}</div><div className="nm">{p.nm}</div>
+                <div className="pr">{p.price!=null?<span>List <b>{hwMoney(p.price)}</b></span>:<span className="q">Request a Quote</span>}</div>
+                <div className="md">{(p.models||[]).slice(0,4).join(", ")}{(p.models||[]).length>4?" +"+((p.models||[]).length-4)+" more":""}</div></div>
+            </a>))}</div>
+        : <p className="hwf-none">No match for "{q}" in our published parts. <a href={"contact.html?part="+encodeURIComponent(q)}>Send it to our parts team</a> and we will identify it from your model and serial number.</p>)}
+    </section>
+  );
+}
+
 function App() {
   return (
     <React.Fragment>
@@ -95,6 +146,7 @@ function App() {
         <a href="gas-heating.html">Gas Heating</a><I.chevR width="14" height="14"/>
         <span>Heat Wagon Factory Parts</span>
       </div>
+      <HWFinder />
 
       <section className="wrap section" style={{paddingTop:"6px"}}>
         <div className="catbar">

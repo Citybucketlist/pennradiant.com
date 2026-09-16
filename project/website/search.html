@@ -13,6 +13,7 @@
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="favicon.ico">
 <script src="sr-parts-data.js?v=21"></script>
+<script src="hw-parts-data.js?v=1"></script>
 <script src="aitken-data.js?v=2"></script>
 <script src="fostoria-data.js?v=2"></script>
 <script src="portable-data.js?v=2"></script>
@@ -60,6 +61,12 @@ function buildIndex(){
     extra:((p.models||[]).join(" ")+" "+(p.group||"")),
     src:(p.gallery&&p.gallery[0])?A+"/products/"+p.gallery[0]:null, href:"part-detail.html?pn="+encodeURIComponent(p.id)
   }));
+  (window.HW_PARTS||[]).forEach(p=>out.push({
+    pn:p.pn, nm:p.nm, cat:(/^SFP$/i.test(p.prefix||"")?"Sure Flame":"Heat Wagon")+" · Replacement Part",
+    extra:((p.models||[]).join(" ")+" "+(p.desc||"")),
+    src:(p.gallery&&p.gallery[0])?A+"/products/"+p.gallery[0]:(p.context?A+"/products/"+p.context:null), href:"hw-part-detail.html?pn="+encodeURIComponent(p.id)
+  }));
+
   (window.AITKEN_PARTS||[]).forEach(p=>{ const s=p.specs||{};
     out.push({ pn:p.pn, nm:p.nm, cat:p.cat==="quartz"?"Aitken · Quartz Element":"Aitken · Element",
       alt:xrefNums(p.xref),

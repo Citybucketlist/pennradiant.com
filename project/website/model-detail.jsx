@@ -25,7 +25,7 @@ function PartsTable({ group, qmap, setQ }) {
     <table className="parts-table">
       <thead><tr>
         <th className="no-col">Item</th><th>Part #</th><th>Description</th>
-        <th className="price-col">Net Price</th><th className="qty-col">Qty</th><th className="act-col"></th>
+        <th className="price-col">List Price</th><th className="qty-col">Qty</th><th className="act-col"></th>
       </tr></thead>
       <tbody>
         {group.parts.map((p)=>{
@@ -150,7 +150,7 @@ function ModelApp() {
           </div>
         )}
 
-        <p className="prp-caption" style={{marginTop:"18px"}}>Net prices shown are from the Penn Radiant catalog and may change — confirm current pricing &amp; availability at 1.800.438.2503.</p>
+        <p className="prp-caption" style={{marginTop:"18px"}}>List prices shown are Heat Wagon 2026-2027 list prices and may change — confirm current pricing &amp; availability at 1.800.438.2503.</p>
       </section>
 
       <div className={"quotebar"+(totalItems>0?" show":"")}><div className="wrap inner">
