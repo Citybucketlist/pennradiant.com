@@ -14,6 +14,7 @@
   <link rel="shortcut icon" href="favicon.ico">
 <script src="sr-parts-data.js?v=21"></script>
 <script src="hw-parts-data.js?v=5"></script>
+<script src="hw-model-xref.js?v=1"></script>
 <script src="aitken-data.js?v=2"></script>
 <script src="fostoria-data.js?v=2"></script>
 <script src="portable-data.js?v=2"></script>
@@ -63,7 +64,7 @@ function buildIndex(){
   }));
   (window.HW_PARTS||[]).forEach(p=>out.push({
     pn:p.pn, nm:p.nm, cat:(/^SFP$/i.test(p.prefix||"")?"Sure Flame":"Heat Wagon")+" · Replacement Part",
-    extra:((p.models||[]).join(" ")+" "+(p.desc||"")),
+    extra:((p.models||[]).join(" ")+" "+(p.desc||"")+" "+(p.models||[]).flatMap(m=>(window.HW_MODEL_XREF||{})[m]||[]).map(x=>x.brand+" "+x.model).join(" ")),
     src:(p.gallery&&p.gallery[0])?A+"/products/"+p.gallery[0]:(p.context?A+"/products/"+p.context:null), href:"hw-part-detail.html?pn="+encodeURIComponent(p.id)
   }));
 

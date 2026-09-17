@@ -24,6 +24,7 @@
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <script src="hw-parts-data.js?v=5"></script>
+<script src="hw-model-xref.js?v=1"></script>
   <link rel="shortcut icon" href="favicon.ico">
 <style>
 .hwf-head p{font-size:14.5px;color:var(--fg-2,#4a5568);margin:4px 0 12px;max-width:720px;line-height:1.5}
@@ -121,7 +122,7 @@ function HWFinder(){
     res=HWP.map(p=>{const pnc=hwCollapse(p.pn);let s=-1;
       if(pnc===qc)s=0;else if(pnc.startsWith(qc))s=1;else if(pnc.includes(qc))s=2;
       else if((p.nm+" "+(p.desc||"")).toLowerCase().includes(q.toLowerCase()))s=3;
-      else if((p.models||[]).some(m=>hwCollapse(m).includes(qc)))s=4;
+      else if((p.models||[]).some(m=>hwCollapse(m).includes(qc)) || (p.models||[]).flatMap(m=>(window.HW_MODEL_XREF||{})[m]||[]).some(x=>hwCollapse(x.model).includes(qc)))s=4;
       return s<0?null:[s,p];}).filter(Boolean).sort((a,b)=>a[0]-b[0]||a[1].pn.localeCompare(b[1].pn)).slice(0,24).map(x=>x[1]);
   }
   return (
