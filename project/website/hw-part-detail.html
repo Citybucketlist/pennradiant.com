@@ -72,7 +72,10 @@ const PAGE = {}; MODELS.forEach(m => { if (m.page) PAGE[m.model] = m.page; });
 const P = PARTS.find(x => x.id === PARAMS.get("pn"));
 const money = n => "$" + Number(n).toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2});
 const brandOf = p => /^SFP$/i.test(p.prefix || "") ? "Sure Flame" : "Heat Wagon";
-const cap = s => s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
+const cap = s => s ? s.replace(/\b([a-z])([a-z]*)\b/g, (m,a,r)=>a.toUpperCase()+r) : s;
+const joinList = a => a.length<=1 ? a.join("") : a.slice(0,-1).join(", ")+" and "+a[a.length-1];
+const sentence = (p,brand) => "The "+brand+" "+cap(p.nm)+", "+p.pn+", is a replacement "+p.nm.toLowerCase()+" for "+brand+" "+(p.models&&p.models.length ? joinList(p.models)+" " : "")+"heaters.";
+const isRedundant = (p,brand) => !p.desc || p.desc.toLowerCase().replace(/[^a-z0-9]/g,"")===(brand+p.nm+p.pn).toLowerCase().replace(/[^a-z0-9]/g,"") || p.desc.toLowerCase()===p.nm.toLowerCase();
 
 function NotFound() {
   return (<div className="wrap section" style={{textAlign:"center"}}>
@@ -122,7 +125,7 @@ function Detail({ p }) {
           <div className="pd-info">
             <div className="eyebrow">{brand} · Replacement Part</div>
             <h1 className="pd-title">{title}</h1>
-            {p.desc && p.desc.toLowerCase() !== p.nm.toLowerCase() && <p className="pd-nm">{p.desc}</p>}
+            <p className="pd-nm">{sentence(p, brand)}</p>
             {p.nla && <div className="pd-nla">This part is no longer available from the factory. Call us and we will find the right replacement.</div>}
             <div className="pd-quote-box">
               <div className="lbl">{p.price != null ? "List Price" : "Price"}</div>
@@ -133,13 +136,14 @@ function Detail({ p }) {
               <div className="row"><span className="k">Part #</span><span className="v"><b>{p.pn}</b></span></div>
               <div className="row"><span className="k">Description</span><span className="v">{cap(p.nm)}</span></div>
               <div className="row"><span className="k">Brand</span><span className="v">{brand}</span></div>
+              {!isRedundant(p, brand) && <div className="row"><span className="k">Also listed as</span><span className="v">{p.desc}</span></div>}
             </div>
             <div className="hw-models">
               <h3>Models Include:</h3>
               {p.models && p.models.length
                 ? <ul>{p.models.map(m => <li key={m}>{PAGE[m] ? <a href={PAGE[m]}>{m}</a> : m}</li>)}</ul>
                 : <p className="none">Fitment not listed for this part. Check your owner's parts manual or call us with your model and serial number.</p>}
-              <p className="hw-note"><b>NOTE:</b> Heat Wagon parts can often be used on more than one model, so always reference your owner's parts manual to make sure you order the correct part.</p>
+              <p className="hw-note"><b>NOTE:</b> {brand} parts can often be used on more than one model, so always reference your owner's parts manual to make sure you order the correct part.</p>
             </div>
             <a className="pd-back" href="heat-wagon-parts.html"><I.chevR width="15" height="15" style={{transform:"rotate(180deg)"}}/> All Heat Wagon parts</a>
           </div>
