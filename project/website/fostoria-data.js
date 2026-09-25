@@ -8,6 +8,7 @@ window.FOSTORIA_PARTS = [
   "price": 250,
   "desc": "This element is a Direct Replacement element (alternate option), manufactured in USA by a company other than Fostoria/ TPI. Fostoria / TPI has discontinued production of the INDIVIDUAL U-Rod replacement elements and do offer a comprehensive kit to replace ALL individual elements with one individual flat panel heating element. We will also be offering these kits as well. These elements are manufactured in the USA, have identical performance specifications ( wattage, voltage & physical requirements ) & method of installation. This replacement kit does include one element, reflector and necessary hardware for installing the replacement. We have found that many of our customers prefer the individual replacement elements for ease of maintaining & replacing.",
   "gallery": [
+   "fostoria/642-21002_2kW-208V-element.jpg",
    "fostoria/u-bend-replacement-ele-2000-208-jpg.jpg",
    "fostoria/img-4682-png.jpg",
    "fostoria/image001-png.jpg"
@@ -32,7 +33,8 @@ window.FOSTORIA_PARTS = [
   "price": 250,
   "desc": "This element is a Direct Replacement element (alternate option), manufactured in USA by a company other than Fostoria/ TPI. Fostoria / TPI has discontinued production of the INDIVIDUAL U-Rod replacement elements and do offer a comprehensive kit to replace ALL individual elements with one individual flat panel heating element. We will also be offering these kits as well. These elements are manufactured in the USA, have identical performance specifications ( wattage, voltage & physical requirements ) & method of installation. This replacement kit does include one element, reflector and necessary hardware for installing the replacement. We have found that many of our customers prefer the individual replacement elements for ease of maintaining & replacing.",
   "gallery": [
-   "fostoria/pr-he20240-replacement-element-kit-2-jpg.jpg",
+   "fostoria/642-21004_2kW-240V-element.jpg",
+   "fostoria/u-bend-replacement-ele-2000-240-jpg.jpg",
    "fostoria/img-4682-png.jpg",
    "fostoria/image001-png.jpg"
   ],
@@ -56,6 +58,7 @@ window.FOSTORIA_PARTS = [
   "price": 250,
   "desc": "This element is a Direct Replacement element (alternate option), manufactured in USA by a company other than Fostoria/ TPI. Fostoria / TPI has discontinued production of the INDIVIDUAL U-Rod replacement elements and do offer a comprehensive kit to replace ALL individual elements with one individual flat panel heating element. We will also be offering these kits as well. These elements are manufactured in the USA, have identical performance specifications ( wattage, voltage & physical requirements ) & method of installation. This replacement kit does include one element, reflector and necessary hardware for installing the replacement. We have found that many of our customers prefer the individual replacement elements for ease of maintaining & replacing.",
   "gallery": [
+   "fostoria/642-21008_2kW-480V-element.jpg",
    "fostoria/u-bend-replacement-ele-2000-480-jpg.jpg",
    "fostoria/img-4682-png.jpg",
    "fostoria/image001-png.jpg"
@@ -80,6 +83,7 @@ window.FOSTORIA_PARTS = [
   "price": 250,
   "desc": "This element is a Direct Replacement element, manufactured in USA by a company other than Fostoria/ TPI. Fostoria / TPI has discontinued production of the INDIVIDUAL U-Rod replacement elements and do offer a comprehensive kit to replace ALL individual elements with one individual flat panel heating element. We will also be offering these kits as well. These elements are manufactured in the USA, have identical performance specifications ( wattage, voltage & physical requirements ) & method of installation. This replacement kit does include one element, reflector and necessary hardware for installing the replacement. We have found that many of our customers prefer the individual replacement elements for ease of maintaining & replacing.",
   "gallery": [
+   "fostoria/642-21009_2kW-600V-element.jpg",
    "fostoria/u-bend-replacement-ele-2000-600-jpg.jpg",
    "fostoria/img-4682-png.jpg",
    "fostoria/image001-png.jpg"
@@ -104,6 +108,7 @@ window.FOSTORIA_PARTS = [
   "price": 335,
   "desc": "This element is a Direct Replacement element (alternate option), manufactured in USA by a company other than Fostoria/ TPI. Fostoria / TPI has discontinued production of the INDIVIDUAL U-Rod replacement elements and do offer a comprehensive kit to replace ALL individual elements with one individual flat panel heating element. We will also be offering these kits as well. These elements are manufactured in the USA, have identical performance specifications ( wattage, voltage & physical requirements ) & method of installation. This replacement kit does include one element, reflector and necessary hardware for installing the replacement. We have found that many of our customers prefer the individual replacement elements for ease of maintaining & replacing.",
   "gallery": [
+   "fostoria/642-21010_4-5kW-208V-element.jpg",
    "fostoria/u-bend-replacement-ele-4500-208-jpg.jpg",
    "fostoria/img-4674-png.jpg",
    "fostoria/image001-png.jpg"
@@ -128,6 +133,7 @@ window.FOSTORIA_PARTS = [
   "price": 335,
   "desc": "This element is a Direct Replacement element (alternate option), manufactured in USA by a company other than Fostoria/ TPI. Fostoria / TPI has discontinued production of the INDIVIDUAL U-Rod replacement elements and do offer a comprehensive kit to replace ALL individual elements with one individual flat panel heating element. We will also be offering these kits as well. These elements are manufactured in the USA, have identical performance specifications ( wattage, voltage & physical requirements ) & method of installation. This replacement kit does include one element, reflector and necessary hardware for installing the replacement. We have found that many of our customers prefer the individual replacement elements for ease of maintaining & replacing.",
   "gallery": [
+   "fostoria/642-21012_4-5kW-240V-element.jpg",
    "fostoria/u-bend-replacement-ele-4500-240-jpg.jpg",
    "fostoria/img-4674-png.jpg",
    "fostoria/image001-png.jpg"
@@ -152,6 +158,7 @@ window.FOSTORIA_PARTS = [
   "price": 335,
   "desc": "This element is a Direct Replacement element (alternate option), manufactured in USA by a company other than Fostoria/ TPI. Fostoria / TPI has discontinued production of the INDIVIDUAL U-Rod replacement elements and do offer a comprehensive kit to replace ALL individual elements with one individual flat panel heating element. We will also be offering these kits as well. These elements are manufactured in the USA, have identical performance specifications ( wattage, voltage & physical requirements ) & method of installation. This replacement kit does include one element, reflector and necessary hardware for installing the replacement. We have found that many of our customers prefer the individual replacement elements for ease of maintaining & replacing.",
   "gallery": [
+   "fostoria/642-21016_4-5kW-480V-element.jpg",
    "fostoria/u-bend-replacement-ele-4500-480-jpg.jpg",
    "fostoria/img-4674-png.jpg",
    "fostoria/image001-png.jpg"
@@ -176,6 +183,7 @@ window.FOSTORIA_PARTS = [
   "price": 335,
   "desc": "This element is a Direct Replacement element (alternate option), manufactured in USA by a company other than Fostoria/ TPI. Fostoria / TPI has discontinued production of the INDIVIDUAL U-Rod replacement elements and do offer a comprehensive kit to replace ALL individual elements with one individual flat panel heating element. We will also be offering these kits as well. These elements are manufactured in the USA, have identical performance specifications ( wattage, voltage & physical requirements ) & method of installation. This replacement kit does include one element, reflector and necessary hardware for installing the replacement. We have found that many of our customers prefer the individual replacement elements for ease of maintaining & replacing.",
   "gallery": [
+   "fostoria/642-21017_4-5kW-600V-element.jpg",
    "fostoria/u-bend-replacement-ele-4500-600-jpg.jpg",
    "fostoria/img-4674-png.jpg",
    "fostoria/image001-png.jpg"
