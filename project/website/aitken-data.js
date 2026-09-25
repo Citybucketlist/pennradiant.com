@@ -154,6 +154,7 @@ window.AITKEN_PARTS = [
   },
   "gallery": [
    "aitken/he20208-1.jpg",
+   "aitken/he20208-kit.jpg",
    "aitken/he20208-2.jpg",
    "aitken/he20208-3.jpg",
    "aitken/he20208-4.jpg",
@@ -185,6 +186,7 @@ window.AITKEN_PARTS = [
   },
   "gallery": [
    "aitken/he20240-1.jpg",
+   "aitken/he20240-kit.jpg",
    "aitken/he20208-5.jpg"
   ],
   "nm": "Replacement Electric Element",
@@ -213,6 +215,7 @@ window.AITKEN_PARTS = [
   },
   "gallery": [
    "aitken/he20480-1.jpg",
+   "aitken/he20480-kit.jpg",
    "aitken/he20208-5.jpg",
    "aitken/he20208-3.jpg"
   ],
@@ -242,6 +245,7 @@ window.AITKEN_PARTS = [
   },
   "gallery": [
    "aitken/he20550-1.jpg",
+   "aitken/he20550-kit.jpg",
    "aitken/he20208-3.jpg"
   ],
   "nm": "Replacement Electric Element"
@@ -261,6 +265,7 @@ window.AITKEN_PARTS = [
   },
   "gallery": [
    "aitken/he20600-1.jpg",
+   "aitken/he20600-kit.jpg",
    "aitken/he20208-3.jpg",
    "aitken/he20208-5.jpg"
   ],
@@ -409,6 +414,7 @@ window.AITKEN_PARTS = [
   },
   "gallery": [
    "aitken/he45208-1.jpg",
+   "aitken/he45208-kit.jpg",
    "aitken/he45208-2.jpg",
    "aitken/he20208-5.jpg"
   ],
@@ -438,6 +444,7 @@ window.AITKEN_PARTS = [
   },
   "gallery": [
    "aitken/he45240-1.jpg",
+   "aitken/he45240-kit.jpg",
    "aitken/he45208-2.jpg"
   ],
   "nm": "Replacement Electric Element",
@@ -466,6 +473,7 @@ window.AITKEN_PARTS = [
   },
   "gallery": [
    "aitken/he45480-1.jpg",
+   "aitken/he45480-kit.jpg",
    "aitken/he45208-2.jpg",
    "aitken/he20208-5.jpg"
   ],
@@ -495,6 +503,7 @@ window.AITKEN_PARTS = [
   },
   "gallery": [
    "aitken/he45550-1.jpg",
+   "aitken/he45550-kit.jpg",
    "aitken/he45208-2.jpg"
   ],
   "nm": "Replacement Electric Element"
@@ -514,6 +523,7 @@ window.AITKEN_PARTS = [
   },
   "gallery": [
    "aitken/he45600-1.jpg",
+   "aitken/he45600-kit.jpg",
    "aitken/he45208-2.jpg",
    "aitken/he20208-5.jpg"
   ],

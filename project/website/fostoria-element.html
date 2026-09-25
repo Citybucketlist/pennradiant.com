@@ -117,7 +117,7 @@ function ZoomMain({ src, alt }) {
   );
 }
 function Detail({ p }) {
-  const gal = (p.gallery&&p.gallery.length) ? p.gallery : null;
+  const gal = (p.gallery&&p.gallery.length) ? (p.gallery.length>1 ? [p.gallery[1], p.gallery[0], ...p.gallery.slice(2)] : p.gallery) : null;  // detail pages lead with the U-Bend photo; grid cards keep the icon
   const [sel,setSel] = useState(0);
   const quoteHref = "contact.html?part="+encodeURIComponent(p.former);
   const rows = [
