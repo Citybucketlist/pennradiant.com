@@ -10,6 +10,7 @@ window.FOSTORIA_PARTS = [
   "gallery": [
    "fostoria/642-21002_2kW-208V-element.jpg",
    "fostoria/u-bend-replacement-ele-2000-208-jpg.jpg",
+   "fostoria/measure-2kw.jpg",
    "fostoria/img-4682-png.jpg",
    "fostoria/image001-png.jpg"
   ],
@@ -35,6 +36,7 @@ window.FOSTORIA_PARTS = [
   "gallery": [
    "fostoria/642-21004_2kW-240V-element.jpg",
    "fostoria/u-bend-replacement-ele-2000-240-jpg.jpg",
+   "fostoria/measure-2kw.jpg",
    "fostoria/img-4682-png.jpg",
    "fostoria/image001-png.jpg"
   ],
@@ -60,6 +62,7 @@ window.FOSTORIA_PARTS = [
   "gallery": [
    "fostoria/642-21008_2kW-480V-element.jpg",
    "fostoria/u-bend-replacement-ele-2000-480-jpg.jpg",
+   "fostoria/measure-2kw.jpg",
    "fostoria/img-4682-png.jpg",
    "fostoria/image001-png.jpg"
   ],
@@ -85,6 +88,7 @@ window.FOSTORIA_PARTS = [
   "gallery": [
    "fostoria/642-21009_2kW-600V-element.jpg",
    "fostoria/u-bend-replacement-ele-2000-600-jpg.jpg",
+   "fostoria/measure-2kw.jpg",
    "fostoria/img-4682-png.jpg",
    "fostoria/image001-png.jpg"
   ],
@@ -110,6 +114,7 @@ window.FOSTORIA_PARTS = [
   "gallery": [
    "fostoria/642-21010_4-5kW-208V-element.jpg",
    "fostoria/u-bend-replacement-ele-4500-208-jpg.jpg",
+   "fostoria/measure-4-5kw.jpg",
    "fostoria/img-4674-png.jpg",
    "fostoria/image001-png.jpg"
   ],
@@ -135,6 +140,7 @@ window.FOSTORIA_PARTS = [
   "gallery": [
    "fostoria/642-21012_4-5kW-240V-element.jpg",
    "fostoria/u-bend-replacement-ele-4500-240-jpg.jpg",
+   "fostoria/measure-4-5kw.jpg",
    "fostoria/img-4674-png.jpg",
    "fostoria/image001-png.jpg"
   ],
@@ -160,6 +166,7 @@ window.FOSTORIA_PARTS = [
   "gallery": [
    "fostoria/642-21016_4-5kW-480V-element.jpg",
    "fostoria/u-bend-replacement-ele-4500-480-jpg.jpg",
+   "fostoria/measure-4-5kw.jpg",
    "fostoria/img-4674-png.jpg",
    "fostoria/image001-png.jpg"
   ],
@@ -185,6 +192,7 @@ window.FOSTORIA_PARTS = [
   "gallery": [
    "fostoria/642-21017_4-5kW-600V-element.jpg",
    "fostoria/u-bend-replacement-ele-4500-600-jpg.jpg",
+   "fostoria/measure-4-5kw.jpg",
    "fostoria/img-4674-png.jpg",
    "fostoria/image001-png.jpg"
   ],
