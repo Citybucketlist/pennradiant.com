@@ -17,6 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../colors_and_type.css">
 <link rel="stylesheet" href="styles.css?v=68">
+<link rel="stylesheet" href="wb-parts-map.css?v=1">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
@@ -85,6 +86,7 @@
 </head>
 <body>
 <div id="root"></div>
+<script src="wb-parts-map.js?v=1"></script>
 <script type="text/babel" src="site.jsx?v=26"></script>
 <script type="text/babel">
 const A = PRP_A, I = PRP_I;
@@ -97,6 +99,17 @@ const FEATS = [
   ["⛽","Natural gas or propane","Available in NG or LP for any installation"],
 ];
 const APPS = ["Restaurants & hospitality","Patios & decks","Breweries & taprooms","Garages & shops","Outdoor dining","Residential outdoor living","Hotels & resorts","Entryways & waiting areas"];
+function WBPartsMap(){
+  const ref = React.useRef(null);
+  React.useEffect(()=>{ if (window.PRP_mountWBParts) window.PRP_mountWBParts(ref.current, {
+    sheet: A+"/products/wb/wb-commonly-replaced-parts.jpg",
+    pdf: A+"/products/wb/WB-Series-Commonly-Replaced-Parts.pdf",
+    img: pn => A+"/products/wb/wb-part-"+pn+".jpg",
+    href: pn => "contact.html?part="+pn,
+    cta: "Request a Quote"
+  }); }, []);
+  return <div ref={ref}></div>;
+}
 function App() {
   return (
     <React.Fragment>
@@ -219,12 +232,15 @@ function App() {
       </section>
 
       <section className="wrap section" style={{paddingTop:"4px"}}>
-        <div className="pd-parts">
-          <div className="pd-parts-thumb"><img src={A+"/products/space-ray/parts/30216060-1.jpg"} alt="Replacement part"/></div>
+        <div className="eyebrow-row"><h2><span className="lt">COMMONLY</span> REPLACED&nbsp;PARTS</h2></div>
+        <p className="wb-lead">The parts we replace most on Wind Blocker WB35 and WB50 heaters, and where each one sits inside the&nbsp;heater.</p>
+        <WBPartsMap />
+        <div className="pd-parts" style={{marginTop:"20px"}}>
+          <div className="pd-parts-thumb"><img src={A+"/products/wb/wb-part-30632100.jpg"} alt="Wind Blocker ignition module 30632100"/></div>
           <div className="m">
             <span className="eb">Genuine Factory Parts</span>
-            <b>Replacement parts are available for the Wind Blocker heaters.</b>
-            <span className="sub">Burners, controls, emitters, valves &amp; more — contact our parts team for availability.</span>
+            <b>Need another Wind Blocker part?</b>
+            <span className="sub">Burners, emitters, valves &amp; more. Send your model &amp; serial number and our parts team will match the exact&nbsp;part.</span>
           </div>
           <a className="btn btn-red" href="contact.html?part=Wind+Blocker+WB35+WB50">Contact us about parts</a>
         </div>
