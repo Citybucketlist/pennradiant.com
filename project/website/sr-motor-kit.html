@@ -17,6 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="../colors_and_type.css">
 <link rel="stylesheet" href="styles.css?v=68">
+<link rel="stylesheet" href="motor-kit-help.css?v=1">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
@@ -66,6 +67,7 @@
 <div id="root"></div>
 <script type="text/babel" src="site.jsx?v=26"></script>
 <script src="sr-parts-data.js?v=21"></script>
+<script src="motor-kit-help.js?v=1"></script>
 <script type="text/babel">
 const A = PRP_A, I = PRP_I;
 const PARTS = window.SR_PARTS || [];
@@ -83,6 +85,11 @@ const REL = [
   {id:"42740000", nm:"Motor Plate"},
   {id:"03723000", nm:"Blower Wheel"},
 ];
+function WhichKit(){
+  const ref = React.useRef(null);
+  React.useEffect(()=>{ if (window.PRP_mountMotorHelp) window.PRP_mountMotorHelp(ref.current); }, []);
+  return <section className="wrap section" style={{paddingTop:"12px"}} ref={ref}></section>;
+}
 function App(){
   return (
     <React.Fragment>
@@ -103,6 +110,8 @@ function App(){
         <div className="mk-pic"><img src={A+"/products/"+hero} alt="Space Ray / SunStar 42928000 motor replacement kit"/></div>
       </div></section>
       <div className="wrap crumb"><a href="index.html">Home</a><I.chevR width="14" height="14"/><a href="parts.html">Parts</a><I.chevR width="14" height="14"/><a href="space-ray-parts.html">Space Ray</a><I.chevR width="14" height="14"/><span>Motor Kit · 42928000</span></div>
+
+      <WhichKit />
 
       <section className="wrap section" style={{paddingTop:"12px"}}>
         <div className="eyebrow-row"><h2><span className="lt">WHAT&rsquo;S</span> IN THE KIT</h2></div>
